@@ -1,55 +1,60 @@
 <html lang="en">
-<meta http-equiv="content-language" content="en" />
-<head>
-<title>Corbin Hale</title>
-<link rel="SHORTCUT ICON" href="index_resources/Logo.ico">
+	<meta http-equiv="content-language" content="en" />
+	<head>
+		<title>Corbin Hale</title>
+		<link rel="SHORTCUT ICON" href="index_resources/Logo.ico">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=0.5, user-scalable=yes"/>
 
-<link rel="stylesheet" type="text/css" href="index_resources/main.css">
-<script src="index_resources/main.js"></script>
+		<link rel="stylesheet" type="text/css" href="index_resources/main.css">
+		<script src="index_resources/main.js"></script>
 
-<script type="text/javascript" src="resources.js"></script>
+		<script type="text/javascript" src="resources.js"></script>
 
-</head>
-<body onload="Nperrow = 1;OnLoad()">
+	</head>
+	<body onload="IsMobile = true; OnLoad()">
 
-<div id="LeMenu" draggable="false">
+		<div id="LeMenu" draggable="false">
 	
-	<!--<div class="UpTitle" id="Mobile-Neon"></div>-->
+			<div class="UpTitle" id="BackMenu"></div>
 
-	<img draggable="false" class="UpTitle" id="Mobile-Logo" src="index_resources/logo.png">
-	<img draggable="false" class="UpTitle" id="Mobile-Sandwich" src="index_resources/Slice-6.png" usemap="#sandwichmap">
+			<img draggable="false" class="UpTitle" id="Mobile-Title" src="index_resources/Slice-6.png" usemap="#menumap">
+
+			<map name="menumap">
+				<area shape="circle" coords="495,160,106" href="index.html" alt="Home!">
+				<area shape="rect" coords="90,240,190,300" href="news/index.html" alt="Check what's new!">
+			</map>
+
+			<div class="UpTitle" id="Mobile-NeonLL"></div>
+
+			<div class="UpTitle" id="Mobile-NeonRR"></div>
+
+
 	
-	<map name="sandwichmap">
-		<area shape="rect" coords="90,240,190,300" href="news/index.html" alt="Check what's new!">
-	</map>
 
+		</div>
+		
 
-	
+		<div id="Mobile-LeContent">
+		
+		</div>
 
-</div>
+		<img src="index_resources/Slice-4.png" id="footer" usemap="#footermap">
 
-<div class="Mobile-LeContent" id="LeContent">
+		<map name="footermap">
+				<area shape="circle" coords="207,47,20" href="http://facebook.com/corbinhalemusic/" alt="Like me on Facebook!">
+				<area shape="circle" coords="277,47,20" href="https://www.youtube.com/corbinhale" alt="Subscribe to my Channel!">
+				<area shape="circle" coords="348,47,20" href="https://twitter.com/CorbinHaleMusic" alt="Follow me on Twitter!">
+				<area shape="circle" coords="420,47,20" href="https://soundcloud.com/CorbinHale" alt="Listen and download to my songs!">
+				<area shape="circle" coords="490,47,20" href="https://instagram.com/corbinhale/" alt="See my pics!">
+				<area shape="circle" coords="561,47,20" href="mailto:contact@corbinhale.com" alt="Contact me!">
+			</map>
 
+		<div id="ModalView">
+				<span id="closebtn" onclick="CloseModal()"> Close </span>
+				<div id="modalpic"> </div>
+				<span id="modalcaption"> </span>
+			</div>
 
-
-</div>
-
-<img src="index_resources/Slice-4.png" id="footer" usemap="#footermap">
-
-	<map name="footermap">
-		<area shape="circle" coords="207,47,20" href="http://facebook.com/corbinhalemusic/" alt="Like me on Facebook!">
-		<area shape="circle" coords="277,47,20" href="https://www.youtube.com/corbinhale" alt="Subscribe to my Channel!">
-		<area shape="circle" coords="348,47,20" href="https://twitter.com/CorbinHaleMusic" alt="Follow me on Twitter!">
-		<area shape="circle" coords="420,47,20" href="https://soundcloud.com/CorbinHale" alt="Listen and download to my songs!">
-		<area shape="circle" coords="490,47,20" href="https://instagram.com/corbinhale/" alt="See my pics!">
-		<area shape="circle" coords="561,47,20" href="mailto:contact@corbinhale.com" alt="Contact me!">
-	</map>
-
-	<div id="ModalView">
-		<span id="closebtn" onclick="CloseModal()"> Close </span>
-		<div id="modalpic"> </div>
-		<span id="modalcaption"> </span>
-	</div>
-
-</body>
+	</body>
 </html>

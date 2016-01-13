@@ -205,21 +205,22 @@ body {
 
 /*SET STYLE FOR MOBILE SPECIFIC COMPONENTS*/
 
-.Mobile-LeContent
+#Mobile-LeContent
 {
 	position: absolute !important; 
-	top: 200px !important;
+	top: 1200px !important;
 	left: calc(50% - 122px) !important;
 	width:244px !important;
+	-webkit-transform: scale(2);
+	transform: scale(2);
 }
 
-#Mobile-Logo
+#Mobile-Title
 {
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	width: 150px;
-	height: 150px;
+	left: calc(50% - 319.5px);
+	top: -25px;
+	width: 639px;
+	height: 334px;
 }
 
 #Mobile-Sandwich
@@ -231,10 +232,18 @@ body {
 	height: 83px;
 }
 
-#Mobile-Neon{
+#Mobile-NeonLL{
 	background: url(Slice-2.png);
 	left:0px;
-	width: 100%;
+	width: calc((100% - 639px)/2);
+	top: -25px;
+	height:356px;
+}
+
+#Mobile-NeonRR{
+	background: url(Slice-2.png);
+	left: calc((100% - (100% - 639px)/2));
+	right:0px;
 	top: -25px;
 	height:356px;
 }

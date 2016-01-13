@@ -1,11 +1,25 @@
 var TheHeadLines = new Array();
 var IsThreeRows = undefined;
+
+var IsMobile = false;
+
 var Nperrow = 4;
+var LeContentObjectID = "LeContent";
+
+function SetUIVariables()
+{
+	if(IsMobile)
+	{
+		Nperrow = 1;
+		LeContentObjectID = "Mobile-LeContent";
+	}
+}
 
 var TheGrid = new Object();
 
 function OnLoad()
 {
+	SetUIVariables();
 	LoadResources();
 	PutInGrid();
 	OnResize();
@@ -56,7 +70,7 @@ function HeadLine(imgsrc, msg, url, type)
 	}
 
 
-	document.getElementById("LeContent").appendChild(this.Obj);
+	document.getElementById(LeContentObjectID).appendChild(this.Obj);
 
 	this.Pic = document.createElement("div");
 	this.Pic.className = "contentpic";
@@ -101,7 +115,7 @@ function PutInGrid()
 	TheGrid.table = document.createElement("table");
 	TheGrid.table.style.width = "100%";
 
-	document.getElementById("LeContent").appendChild(TheGrid.table);
+	document.getElementById(LeContentObjectID).appendChild(TheGrid.table);
 
 	TheGrid.rows = new Array();
 	TheGrid.cells = new Array();
@@ -152,16 +166,16 @@ function OnResize()
 
 function SwitchToThreePerRow()
 {
-	document.getElementById("LeContent").style.left = "Calc(50% - 500px)";
-	document.getElementById("LeContent").style.width = "1000px";
+	document.getElementById(LeContentObjectID).style.left = "Calc(50% - 500px)";
+	document.getElementById(LeContentObjectID).style.width = "1000px";
 	//document.getElementById("backgroundcenter").style.backgroundPosition = "center";
 	IsThreeRows = true;
 }
 
 function SwitchToTwoPerRow()
 {
-	document.getElementById("LeContent").style.left = "Calc(50% - 332px)";
-	document.getElementById("LeContent").style.width = "664px";
+	document.getElementById(LeContentObjectID).style.left = "Calc(50% - 332px)";
+	document.getElementById(LeContentObjectID).style.width = "664px";
 	//document.getElementById("backgroundcenter").style.backgroundPosition = "Calc(50% - 166px)";
 	IsThreeRows = false;
 }
