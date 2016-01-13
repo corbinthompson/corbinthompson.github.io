@@ -1,0 +1,240 @@
+body {
+	background: #92c5c5;
+}
+
+@font-face {
+    font-family: TheFont;
+    src: url(FRUSHAND.ttf);
+}
+
+#LeMenu {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	cursor: default;
+}
+
+.UpTitle {
+	position:fixed;
+	z-index:21;
+}
+
+#Title{
+	left: calc(50% - 495.5px);
+	top: -25px;
+	width: 991px;
+	height: 356px;
+}
+
+#WNCH{
+	right:0px;
+	top:-5px;
+}
+
+#BackMenu {
+	background: url(BackMenu.png);
+	opacity: 0.8;
+	left: 0px;
+	width: 100%;
+	top: -25px;
+	height:356px;
+}
+
+#NeonLL{
+	background: url(Slice-2.png);
+	left:0px;
+	width: calc((100% - 991px)/2);
+	top: -25px;
+	height:356px;
+}
+
+#NeonRR{
+	background: url(Slice-2.png);
+	left: calc((100% - (100% - 991px)/2));
+	right:0px;
+	top: -25px;
+	height:356px;
+}
+
+#LeContent{
+	position: absolute;
+	top: 350px;
+
+	left: calc(50% - 510px);
+	width:1020px;
+
+	/*left:0px;
+	right:0px;*/
+
+	/*left: calc(50% - 500px);
+	width: 1000px;*/
+}
+
+.PieceOfContentPolaroid {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	cursor: pointer;
+	float: left;
+	/*margin: 51px;*/
+	margin: 20px;
+	width: 198px;
+	height: 292px;
+	margin-bottom:8px;
+}
+
+.PieceOfContentPostIt {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	cursor: pointer;
+	float: left;
+	/*margin: 51px;*/
+	margin: 50px;
+	width: 250px;
+	height: 250px;
+	margin-bottom:0px;
+}
+
+.contentpic {
+	position: relative;
+	top: -22px;
+	left: 17px;
+	width: 161px;
+	height: 180px;
+	background: #000000;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center top;
+	z-index:2;
+}
+
+.contentframe {
+	position:relative;
+	top: -230px;
+	left: 0px;
+	z-index:13;
+}
+
+.contentlabelPolaroid {
+	position: relative;
+	top: -285px;
+	width: 90%;
+	left: 10px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-align: center;
+	color: #444;
+	font-family: 'TheFont', Fallback, sans-serif;
+	font-size: 12pt;
+	z-index:14;
+}
+
+.contentlabelPostIt {
+	position: relative;
+	top: -435px;
+	width: 80%;
+	left: 20px;
+	height:190px;
+	overflow: hidden;
+	white-space: default;
+	text-overflow: ellipsis;
+	text-align: center;
+	color: #444;
+	font-family: 'TheFont', Fallback, sans-serif;
+	font-size: 12pt;
+	z-index:14;
+}
+
+#footer{
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+}
+
+#ModalView {
+	position:fixed;
+	z-index:30;
+	background-color: rgba(0,0,0,0.8);
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+#closebtn {
+	position:fixed;
+	right:10px;
+	top:10px;
+	font-family: 'TheFont', Fallback, sans-serif;
+	font-size: 12pt;
+	color: #FFFFFF;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	cursor: pointer;
+}
+
+#modalpic {
+	position:fixed;
+	top: 50px;
+	bottom: 50px;
+	left: 20px;
+	right: 20px;
+}
+
+#modalcaption {
+	font-family: 'TheFont', Fallback, sans-serif;
+	font-size: 18pt;
+	color: #FFFFFF;
+	position: fixed;
+	bottom: 10px;
+	width:100%;
+	text-align: center;
+}
+
+/*SET STYLE FOR MOBILE SPECIFIC COMPONENTS*/
+
+.Mobile-LeContent
+{
+	position: absolute !important; 
+	top: 200px !important;
+	left: calc(50% - 122px) !important;
+	width:244px !important;
+}
+
+#Mobile-Logo
+{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 150px;
+	height: 150px;
+}
+
+#Mobile-Sandwich
+{
+	position: fixed;
+	top: 50px;
+	right: 0px;
+	width: 141px;
+	height: 83px;
+}
+
+#Mobile-Neon{
+	background: url(Slice-2.png);
+	left:0px;
+	width: 100%;
+	top: -25px;
+	height:356px;
+}
