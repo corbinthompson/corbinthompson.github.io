@@ -247,3 +247,33 @@ body {
 	top: -25px;
 	height:356px;
 }
+
+#Mobile-Footer{
+	position: absolute;
+	right: -360px;
+	bottom: 0px;
+}
+
+#Mobile-Menu-Drawer
+{
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	width: 320px;
+	-webkit-box-shadow: rgba(0,0,0,0.5) 0px 0px 5px;
+	-webkit-transition: all 0.5s;
+	/*Make it compatible with other stuff*/
+	background-color: beige;
+	color: red;
+	z-index: 200;
+}
+
+.Drawer-Closed
+{
+	right: -320px;
+}
+
+.Drawer-Open
+{
+	right: 0px;
+}

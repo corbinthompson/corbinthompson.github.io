@@ -5,6 +5,7 @@ var IsMobile = false;
 
 var Nperrow = 4;
 var LeContentObjectID = "LeContent";
+var FooterObjectID = "footer";
 
 function SetUIVariables()
 {
@@ -12,6 +13,7 @@ function SetUIVariables()
 	{
 		Nperrow = 1;
 		LeContentObjectID = "Mobile-LeContent";
+		FooterObjectID = "Mobile-Footer";
 	}
 }
 
@@ -138,6 +140,7 @@ function PutInGrid()
 	}
 }
 
+
 function OnResize()
 {
 	var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
@@ -160,7 +163,7 @@ function OnResize()
     html = document.documentElement;
 
 	var pageheight = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
-    document.getElementById("footer").style.top = pageheight - 201;
+    document.getElementById(FooterObjectID).style.top = pageheight - 201;
 
 }
 
@@ -195,4 +198,11 @@ function OpenModal(imgUrl, imgCaption)
 	document.getElementById("modalpic").style.backgroundPosition = "center center";
 	document.getElementById("modalpic").style.backgroundSize = "contain";
 	document.getElementById("modalpic").style.backgroundRepeat = "no-repeat";
+}
+
+//Mobile specific
+
+function MobileOpenMenu()
+{
+	document.getElementById("Mobile-Menu-Drawer").className = "Drawer-Open";
 }
