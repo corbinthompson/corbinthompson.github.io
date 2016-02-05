@@ -205,4 +205,11 @@ function OpenModal(imgUrl, imgCaption)
 function MobileOpenMenu()
 {
 	document.getElementById("Mobile-Menu-Drawer").className = "Drawer-Open";
+	document.getElementById("Mobile-Menu-Modal").className = "";
+}
+
+function MobileCloseMenu()
+{
+	document.getElementById("Mobile-Menu-Drawer").className = "Drawer-Closed";
+	document.getElementById("Mobile-Menu-Modal").className = "pseudo-hidden";
 }
