@@ -202,14 +202,14 @@ function OpenModal(imgUrl, imgCaption)
 
 //Mobile specific
 
-function MobileOpenMenu()
+function OpenCompactMenu()
 {
-	document.getElementById("Mobile-Menu-Drawer").className = "Drawer-Open";
-	document.getElementById("Mobile-Menu-Modal").className = "";
+	document.getElementById("CompactMenuDrawer").className = "DrawerOpen";
+	document.getElementById("CompactMenuModal").className = "";
 }
 
-function MobileCloseMenu()
+function CloseCompactMenu()
 {
-	document.getElementById("Mobile-Menu-Drawer").className = "Drawer-Closed";
-	document.getElementById("Mobile-Menu-Modal").className = "pseudo-hidden";
+	document.getElementById("CompactMenuDrawer").className = "DrawerClosed";
+	document.getElementById("CompactMenuModal").className = "pseudo-hidden";
 }

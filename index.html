@@ -16,6 +16,26 @@
 			<div class="UpTitle" id="BackMenu"></div>
 
 			<img draggable="false" class="UpTitle" id="Title" src="index_resources/Slice-1.png" usemap="#menumap">
+			<img draggable="false" class="UpTitle" id="CompactTitle" src="index_resources/Slice-6.png" usemap="#mobilemenumap">
+			
+			<div class="Drawer-Closed" id="CompactMenuDrawer">
+				<div class="Mobile-Menu-Title">Menu</div>
+				<hr class="Mobile-Menu-HR" />
+				<div class="Mobile-Menu-Item">News</div>
+				<div class="Mobile-Menu-Item">Music</div>
+				<div class="Mobile-Menu-Item">Videos</div>
+				<div class="Mobile-Menu-Item">#UArtist</div>
+				
+				<div id="Mobile-Social-Buttons">
+					<div class="Mobile-Social-Button" href="http://facebook.com/corbinhalemusic/"><img src="index_resources/icons/facebook.png"></div>
+					<div class="Mobile-Social-Button" href="https://www.youtube.com/corbinhale"><img src="index_resources/icons/youtube.png"></div>
+					<div class="Mobile-Social-Button" href="https://twitter.com/CorbinHaleMusic"><img src="index_resources/icons/twitter.png"></div>
+					<div class="Mobile-Social-Button" href="https://soundcloud.com/CorbinHale"><img src="index_resources/icons/soundcloud.png"></div>
+					<div class="Mobile-Social-Button" href="https://instagram.com/corbinhale/"><img src="index_resources/icons/instagram.png"></div>
+					<div class="Mobile-Social-Button" href="mailto:contact@corbinhale.com"><img src="index_resources/icons/email.png"></div>
+				</div>
+			</div>
+			<div class="pseudo-hidden" id="CompactMenuModal" onclick="CloseCompactMenu()"></div>
 
 			<map name="menumap">
 				<area shape="circle" coords="495,160,106" href="index.html" alt="Home!">
@@ -25,7 +45,10 @@
 				<area shape="rect" coords="590,240,725,300" href="videos/index.html" alt="Watch amazing videos!">
 				<area shape="rect" coords="725,240,900,300" href="uartist/index.html" alt="Get inspired! Create!">
 			</map>
-
+			<map name="mobilemenumap">
+				<area shape="circle" coords="320, 167, 106" href="index.html" title="Home!">
+				<area shape="rect" coords="426, 0, 622, 334" onclick="OpenCompactMenu()" title="Open Menu">
+			</map>
 
 			<div class="UpTitle" id="NeonLL"></div>
 
@@ -36,6 +59,7 @@
 			<map name="WNCHmap">
 				<area shape="poly" coords="23,0,110,0,245,135,245,223" href="http://corbinhale.us11.list-manage1.com/subscribe?u=eb64874570249b730ee6e15bf&id=7b45bd9997" target="_blank" alt="Subscribe to my mailing list!">
 			</map>
+			
 
 		</div>
 
