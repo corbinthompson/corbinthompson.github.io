@@ -1,12 +1,16 @@
 var TheHeadLines = new Array();
+
+//May become deprecated
 var IsThreeRows = undefined;
-
 var IsMobile = false;
-
 var Nperrow = 4;
 var LeContentObjectID = "LeContent";
 var FooterObjectID = "footer";
 
+//New Variables
+NavLocation = "resources.json";
+
+//May become deprecated
 function SetUIVariables()
 {
 	if(IsMobile)
@@ -22,9 +26,12 @@ var TheGrid = new Object();
 function OnLoad()
 {
 	SetUIVariables();
-	LoadResources();
+	//Now we'll have to load from external JSON
+	/*LoadResources();
 	PutInGrid();
-	OnResize();
+	OnResize();*/
+	
+	//Let's do just that
 }
 
 function HeadLine(imgsrc, msg, url, type)
@@ -111,6 +118,8 @@ function HeadLine(imgsrc, msg, url, type)
 	this.Obj.style.webkitTransform = "rotate(" + (Math.random()*30 - 15) + "deg)"
 
 }
+
+//Grid might be different from now on.
 
 function PutInGrid()
 {
@@ -213,3 +222,44 @@ function CloseCompactMenu()
 	document.getElementById("CompactMenuDrawer").className = "DrawerClosed";
 	document.getElementById("CompactMenuModal").className = "pseudo-hidden";
 }
+
+//Multi-page navigation
+
+function GetPageJSON(url) {
+	return new Promise(function(resolve, reject) {
+		var Conn = new XMLHTTPRequest();
+		req.open('GET', url);
+		req.onload = function() {
+			if(req.status == 200) {
+				resolve(JSON.parse(req.response));
+			}
+			else {
+				reject(Error(req.statusText));
+			}
+		}
+		req.onerror = function() {
+			reject(Error("Network Error"));
+		}
+		req.send();
+	});
+}
+
+function LoadPage(url) {
+	NavLocation = url;
+	GetPageJSON(NavLocation).then(function(response) {
+		response.map(function(item, index) {
+			TheHeadLines.push(new HeadLine());
+		});
+	})
+	.catch(function(response) {
+		console.log("Failed to open page." + response);
+	});
+}
+
+
+
+
+
+
+
+
