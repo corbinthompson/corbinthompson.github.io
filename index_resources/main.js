@@ -32,6 +32,7 @@ function OnLoad()
 	OnResize();*/
 	
 	//Let's do just that
+	LoadPage(NavLocation);
 }
 
 function HeadLine(imgsrc, msg, url, type)
@@ -149,7 +150,7 @@ function PutInGrid()
 	}
 }
 
-
+//Might become deprecated
 function OnResize()
 {
 	var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
@@ -176,6 +177,7 @@ function OnResize()
 
 }
 
+//Might become deprecated
 function SwitchToThreePerRow()
 {
 	document.getElementById(LeContentObjectID).style.left = "Calc(50% - 500px)";
@@ -184,6 +186,7 @@ function SwitchToThreePerRow()
 	IsThreeRows = true;
 }
 
+//Might become deprecated
 function SwitchToTwoPerRow()
 {
 	document.getElementById(LeContentObjectID).style.left = "Calc(50% - 332px)";
@@ -227,7 +230,7 @@ function CloseCompactMenu()
 
 function GetPageJSON(url) {
 	return new Promise(function(resolve, reject) {
-		var Conn = new XMLHTTPRequest();
+		var req = new XMLHttpRequest();
 		req.open('GET', url);
 		req.onload = function() {
 			if(req.status == 200) {
@@ -246,14 +249,26 @@ function GetPageJSON(url) {
 
 function LoadPage(url) {
 	NavLocation = url;
+	ClearPage();
 	GetPageJSON(NavLocation).then(function(response) {
 		response.map(function(item, index) {
-			TheHeadLines.push(new HeadLine());
+			if(item.Type == "Picture") {
+				TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.Picture, 0));
+			}
+			else {
+				//Don't know yet
+			}
 		});
 	})
 	.catch(function(response) {
 		console.log("Failed to open page." + response);
 	});
+}
+
+function ClearPage() {
+	TheHeadLines = null;
+	TheHeadLines = new Array();
+	document.getElementById(LeContentObjectID).innerHTML = "";
 }
 
 
