@@ -228,7 +228,7 @@ function CloseCompactMenu()
 
 //Multi-page navigation
 
-function GetPageJSON(url) {
+function GetJSON(url) {
 	return new Promise(function(resolve, reject) {
 		var req = new XMLHttpRequest();
 		req.open('GET', url);
@@ -250,7 +250,7 @@ function GetPageJSON(url) {
 function LoadPage(url) {
 	NavLocation = url;
 	ClearPage();
-	GetPageJSON(NavLocation).then(function(response) {
+	GetJSON(NavLocation).then(function(response) {
 		response.map(function(item, index) {
 			if(item.Type == "Picture") {
 				TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.Picture, 0));
