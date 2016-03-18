@@ -232,6 +232,7 @@ function CloseCompactMenu()
 function LoadArticle(ArticleHTML)
 {
 	document.getElementById("LeContent").innerHTML = ArticleHTML;
+	document.getElementById("LeMenu").className = "UpTitleAbsolute";
 }
 
 function GetJSON(url) {
@@ -281,6 +282,7 @@ function ClearPage() {
 	TheHeadLines = null;
 	TheHeadLines = new Array();
 	document.getElementById(LeContentObjectID).innerHTML = "";
+	document.getElementById("LeMenu").className = "UpTitleAbsolute";
 }
 
 
