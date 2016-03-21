@@ -32,7 +32,8 @@ function OnLoad()
 	OnResize();*/
 	
 	//Let's do just that
-	LoadPage(NavLocation);
+	//LoadPage(NavLocation);
+	GoHash(location.hash);
 }
 
 function HeadLine(imgsrc, msg, url, type)
@@ -283,6 +284,18 @@ function ClearPage() {
 	TheHeadLines = new Array();
 	document.getElementById(LeContentObjectID).innerHTML = "";
 	document.getElementById("LeMenu").className = "UpTitleAbsolute";
+}
+
+//Hash navigation
+
+window.onhashchange = GoHash = function() {
+	if(location.hash != "") {
+		var hashvalue = location.hash.substring(1, location.hash.length);
+		LoadPage(hashvalue + "/index.json");
+	}
+	else {
+		LoadPage("home/index.json");
+	}
 }
 
 
