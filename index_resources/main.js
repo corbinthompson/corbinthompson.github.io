@@ -173,7 +173,7 @@ function OnResize()
 	var body = document.body,
     html = document.documentElement;
 	*/
-	var pageheight = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
+	pageheight = Math.max( document.body.scrollHeight, document.body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
     document.getElementById(FooterObjectID).style.top = pageheight - 101;
 
 }
