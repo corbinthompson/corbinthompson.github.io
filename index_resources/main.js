@@ -248,6 +248,7 @@ function LoadArticle(ArticleHTML)
 {
 	document.getElementById("LeContent").innerHTML = ArticleHTML;
 	document.getElementById("LeMenu").className = "UpTitleAbsolute";
+	OnResize();
 }
 
 function GetJSON(url) {
