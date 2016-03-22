@@ -34,7 +34,7 @@ function OnLoad()
 	
 	//Let's do just that
 	//LoadPage(NavLocation);
-	GoHash(location.hash);
+	GetSitemap();
 }
 
 function HeadLine(imgsrc, msg, url, type)
@@ -312,6 +312,7 @@ window.onhashchange = GoHash = function() {
 GetSitemap = function() {
 	GetJSON("index_resources/sitemap.json").then(function(response) {
 		Sitemap = response;
+		GoHash();
 	});
 }
 
