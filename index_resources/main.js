@@ -270,7 +270,10 @@ function LoadPage(url) {
 					LoadArticle(item.HTML);
 					break;
 				case "PostIt":
-					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.Picture, 1));
+					TheHeadLines.push(new HeadLine("", item.Caption, item.URL, 3));
+					break;
+				case "PolaroidLink":
+					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 1));
 					break;
 			}
 		});
