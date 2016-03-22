@@ -1,6 +1,10 @@
 [
 	{
 		"name": "home",
-		"address": "resources.json"
+		"address": "home/index.json"
+	},
+	{
+		"name": "",
+		"address": "home/index.json"
 	}
 ]

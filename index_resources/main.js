@@ -9,6 +9,7 @@ var FooterObjectID = "footer";
 
 //New Variables
 NavLocation = "resources.json";
+Sitemap = undefined;
 
 //May become deprecated
 function SetUIVariables()
@@ -291,11 +292,24 @@ function ClearPage() {
 window.onhashchange = GoHash = function() {
 	if(location.hash != "") {
 		var hashvalue = location.hash.substring(1, location.hash.length);
-		LoadPage(hashvalue + "/index.json");
+		//LoadPage(hashvalue + "/index.json");
 	}
 	else {
-		LoadPage("home/index.json");
+		var hashvalue = "home";
 	}
+	if(Sitemap) {
+		Sitemap.map(function(item, index) {
+			if(item.name == hashvalue) {
+				LoadPage(item.address);
+			}
+		});
+	}
+}
+
+GetSitemap = function() {
+	GetJSON("index_resources/sitemap.json").then(function(response) {
+		Sitemap = response;
+	});
 }
 
 
