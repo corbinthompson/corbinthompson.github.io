@@ -1,62 +1,62 @@
 [
 	{
-		"Thumbnail": "polaroid_thumb/thumb-I.jpg",
+		"Thumbnail": "music/polaroid_thumb/thumb-I.jpg",
 		"Caption:": "\"I'd walk a thousand miles to see your morphine smile\"",
-		"Picture": "polaroid_thumb/I.jpg",
+		"Picture": "music/polaroid_thumb/I.jpg",
 		"Type": "Picture"
 	},
 	{
-		"Thumbnail": "polaroid_thumb/thumb-II.jpg",
+		"Thumbnail": "music/polaroid_thumb/thumb-II.jpg",
 		"Caption:": "&nbsp \"&nbspThe way your hair smells is like a drug\"",
-		"Picture": "polaroid_thumb/II.jpg",
+		"Picture": "music/polaroid_thumb/II.jpg",
 		"Type": "Picture"
 	},
 	{
-		"Thumbnail": "polaroid_thumb/thumb-III.jpg",
+		"Thumbnail": "music/polaroid_thumb/thumb-III.jpg",
 		"Caption:": "\"I miss everyone I've seen when you're not around\"",
-		"Picture": "polaroid_thumb/III.jpg",
+		"Picture": "music/polaroid_thumb/III.jpg",
 		"Type": "Picture"
 	},
 	{
-		"Thumbnail": "polaroid_thumb/thumb-IV.jpg",
+		"Thumbnail": "music/polaroid_thumb/thumb-IV.jpg",
 		"Caption:": "\"The moonlight seems different than before...\"",
-		"Picture": "polaroid_thumb/IV.jpg",
+		"Picture": "music/polaroid_thumb/IV.jpg",
 		"Type": "Picture"
 	},
 	{
-		"Thumbnail": "polaroid_thumb/thumb-V.jpg",
+		"Thumbnail": "music/polaroid_thumb/thumb-V.jpg",
 		"Caption:": "&nbsp\"Dressed like an angel she came tonight\"",
-		"Picture": "polaroid_thumb/V.jpg",
+		"Picture": "music/polaroid_thumb/V.jpg",
 		"Type": "Picture"
 	},
 	{
-		"Thumbnail": "polaroid_thumb/thumb-VI.jpg",
+		"Thumbnail": "music/polaroid_thumb/thumb-VI.jpg",
 		"Caption:": "&nbsp\"Can't you see what you have done? My brain has really gone so numb\"",
-		"Picture": "polaroid_thumb/VI.jpg",
+		"Picture": "music/polaroid_thumb/VI.jpg",
 		"Type": "Picture"
 	},
 	{
-		"Thumbnail": "polaroid_thumb/thumb-VII.jpg",
+		"Thumbnail": "music/polaroid_thumb/thumb-VII.jpg",
 		"Caption:": "\"You're faster than I can run...\"",
-		"Picture": "polaroid_thumb/VII.jpg",
+		"Picture": "music/polaroid_thumb/VII.jpg",
 		"Type": "Picture"
 	},
 	{
-		"Thumbnail": "polaroid_thumb/thumb-VIII.jpg",
+		"Thumbnail": "music/polaroid_thumb/thumb-VIII.jpg",
 		"Caption:": "\"I can't sleep, I can't dream, I can't see what lies within\"",
-		"Picture": "polaroid_thumb/VIII.jpg",
+		"Picture": "music/polaroid_thumb/VIII.jpg",
 		"Type": "Picture"
 	},
 	{
-		"Thumbnail": "polaroid_thumb/thumb-IX.jpg",
+		"Thumbnail": "music/polaroid_thumb/thumb-IX.jpg",
 		"Caption:": "\"If you dream it, you can make it, darling\"",
-		"Picture": "polaroid_thumb/IX.jpg",
+		"Picture": "music/polaroid_thumb/IX.jpg",
 		"Type": "Picture"
 	},
 	{
-		"Thumbnail": "polaroid_thumb/thumb-X.jpg",
+		"Thumbnail": "music/polaroid_thumb/thumb-X.jpg",
 		"Caption:": "&nbsp\"&nbspTrying&nbspto&nbspwrite &nbspa&nbsp brand&nbsp new&nbspstory&nbsp\"",
-		"Picture": "polaroid_thumb/X.jpg",
+		"Picture": "music/polaroid_thumb/X.jpg",
 		"Type": "Picture"
 	}
 ]

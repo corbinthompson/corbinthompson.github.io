@@ -1,24 +1,24 @@
 [
 	{
-		"Thumbnail": "polaroid_thumb/photograph.png",
+		"Thumbnail": "videos/polaroid_thumb/photograph.png",
 		"Caption": "Photograph",
 		"URL": "https://youtu.be/fVvvRj_2pps?list=PLbVgatLHBk2C-ZOY8ZTJUeM4c7SMiH_B6",
 		"Type": "PolaroidLink"
 	},
 	{
-		"Thumbnail": "polaroid_thumb/18.png",
+		"Thumbnail": "videos/polaroid_thumb/18.png",
 		"Caption": "18",
 		"URL": "https://youtu.be/QRUdmRsyTpA?list=PLbVgatLHBk2C-ZOY8ZTJUeM4c7SMiH_B6",
 		"Type": "PolaroidLink"
 	},
 	{
-		"Thumbnail": "polaroid_thumb/seeuagain.png",
+		"Thumbnail": "videos/polaroid_thumb/seeuagain.png",
 		"Caption": "See you again",
 		"URL": "https://youtu.be/4fgLyWh-uiM?list=PLbVgatLHBk2C-ZOY8ZTJUeM4c7SMiH_B6",
 		"Type": "PolaroidLink"
 	},
 	{
-		"Thumbnail": "polaroid_thumb/doiwannaknow.jpg",
+		"Thumbnail": "videos/polaroid_thumb/doiwannaknow.jpg",
 		"Caption": "Do I wanna know",
 		"URL": "https://youtu.be/uryCvz_7uUc?list=PLbVgatLHBk2C-ZOY8ZTJUeM4c7SMiH_B6",
 		"Type": "PolaroidLink"
