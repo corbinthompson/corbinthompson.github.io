@@ -228,6 +228,12 @@ function CloseCompactMenu()
 	document.getElementById("CompactMenuModal").className = "pseudo-hidden";
 }
 
+function DrawerGo(towhere)
+{
+	location.href = towhere;
+	CloseCompactMenu();
+}
+
 //Multi-page navigation
 
 function LoadArticle(ArticleHTML)
