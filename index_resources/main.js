@@ -175,9 +175,8 @@ function OnResize()
 	var body = document.body,
     html = document.documentElement;
 	*/
-	pageheight = Math.max( document.body.scrollHeight, document.body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
+	pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
     document.getElementById(FooterObjectID).style.top = pageheight - 101;
-
 }
 
 //Might become deprecated
@@ -257,6 +256,7 @@ function GetJSON(url) {
 }
 
 function LoadPage(url) {
+	document.getElementById(FooterObjectID).style.top = -101;
 	NavLocation = url;
 	ClearPage();
 	GetJSON(NavLocation).then(function(response) {
@@ -277,6 +277,8 @@ function LoadPage(url) {
 					break;
 			}
 		});
+		//Update the footer
+		OnResize();
 	})
 	.catch(function(response) {
 		console.log("Failed to open page." + response);
