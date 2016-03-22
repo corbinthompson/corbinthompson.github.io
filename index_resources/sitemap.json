@@ -6,5 +6,25 @@
 	{
 		"name": "",
 		"address": "home/index.json"
+	},
+	{
+		"name": "news",
+		"address": "news/index.json"
+	},
+	{
+		"name": "music",
+		"address": "home/index.json"
+	},
+	{
+		"name": "photos",
+		"address": "photos/index.json"
+	},
+	{
+		"name": "videos",
+		"address": "videos/index.json"
+	},
+	{
+		"name": "uartist",
+		"address": "uartist/index.json"
 	}
 ]
