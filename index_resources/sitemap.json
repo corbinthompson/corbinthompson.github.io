@@ -26,5 +26,9 @@
 	{
 		"name": "uartist",
 		"address": "uartist/index.json"
+	},
+	{
+		"name": "bonjovistory",
+		"address": "news/bonjovi/article.json"
 	}
 ]

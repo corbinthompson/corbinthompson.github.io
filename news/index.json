@@ -5,7 +5,8 @@
 		"Type": "PostIt"
 	},
 	{
-		"Thumbnail": "news/polaroid_thumb/work.png", "Let's Work!",
+		"Thumbnail": "news/polaroid_thumb/work.png",
+		"Caption": "Let's Work!",
 		"URL": "https://instagram.com/p/8ivzSUAQz9/",
 		"Type": "Picture"
 	},
@@ -85,7 +86,8 @@
 		"Type": "PostIt"
 	},
 	{
-		"Thumbnail": "news/polaroid_thumb/vancity.png", "",
+		"Thumbnail": "news/polaroid_thumb/vancity.png",
+		"Caption": "Vancouver is awesome",
 		"URL": "https://instagram.com/p/7A9q4pAQyM/ ",
 		"Type": "Picture"
 	},
@@ -130,8 +132,8 @@
 		"Type": "PostIt"
 	},
 	{
-		"Caption": "Happy 4th of July to all! #FourthofJuly thanks to everyone who help making this country this awesome!", 
-		"URL": "https://google.ca/",
+		"Caption": "Happy 4th of July to all! #FourthofJuly thanks to everyone who help making this country this awesome! Let's read about Bon Jovi", 
+		"URL": "#bonjovistory",
 		"Type": "PostIt"
 	}
 ]
