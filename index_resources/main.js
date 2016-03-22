@@ -62,22 +62,12 @@ function HeadLine(imgsrc, msg, url, type)
 	if(this.type == 1)
 	{
 		this.Obj.onclick = function() {
-			var form = document.createElement("form");
-			form.method = "GET";
-			form.action = that.url;
-			form.target = "_blank";
-			document.body.appendChild(form);
-			form.submit();
+			GoToURL(that.url);
 		}
 	}if(this.type == 3)
 	{
 		this.Obj.onclick = function() {
-			var form = document.createElement("form");
-			form.method = "GET";
-			form.action = that.url;
-			form.target = "_blank";
-			document.body.appendChild(form);
-			form.submit();
+			GoToURL(that.url);
 		}
 	}
 
@@ -230,11 +220,29 @@ function CloseCompactMenu()
 
 function DrawerGo(towhere)
 {
+	GoToURL(towhere);
 	location.href = towhere;
 	CloseCompactMenu();
 }
 
 //Multi-page navigation
+
+function GoToURL(towhere)
+{
+	if(towhere.substring(0,1) == "#")
+	{
+		location.href = towhere;
+	}
+	else
+	{
+			var form = document.createElement("form");
+			form.method = "GET";
+			form.action = towhere;
+			form.target = "_blank";
+			document.body.appendChild(form);
+			form.submit();
+	}
+}
 
 function LoadArticle(ArticleHTML)
 {
