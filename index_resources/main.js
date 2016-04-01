@@ -11,6 +11,9 @@ var FooterObjectID = "footer";
 NavLocation = "resources.json";
 Sitemap = undefined;
 
+didScroll = false;
+ScrollRefPoint = null;
+
 //May become deprecated
 function SetUIVariables()
 {
@@ -168,6 +171,55 @@ function OnResize()
 	pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
     document.getElementById(FooterObjectID).style.top = pageheight - 101;
 }
+
+function OnScroll()
+{
+	didScroll = true;
+}
+
+setInterval(function() {
+	if(didScroll && !ScrollRefPoint) {
+		ScrollRefPoint = window.scrollY;	
+	}
+	else if(didScroll) {
+		var ScrollDelta = window.scrollY - ScrollRefPoint;
+		if(window.scrollY >= 200) {
+			if(ScrollDelta >= 50) {
+				//Hide menu
+				document.getElementById("BackMenu").classList.add("NavUp");
+				document.getElementById("Title").classList.add("NavUp");
+				document.getElementById("CompactTitle").classList.add("NavUp");
+				document.getElementById("WNCH").classList.add("NavUp");
+				document.getElementById("NeonLL").classList.add("NavUp");
+				document.getElementById("NeonRR").classList.add("NavUp");
+				didScroll = false;
+				ScrollRefPoint = null;
+			}
+			if(ScrollDelta <= -50) {
+				//show menu
+				document.getElementById("BackMenu").classList.remove("NavUp");
+				document.getElementById("Title").classList.remove("NavUp");
+				document.getElementById("CompactTitle").classList.remove("NavUp");
+				document.getElementById("WNCH").classList.remove("NavUp");
+				document.getElementById("NeonLL").classList.remove("NavUp");
+				document.getElementById("NeonRR").classList.remove("NavUp");
+				didScroll = false;
+				ScrollRefPoint = null;
+			}
+		}
+		else {
+			//show menu
+			document.getElementById("BackMenu").classList.remove("NavUp");
+			document.getElementById("Title").classList.remove("NavUp");
+			document.getElementById("CompactTitle").classList.remove("NavUp");
+			document.getElementById("WNCH").classList.remove("NavUp");
+			document.getElementById("NeonLL").classList.remove("NavUp");
+			document.getElementById("NeonRR").classList.remove("NavUp");
+			didScroll = false;
+			ScrollRefPoint = null;
+		}
+	}
+}, 250);
 
 //Might become deprecated
 function SwitchToThreePerRow()
