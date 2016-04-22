@@ -166,6 +166,7 @@ function OnResize()
 	var body = document.body,
     html = document.documentElement;
 	*/
+	document.getElementById(FooterObjectID).style.top = -101;
 	pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
     document.getElementById(FooterObjectID).style.top = pageheight - 101;
 }
