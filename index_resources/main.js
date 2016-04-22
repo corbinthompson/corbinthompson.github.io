@@ -38,6 +38,7 @@ function OnLoad()
 	//Let's do just that
 	//LoadPage(NavLocation);
 	GetSitemap();
+	setInterval(OnResize, 1000);
 }
 
 function HeadLine(imgsrc, msg, url, type)
