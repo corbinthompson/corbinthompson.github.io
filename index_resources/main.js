@@ -87,7 +87,6 @@ function HeadLine(imgsrc, msg, url, type)
 
 	this.Frame = document.createElement("img");
 	this.Frame.draggable = false;
-	this.Frame.className = "contentframe";
 	this.Obj.appendChild(this.Frame);
 
 	this.Label = document.createElement("div");
@@ -97,16 +96,14 @@ function HeadLine(imgsrc, msg, url, type)
 	if(this.type == 3)
 	{
 		this.Frame.src = "index_resources/postit.png";
-		this.Frame.style.width = "250px";
-		this.Frame.style.height = "250px";
+		this.Frame.className = "PostItframe";
 		this.Obj.className = "PieceOfContentPostIt";
 		this.Label.className = "contentlabelPostIt";
 	}
 	else
 	{
 		this.Frame.src = "index_resources/frame.png";
-		this.Frame.style.width = "198px";
-		this.Frame.style.height = "272px";
+		this.Frame.className = "contentframe";
 		this.Obj.className = "PieceOfContentPolaroid";
 		this.Label.className = "contentlabelPolaroid";
 	}
