@@ -5,6 +5,7 @@ var IsThreeRows = undefined;
 var IsMobile = false;
 var Nperrow = 4;
 var LeContentObjectID = "LeContent";
+var LeArticleObjectID = "LeArticle";
 var FooterObjectID = "footer";
 
 //New Variables
@@ -302,7 +303,9 @@ function GoToURL(towhere)
 
 function LoadArticle(ArticleHTML)
 {
-	document.getElementById("LeContent").innerHTML = ArticleHTML;
+	document.getElementById(LeContentObjectID).innerHTML = "";
+	document.getElementById(LeArticleObjectID).innerHTML = ArticleHTML;
+	document.getElementById(LeArticleObjectID).style.display = "block";
 	document.getElementById("LeMenu").className = "UpTitleAbsolute";
 	OnResize();
 }
@@ -360,6 +363,8 @@ function ClearPage() {
 	TheHeadLines = null;
 	TheHeadLines = new Array();
 	document.getElementById(LeContentObjectID).innerHTML = "";
+	document.getElementById(LeArticleObjectID).innerHTML = "";
+	document.getElementById(LeArticleObjectID).style.display = "none";
 	document.getElementById("LeMenu").className = "UpTitleAbsolute";
 }
 
