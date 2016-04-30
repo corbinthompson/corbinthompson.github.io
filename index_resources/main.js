@@ -243,11 +243,13 @@ function SwitchToTwoPerRow()
 
 function CloseModal()
 {
+	document.body.classList.remove("ModalOpen");
 	document.getElementById("ModalView").style.display = "none";
 }
 
 function OpenModal(imgUrl, imgCaption)
 {
+	document.body.classList.add("ModalOpen");
 	document.getElementById("ModalView").style.display = "block";
 	document.getElementById("modalcaption").innerHTML = imgCaption;
 	document.getElementById("modalpic").style.background = "url(" + imgUrl + ")";
@@ -260,12 +262,14 @@ function OpenModal(imgUrl, imgCaption)
 
 function OpenCompactMenu()
 {
+	document.body.classList.add("ModalOpen");
 	document.getElementById("CompactMenuDrawer").className = "DrawerOpen";
 	document.getElementById("CompactMenuModal").className = "";
 }
 
 function CloseCompactMenu()
 {
+	document.body.classList.remove("ModalOpen");
 	document.getElementById("CompactMenuDrawer").className = "DrawerClosed";
 	document.getElementById("CompactMenuModal").className = "pseudo-hidden";
 }
