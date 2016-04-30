@@ -29,6 +29,7 @@ var TheGrid = new Object();
 
 function OnLoad()
 {
+	imageMapResize();
 	SetUIVariables();
 	//Now we'll have to load from external JSON
 	/*LoadResources();
