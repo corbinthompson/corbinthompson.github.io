@@ -1,62 +1,26 @@
 [
 	{
-		"Thumbnail": "music/polaroid_thumb/thumb-I.jpg",
-		"Caption:": "\"I'd walk a thousand miles to see your morphine smile\"",
-		"Picture": "music/polaroid_thumb/I.jpg",
-		"Type": "Picture"
+		"Thumbnail": "music/polaroid_thumb/18.png",
+		"Caption": "18",
+		"SongURL": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/221867196&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
+		"Type": "PolaroidMusic"
 	},
 	{
-		"Thumbnail": "music/polaroid_thumb/thumb-II.jpg",
-		"Caption:": "&nbsp \"&nbspThe way your hair smells is like a drug\"",
-		"Picture": "music/polaroid_thumb/II.jpg",
-		"Type": "Picture"
+		"Thumbnail": "music/polaroid_thumb/Do-I-Wanna-Know.png",
+		"Caption": "Do I Wanna Know",
+		"SongURL": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/208651644&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
+		"Type": "PolaroidMusic"
 	},
 	{
-		"Thumbnail": "music/polaroid_thumb/thumb-III.jpg",
-		"Caption:": "\"I miss everyone I've seen when you're not around\"",
-		"Picture": "music/polaroid_thumb/III.jpg",
-		"Type": "Picture"
+		"Thumbnail": "music/polaroid_thumb/Photograph.png",
+		"Caption": "Photograph",
+		"SongURL": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/223770700&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
+		"Type": "PolaroidMusic"
 	},
 	{
-		"Thumbnail": "music/polaroid_thumb/thumb-IV.jpg",
-		"Caption:": "\"The moonlight seems different than before...\"",
-		"Picture": "music/polaroid_thumb/IV.jpg",
-		"Type": "Picture"
-	},
-	{
-		"Thumbnail": "music/polaroid_thumb/thumb-V.jpg",
-		"Caption:": "&nbsp\"Dressed like an angel she came tonight\"",
-		"Picture": "music/polaroid_thumb/V.jpg",
-		"Type": "Picture"
-	},
-	{
-		"Thumbnail": "music/polaroid_thumb/thumb-VI.jpg",
-		"Caption:": "&nbsp\"Can't you see what you have done? My brain has really gone so numb\"",
-		"Picture": "music/polaroid_thumb/VI.jpg",
-		"Type": "Picture"
-	},
-	{
-		"Thumbnail": "music/polaroid_thumb/thumb-VII.jpg",
-		"Caption:": "\"You're faster than I can run...\"",
-		"Picture": "music/polaroid_thumb/VII.jpg",
-		"Type": "Picture"
-	},
-	{
-		"Thumbnail": "music/polaroid_thumb/thumb-VIII.jpg",
-		"Caption:": "\"I can't sleep, I can't dream, I can't see what lies within\"",
-		"Picture": "music/polaroid_thumb/VIII.jpg",
-		"Type": "Picture"
-	},
-	{
-		"Thumbnail": "music/polaroid_thumb/thumb-IX.jpg",
-		"Caption:": "\"If you dream it, you can make it, darling\"",
-		"Picture": "music/polaroid_thumb/IX.jpg",
-		"Type": "Picture"
-	},
-	{
-		"Thumbnail": "music/polaroid_thumb/thumb-X.jpg",
-		"Caption:": "&nbsp\"&nbspTrying&nbspto&nbspwrite &nbspa&nbsp brand&nbsp new&nbspstory&nbsp\"",
-		"Picture": "music/polaroid_thumb/X.jpg",
-		"Type": "Picture"
+		"Thumbnail": "music/polaroid_thumb/See-you-Again.png",
+		"Caption": "See you Again",
+		"SongURL": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/209616859&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
+		"Type": "PolaroidMusic"
 	}
 ]

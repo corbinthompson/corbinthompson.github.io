@@ -13,7 +13,7 @@
 	},
 	{
 		"name": "music",
-		"address": "home/index.json"
+		"address": "music/index.json"
 	},
 	{
 		"name": "photos",

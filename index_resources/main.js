@@ -64,19 +64,21 @@ function HeadLine(imgsrc, msg, url, type)
 			OpenModal(that.url, that.msg);
 		}
 	}
-
-	if(this.type == 1)
+	
+	if(this.type == 2)
 	{
 		this.Obj.onclick = function() {
-			GoToURL(that.url);
+			OpenMusicModal(that.url);
 		}
-	}if(this.type == 3)
+	}
+
+
+	if(this.type == 1 || this.type == 3)
 	{
 		this.Obj.onclick = function() {
 			GoToURL(that.url);
 		}
 	}
-
 
 	document.getElementById(LeContentObjectID).appendChild(this.Obj);
 
@@ -257,7 +259,21 @@ function OpenModal(imgUrl, imgCaption)
 	document.getElementById("modalpic").style.backgroundPosition = "center center";
 	document.getElementById("modalpic").style.backgroundSize = "contain";
 	document.getElementById("modalpic").style.backgroundRepeat = "no-repeat";
+	document.getElementById("modalpic").innerHTML = "";
 }
+
+function OpenMusicModal(songUrl)
+{
+	document.body.classList.add("ModalOpen");
+	document.getElementById("ModalView").style.display = "block";
+	document.getElementById("modalcaption").innerHTML = "";
+	document.getElementById("modalpic").style.background = "";
+	document.getElementById("modalpic").style.backgroundPosition = "center center";
+	document.getElementById("modalpic").style.backgroundSize = "contain";
+	document.getElementById("modalpic").style.backgroundRepeat = "no-repeat";
+	document.getElementById("modalpic").innerHTML = '<iframe width="100%" height="300" scrolling="no" frameborder="no" src="' + songUrl + '"></iframe>';
+}
+
 
 //Mobile specific
 
@@ -349,6 +365,8 @@ function LoadPage(url) {
 				case "PolaroidLink":
 					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 1));
 					break;
+				case "PolaroidMusic":
+					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.SongURL, 2));
 			}
 		});
 		//Update the footer
