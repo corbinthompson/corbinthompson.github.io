@@ -1,4 +1,0 @@
-function LoadResources()
-{
-	//CONTINUE HERE	
-}

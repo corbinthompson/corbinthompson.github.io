@@ -30,5 +30,21 @@
 	{
 		"name": "bonjovistory",
 		"address": "news/bonjovi/article.json"
+	},
+	{
+		"name": "welcome",
+		"address": "news/articles/welcome/article.json"
+	},
+	{
+		"name": "dreams",
+		"address": "news/articles/dreams/article.json"
+	},
+	{
+		"name": "peace",
+		"address": "news/articles/peace/article.json"
+	},
+	{
+		"name": "newjourney",
+		"address": "news/articles/newjourney/article.json"
 	}
 ]
