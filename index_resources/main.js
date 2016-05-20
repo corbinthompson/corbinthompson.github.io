@@ -271,7 +271,7 @@ function OpenMusicModal(songUrl)
 	document.getElementById("modalpic").style.backgroundPosition = "center center";
 	document.getElementById("modalpic").style.backgroundSize = "contain";
 	document.getElementById("modalpic").style.backgroundRepeat = "no-repeat";
-	document.getElementById("modalpic").innerHTML = '<iframe width="500" style="position: relative; top: calc(50% - 150px);left: calc(50% - 250px);" height="300" scrolling="no" frameborder="no" src="' + songUrl + '"></iframe>';
+	document.getElementById("modalpic").innerHTML = '<iframe width="500" style="position: relative; top: calc(50vh - 50px - 150px);left: calc(50% - 250px);" height="300" scrolling="no" frameborder="no" src="' + songUrl + '"></iframe>';
 }
 
 
