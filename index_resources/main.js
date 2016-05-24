@@ -123,7 +123,7 @@ function HeadLine(imgsrc, msg, url, type)
 		
 		this.UpperObj = document.createElement("div");
 		document.getElementById(LeContentObjectID).appendChild(this.UpperObj);
-		this.UpperObj.style.display = "flex";
+		this.UpperObj.className = "PolaroidTextObj";
 		this.UpperObj.appendChild(this.Obj);
 		
 		this.SideText = document.createElement("div");
@@ -143,6 +143,13 @@ function HeadLine(imgsrc, msg, url, type)
 		this.SideTextP = document.createElement("p");
 		this.SideTextP.innerHTML = this.msg.Message;
 		this.SideText.appendChild(this.SideTextP);
+		
+		this.SideTextButton = document.createElement("button");
+		this.SideTextP.appendChild(this.SideTextButton);
+		this.SideTextButton.innerText = "Read More";
+		this.SideTextButton.onclick = function() {
+			location.href = that.url;
+		}
 		
 		if(HeadLineSwitch) {
 			this.SideText.style.order = "1";
