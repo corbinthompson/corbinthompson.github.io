@@ -8,6 +8,9 @@ var LeContentObjectID = "LeContent";
 var LeArticleObjectID = "LeArticle";
 var FooterObjectID = "footer";
 
+//For Headline function
+var HeadLineSwitch = false;
+
 //New Variables
 NavLocation = "resources.json";
 Sitemap = undefined;
@@ -73,7 +76,7 @@ function HeadLine(imgsrc, msg, url, type)
 	}
 
 
-	if(this.type == 1 || this.type == 3)
+	if(this.type == 1 || this.type == 3 || this.type == 4)
 	{
 		this.Obj.onclick = function() {
 			GoToURL(that.url);
@@ -112,8 +115,40 @@ function HeadLine(imgsrc, msg, url, type)
 		this.Obj.className = "PieceOfContentPolaroid";
 		this.Label.className = "contentlabelPolaroid";
 	}
-
+	
 	this.Obj.style.webkitTransform = "rotate(" + (Math.random()*30 - 15) + "deg)"
+
+	if(this.type == 4) {
+		HeadLineSwitch = !HeadLineSwitch;
+		
+		this.UpperObj = document.createElement("div");
+		document.getElementById(LeContentObjectID).appendChild(this.UpperObj);
+		this.UpperObj.style.display = "flex";
+		this.UpperObj.appendChild(this.Obj);
+		
+		this.SideText = document.createElement("div");
+		this.UpperObj.appendChild(this.SideText);
+		this.SideText.className = "PolaroidSideText";
+		
+		//next line will undo what we have done earlier this function
+		this.Label.innerHTML = "";
+		
+		this.SideTextH1 = document.createElement("h1");
+		this.SideTextH1.innerHTML = this.msg.Title;
+		this.SideText.appendChild(this.SideTextH1);
+		
+		this.SideTextHR = document.createElement("hr");
+		this.SideText.appendChild(this.SideTextHR);
+		
+		this.SideTextP = document.createElement("p");
+		this.SideTextP.innerHTML = this.msg.Message;
+		this.SideText.appendChild(this.SideTextP);
+		
+		if(HeadLineSwitch) {
+			this.SideText.style.order = "1";
+			this.Obj.style.order = "2";
+		}
+	}
 
 }
 
@@ -367,6 +402,10 @@ function LoadPage(url) {
 					break;
 				case "PolaroidMusic":
 					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.SongURL, 2));
+					break;
+				case "PolaroidText":
+					TheHeadLines.push(new HeadLine(item.Thumbnail, {Title: item.CaptionTitle, Message: item.Caption}, item.URL, 4));
+					break;
 			}
 		});
 		//Update the footer

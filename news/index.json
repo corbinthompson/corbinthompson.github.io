@@ -1,26 +1,30 @@
 [
 	{
 		"Thumbnail": "news/polaroid_thumb/welcome.png",
-		"Caption": "Don't you think the 50s would've been even cooler with you in it? Welcome to my new website!", 
+		"CaptionTitle": "Welcome!",
+		"Caption": "Don't you think the 50s would've been even cooler with you in it? Welcome to my new website!",
 		"URL": "#welcome",
-		"Type": "PolaroidLink"
+		"Type": "PolaroidText"
 	},
 	{
 		"Thumbnail": "news/polaroid_thumb/people.png",
+		"CaptionTitle": "Providing voice",
 		"Caption": "Every obstacle that I have ever had to go through comes down to the moment when someone smiles at you just because of your work. When you provide voice to the ones who have never been heard before…", 
 		"URL": "#dreams",
-		"Type": "PolaroidLink"
+		"Type": "PolaroidText"
 	},
 	{
 		"Thumbnail": "news/polaroid_thumb/peace.png",
-		"Caption": "Every obstacle that I have ever had to go through comes down to the moment when someone smiles at you just because of your work. When you provide voice to the ones who have never been heard before…", 
+		"CaptionTitle": "Bring me some peace",
+		"Caption": "Dreams were swept away forever…", 
 		"URL": "#peace",
-		"Type": "PolaroidLink"
+		"Type": "PolaroidText"
 	},
 	{
 		"Thumbnail": "news/polaroid_thumb/EP.JPG",
+		"CaptionTitle": "A new Journey",
 		"Caption": "A new journey begins today! Start recording our first EP means a lot more than what it seems.", 
 		"URL": "#newjourney",
-		"Type": "PolaroidLink"
+		"Type": "PolaroidText"
 	}
 ]
