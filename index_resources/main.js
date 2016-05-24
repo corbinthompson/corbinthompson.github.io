@@ -43,6 +43,7 @@ function OnLoad()
 	//Let's do just that
 	//LoadPage(NavLocation);
 	GetSitemap();
+	GetJSON("music/music.json").then(LoadMusicBar);
 	setInterval(OnResize, 1000);
 }
 
@@ -458,6 +459,92 @@ GetSitemap = function() {
 	});
 }
 
+//Music Bar
+
+function LoadMusicBar(TheLibrary) {
+	MBNameObj = document.getElementById("MBName");
+	MBTimeObj = document.getElementById("MBTime");
+	MBClockObj = document.getElementById("MBClock");
+	MBPlayPauseObj = document.getElementById("MBPlayPause");
+	MBBackObj = document.getElementById("MBBack");
+	MBNextObj = document.getElementById("MBNext");
+	
+	SongCursor = 0;
+	
+	IsPlaying = false;
+	
+	MusicLibrary = TheLibrary;
+	
+	for(var i = 0;i < MusicLibrary.length;i++) {
+		MusicLibrary[i].player = new Audio(MusicLibrary[i].URL);
+	}
+	
+	MBNextObj.onclick = NextSong;
+	MBBackObj.onclick = PreviousSong;
+	MBPlayPauseObj.onclick = PlayPauseSong;
+	MBTimeObj.onmousedown = function() {
+		IsPlaying = false;
+	}
+	MBTimeObj.onchange = function() {
+		IsPlaying = false;
+	}
+	
+	setInterval(UpdateSongTime ,250)
+}
+
+function NextSong() {
+	MusicLibrary[SongCursor].player.pause();
+	MusicLibrary[SongCursor].player.currentTime = 0;
+	SongCursor++;
+	if(IsPlaying) {
+		MusicLibrary[SongCursor].play();
+	}
+	MBNameObj.innerText = MusicLibrary[SongCursor].Name;
+}
+
+function PreviousSong() {
+	MusicLibrary[SongCursor].player.pause();
+	MusicLibrary[SongCursor].player.currentTime = 0;
+	SongCursor--;
+	if(IsPlaying) {
+		MusicLibrary[SongCursor].play();
+	}
+	MBNameObj.innerText = MusicLibrary[SongCursor].Name;
+}
+
+function UpdateSongTime() {
+	if(IsPlaying) {
+		MBTimeObj.value = (MusicLibrary[SongCursor].player.currentTime/MusicLibrary[SongCursor].player.duration)*100;
+	}
+	else {
+		MusicLibrary[SongCursor].player.currentTime = (MBTimeObj.value/100)*MusicLibrary[SongCursor].player.duration;
+	}
+	var minutes = Math.floor(MusicLibrary[SongCursor].player.currentTime/60);
+	var seconds = MusicLibrary[SongCursor].player.currentTime%60;
+	if(minutes < 10) {
+		minutes = "0" + minutes;
+	}
+	if(seconds < 10) {
+		seconds = "0" + seconds;
+	}
+	MBClockObj.innerText = minutes + ":" + seconds;
+	if(MusicLibrary[SongCursor].player.ended) {
+		NextSong();
+	}
+}
+
+function PlayPauseSong() {
+	if(IsPlaying) {
+		//pause
+		MusicLibrary[SongCursor].player.pause();
+		MBPlayPauseObj.innerHTML = "<i class=\"fa fa-play\" aria-hidden=\"true\"></i>";
+	}
+	else {
+		//play
+		MusicLibrary[SongCursor].player.play();
+		MBPlayPauseObj.innerHTML = "<i class=\"fa fa-pause\" aria-hidden=\"true\"></i>";		
+	}
+}
 
 
 

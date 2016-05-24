@@ -5,6 +5,7 @@
 		<link rel="SHORTCUT ICON" href="index_resources/Logo.ico">
 
 		<link rel="stylesheet" type="text/css" href="index_resources/main.css">
+		<link rel="stylesheet" type="text/css" href="index_resources/font-awesome/css/font-awesome.css">
 		<script src="index_resources/imageMapResizer.min.js"></script>
 		<script src="index_resources/main.js"></script>
 		
@@ -104,13 +105,16 @@
 		
 		<div id="MusicBar">
 			<div>
-				<button>Previous</button>
-				<button>Play</button>
-				<button>Next</button>
+				<button id="MBBack"><i class="fa fa-fast-backward" aria-hidden="true"></i></button>
+				<button id="MBPlayPause"><i class="fa fa-play" aria-hidden="true"></i></button>
+				<button id="MBNext"><i class="fa fa-fast-forward" aria-hidden="true"></i></button>
 			</div>
 			<div>
-				<input type="range" min="0" max="100">
-				<span class="Element">00:00</span>
+				<marquee id="MBName" style="width: 300px">Do I wanna know - Corbin Hale Covers</marquee>
+			</div>
+			<div>
+				<input id="MBTime" type="range" value="0" min="0" max="100">
+				<span id="MBClock" class="Element">00:00</span>
 			</div>
 		</div>
 
