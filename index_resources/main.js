@@ -43,7 +43,7 @@ function OnLoad()
 	//Let's do just that
 	//LoadPage(NavLocation);
 	GetSitemap();
-	GetJSON("music/music.json").then(LoadMusicBar);
+	//GetJSON("music/music.json").then(LoadMusicBar);
 	setInterval(OnResize, 1000);
 }
 
