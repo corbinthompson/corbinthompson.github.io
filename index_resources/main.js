@@ -461,7 +461,11 @@ GetSitemap = function() {
 
 //Music Bar
 
-function LoadMusicBar(TheLibrary) {
+function LoadMusicBar(TheLibrary, TheSongCursor) {
+	if(TheSongCursor == undefined) {
+		TheSongCursor = 0;
+	}
+	
 	MBNameObj = document.getElementById("MBName");
 	MBTimeObj = document.getElementById("MBTime");
 	MBClockObj = document.getElementById("MBClock");
@@ -469,7 +473,7 @@ function LoadMusicBar(TheLibrary) {
 	MBBackObj = document.getElementById("MBBack");
 	MBNextObj = document.getElementById("MBNext");
 	
-	SongCursor = 0;
+	SongCursor = TheSongCursor;
 	
 	IsPlaying = false;
 	PreviousIsPlaying = false;
@@ -490,6 +494,8 @@ function LoadMusicBar(TheLibrary) {
 	MBTimeObj.onchange = function() {
 		IsPlaying = PreviousIsPlaying;
 	}
+	
+	MBNameObj.innerText = MusicLibrary[SongCursor].Name;
 	
 	setInterval(UpdateSongTime ,250)
 }
