@@ -538,11 +538,13 @@ function PlayPauseSong() {
 		//pause
 		MusicLibrary[SongCursor].player.pause();
 		MBPlayPauseObj.innerHTML = "<i class=\"fa fa-play\" aria-hidden=\"true\"></i>";
+		IsPlaying = false;
 	}
 	else {
 		//play
 		MusicLibrary[SongCursor].player.play();
 		MBPlayPauseObj.innerHTML = "<i class=\"fa fa-pause\" aria-hidden=\"true\"></i>";		
+		IsPlaying = true;
 	}
 }
 
