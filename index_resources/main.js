@@ -520,10 +520,10 @@ function PreviousSong() {
 
 function UpdateSongTime() {
 	if(IsPlaying) {
-		MBTimeObj.value = (MusicLibrary[SongCursor].player.currentTime/MusicLibrary[SongCursor].player.duration)*100;
+		MBTimeObj.value = (MusicLibrary[SongCursor].player.currentTime/MusicLibrary[SongCursor].player.duration)*1000;
 	}
 	else {
-		MusicLibrary[SongCursor].player.currentTime = (MBTimeObj.value/100)*MusicLibrary[SongCursor].player.duration;
+		MusicLibrary[SongCursor].player.currentTime = (MBTimeObj.value/1000)*MusicLibrary[SongCursor].player.duration;
 	}
 	var minutes = Math.floor(MusicLibrary[SongCursor].player.currentTime/60);
 	var seconds = Math.floor(MusicLibrary[SongCursor].player.currentTime%60);
