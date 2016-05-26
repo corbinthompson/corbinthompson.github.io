@@ -479,20 +479,12 @@ MusicLibrary = undefined;
 SongCursor = 0;
 IsPlaying = false;
 PreviousIsPlaying = false;
+MusicInterval = undefined;
+MusicIntervalExists = false;
 
 function LoadMusicBar(TheLibrary, TheSongCursor) {
 	if(TheSongCursor == undefined) {
 		TheSongCursor = 0;
-	}
-	//Let's clean up the old music library if there is one
-	if(MusicLibrary != undefined) {
-		if(MusicLibrary.length) {
-			for(var i=0;i < MusicLibrary.length;i++) {
-				MusicLibrary[i].player.pause();
-				MusicLibrary[i].player.remove();
-				MusicLibrary[i].player = null;
-			}
-		}
 	}
 	
 	MBNameObj = document.getElementById("MBName");
@@ -503,6 +495,7 @@ function LoadMusicBar(TheLibrary, TheSongCursor) {
 	MBNextObj = document.getElementById("MBNext");
 	MBMain = document.getElementById("MusicBar");
 	
+	UnloadMusicBar();
 	MBMain.classList.remove("MusicBarHide");
 	
 	SongCursor = TheSongCursor;
@@ -531,7 +524,8 @@ function LoadMusicBar(TheLibrary, TheSongCursor) {
 	
 	MusicBarUpdateButtonVisibility();
 	
-	setInterval(UpdateSongTime ,250)
+	MusicInterval = setInterval(UpdateSongTime ,250);
+	MusicIntervalExists = true;
 }
 
 function NextSong() {
@@ -603,7 +597,7 @@ function UpdateSongTime() {
 	MBClockObj.innerText = minutes + ":" + seconds;
 	if(MusicLibrary[SongCursor].player.ended) {
 		if(SongCursor == MusicLibrary.length - 1) {
-			MBMain.classList.add("MusicBarHide");			
+			UnloadMusicBar();		
 		}
 		else {
 			NextSong();
@@ -626,7 +620,24 @@ function PlayPauseSong() {
 	}
 }
 
-
+function UnloadMusicBar() {
+	MBMain.classList.add("MusicBarHide");
+	if(MusicIntervalExists) {
+		clearInterval(MusicInterval);
+		MusicIntervalExists = false;
+	}
+	//Let's clean up the old music library if there is one
+	if(MusicLibrary != undefined) {
+		if(MusicLibrary.length) {
+			for(var i=0;i < MusicLibrary.length;i++) {
+				MusicLibrary[i].player.pause();
+				MusicLibrary[i].player.remove();
+				MusicLibrary[i].player = null;
+			}
+		}
+		MusicLibrary = undefined;
+	}
+}
 
 
 
