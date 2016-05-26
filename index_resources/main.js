@@ -43,7 +43,6 @@ function OnLoad()
 	//Let's do just that
 	//LoadPage(NavLocation);
 	GetSitemap();
-	//GetJSON("music/music.json").then(LoadMusicBar);
 	setInterval(OnResize, 1000);
 }
 
@@ -72,7 +71,11 @@ function HeadLine(imgsrc, msg, url, type)
 	if(this.type == 2)
 	{
 		this.Obj.onclick = function() {
-			OpenMusicModal(that.url);
+			//OpenMusicModal(that.url);
+			GetJSON(that.url.PlaylistURL).then(function(response) {
+				LoadMusicBar(response, that.url.SongNumber);
+				PlayPauseSong();
+			});
 		}
 	}
 
@@ -312,6 +315,7 @@ function OpenModal(imgUrl, imgCaption)
 	document.getElementById("modalpic").innerHTML = "";
 }
 
+//May become deprecated soon
 function OpenMusicModal(songUrl)
 {
 	document.body.classList.add("ModalOpen");
@@ -413,7 +417,7 @@ function LoadPage(url) {
 					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 1));
 					break;
 				case "PolaroidMusic":
-					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.SongURL, 2));
+					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, {PlaylistURL: item.PlaylistURL, SongNumber: item.SongNumber}, 2));
 					break;
 				case "PostIt":
 					TheHeadLines.push(new HeadLine("", item.Caption, item.URL, 3));
@@ -471,9 +475,24 @@ GetSitemap = function() {
 
 //Music Bar
 
+MusicLibrary = undefined;
+SongCursor = 0;
+IsPlaying = false;
+PreviousIsPlaying = false;
+
 function LoadMusicBar(TheLibrary, TheSongCursor) {
 	if(TheSongCursor == undefined) {
 		TheSongCursor = 0;
+	}
+	//Let's clean up the old music library if there is one
+	if(MusicLibrary != undefined) {
+		if(MusicLibrary.length) {
+			for(var i=0;i < MusicLibrary.length;i++) {
+				MusicLibrary[i].player.pause();
+				MusicLibrary[i].player.remove();
+				MusicLibrary[i].player = null;
+			}
+		}
 	}
 	
 	MBNameObj = document.getElementById("MBName");

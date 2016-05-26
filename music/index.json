@@ -2,25 +2,29 @@
 	{
 		"Thumbnail": "music/polaroid_thumb/18.png",
 		"Caption": "18",
-		"SongURL": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/221867196&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
+		"PlaylistURL": "music/music.json",
+		"SongNumber": "0",
 		"Type": "PolaroidMusic"
 	},
 	{
 		"Thumbnail": "music/polaroid_thumb/Do-I-Wanna-Know.png",
 		"Caption": "Do I Wanna Know",
-		"SongURL": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/208651644&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
+		"PlaylistURL": "music/music.json",
+		"SongNumber": "1",
 		"Type": "PolaroidMusic"
 	},
 	{
 		"Thumbnail": "music/polaroid_thumb/Photograph.png",
 		"Caption": "Photograph",
-		"SongURL": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/223770700&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
+		"PlaylistURL": "music/music.json",
+		"SongNumber": "0",
 		"Type": "PolaroidMusic"
 	},
 	{
 		"Thumbnail": "music/polaroid_thumb/See-you-Again.png",
 		"Caption": "See you Again",
-		"SongURL": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/209616859&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
+		"PlaylistURL": "music/music.json",
+		"SongNumber": "1",
 		"Type": "PolaroidMusic"
 	}
 ]
