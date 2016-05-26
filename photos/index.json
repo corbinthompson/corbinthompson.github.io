@@ -1,4 +1,11 @@
 [
+	
+	{
+		"Thumbnail": "photos/polaroid_thumb/thumb-I.jpg",
+		"Caption": "\"I'd walk a thousand miles to see your morphine smile\"",
+		"URL": "photos/polaroid_thumb/I.jpg",
+		"Type": "PolaroidAlbum"
+	},
 	{
 		"Thumbnail": "photos/polaroid_thumb/thumb-I.jpg",
 		"Caption": "\"I'd walk a thousand miles to see your morphine smile\"",

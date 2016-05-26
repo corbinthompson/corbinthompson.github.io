@@ -77,15 +77,15 @@ function HeadLine(imgsrc, msg, url, type)
 	}
 
 
-	if(this.type == 1 || this.type == 3 || this.type == 4)
+	if(this.type == 1 || this.type == 3 || this.type == 4 || this.type == 5)
 	{
 		this.Obj.onclick = function() {
 			GoToURL(that.url);
 		}
 	}
-
+	
 	document.getElementById(LeContentObjectID).appendChild(this.Obj);
-
+	
 	this.Pic = document.createElement("div");
 	this.Pic.className = "contentpic";
 	this.Pic.style.background = "url(" + this.imgsrc + ")";
@@ -108,6 +108,13 @@ function HeadLine(imgsrc, msg, url, type)
 		this.Frame.className = "PostItframe";
 		this.Obj.className = "PieceOfContentPostIt";
 		this.Label.className = "contentlabelPostIt";
+	}
+	else if(this.type == 5)
+	{
+		this.Frame.src = "index_resources/Polaroid-Album.png";
+		this.Frame.className = "contentframe";
+		this.Obj.className = "PieceOfContentPolaroid";
+		this.Label.className = "contentlabelPolaroid";
 	}
 	else
 	{
@@ -396,14 +403,11 @@ function LoadPage(url) {
 		response.map(function(item, index) {
 			switch(item.Type)
 			{
-				case "Picture":
-					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.Picture, 0));
-					break;
 				case "Article":
 					LoadArticle(item.HTML);
 					break;
-				case "PostIt":
-					TheHeadLines.push(new HeadLine("", item.Caption, item.URL, 3));
+				case "Picture":
+					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.Picture, 0));
 					break;
 				case "PolaroidLink":
 					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 1));
@@ -411,8 +415,14 @@ function LoadPage(url) {
 				case "PolaroidMusic":
 					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.SongURL, 2));
 					break;
+				case "PostIt":
+					TheHeadLines.push(new HeadLine("", item.Caption, item.URL, 3));
+					break;
 				case "PolaroidText":
 					TheHeadLines.push(new HeadLine(item.Thumbnail, {Title: item.CaptionTitle, Message: item.Caption}, item.URL, 4));
+					break;
+				case "PolaroidAlbum":
+					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 5));
 					break;
 			}
 		});
