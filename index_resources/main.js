@@ -472,6 +472,7 @@ function LoadMusicBar(TheLibrary) {
 	SongCursor = 0;
 	
 	IsPlaying = false;
+	PreviousIsPlaying = false;
 	
 	MusicLibrary = TheLibrary;
 	
@@ -483,10 +484,11 @@ function LoadMusicBar(TheLibrary) {
 	MBBackObj.onclick = PreviousSong;
 	MBPlayPauseObj.onclick = PlayPauseSong;
 	MBTimeObj.onmousedown = function() {
+		PreviousIsPlaying = IsPlaying;
 		IsPlaying = false;
 	}
 	MBTimeObj.onchange = function() {
-		IsPlaying = false;
+		IsPlaying = PreviousIsPlaying;
 	}
 	
 	setInterval(UpdateSongTime ,250)
@@ -495,9 +497,11 @@ function LoadMusicBar(TheLibrary) {
 function NextSong() {
 	MusicLibrary[SongCursor].player.pause();
 	MusicLibrary[SongCursor].player.currentTime = 0;
+	MBTimeObj.value = 0;
+	MBClockObj.innerText = "00:00";
 	SongCursor++;
 	if(IsPlaying) {
-		MusicLibrary[SongCursor].play();
+		MusicLibrary[SongCursor].player.play();
 	}
 	MBNameObj.innerText = MusicLibrary[SongCursor].Name;
 }
@@ -505,9 +509,11 @@ function NextSong() {
 function PreviousSong() {
 	MusicLibrary[SongCursor].player.pause();
 	MusicLibrary[SongCursor].player.currentTime = 0;
+	MBTimeObj.value = 0;
+	MBClockObj.innerText = "00:00";
 	SongCursor--;
 	if(IsPlaying) {
-		MusicLibrary[SongCursor].play();
+		MusicLibrary[SongCursor].player.play();
 	}
 	MBNameObj.innerText = MusicLibrary[SongCursor].Name;
 }
@@ -520,7 +526,7 @@ function UpdateSongTime() {
 		MusicLibrary[SongCursor].player.currentTime = (MBTimeObj.value/100)*MusicLibrary[SongCursor].player.duration;
 	}
 	var minutes = Math.floor(MusicLibrary[SongCursor].player.currentTime/60);
-	var seconds = MusicLibrary[SongCursor].player.currentTime%60;
+	var seconds = Math.floor(MusicLibrary[SongCursor].player.currentTime%60);
 	if(minutes < 10) {
 		minutes = "0" + minutes;
 	}
@@ -538,13 +544,13 @@ function PlayPauseSong() {
 		//pause
 		MusicLibrary[SongCursor].player.pause();
 		MBPlayPauseObj.innerHTML = "<i class=\"fa fa-play\" aria-hidden=\"true\"></i>";
-		IsPlaying = false;
+		IsPlaying = PreviousIsPlaying = false;
 	}
 	else {
 		//play
 		MusicLibrary[SongCursor].player.play();
 		MBPlayPauseObj.innerHTML = "<i class=\"fa fa-pause\" aria-hidden=\"true\"></i>";		
-		IsPlaying = true;
+		IsPlaying = PreviousIsPlaying  = true;
 	}
 }
 
