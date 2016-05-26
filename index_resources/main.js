@@ -472,6 +472,9 @@ function LoadMusicBar(TheLibrary, TheSongCursor) {
 	MBPlayPauseObj = document.getElementById("MBPlayPause");
 	MBBackObj = document.getElementById("MBBack");
 	MBNextObj = document.getElementById("MBNext");
+	MBMain = document.getElementById("MusicBar");
+	
+	MBMain.classList.remove("MusicBarHide");
 	
 	SongCursor = TheSongCursor;
 	
@@ -497,6 +500,8 @@ function LoadMusicBar(TheLibrary, TheSongCursor) {
 	
 	MBNameObj.innerText = MusicLibrary[SongCursor].Name;
 	
+	MusicBarUpdateButtonVisibility();
+	
 	setInterval(UpdateSongTime ,250)
 }
 
@@ -506,6 +511,10 @@ function NextSong() {
 	MBTimeObj.value = 0;
 	MBClockObj.innerText = "00:00";
 	SongCursor++;
+	if(SongCursor >= MusicLibrary.length) {
+		SongCursor = MusicLibrary.length - 1;
+	}
+	MusicBarUpdateButtonVisibility();
 	if(IsPlaying) {
 		MusicLibrary[SongCursor].player.play();
 	}
@@ -518,10 +527,33 @@ function PreviousSong() {
 	MBTimeObj.value = 0;
 	MBClockObj.innerText = "00:00";
 	SongCursor--;
+	if(SongCursor < 0) {
+		SongCursor = 0;
+	}
+	MusicBarUpdateButtonVisibility();
 	if(IsPlaying) {
 		MusicLibrary[SongCursor].player.play();
 	}
 	MBNameObj.innerText = MusicLibrary[SongCursor].Name;
+}
+
+function MusicBarUpdateButtonVisibility() {
+	if(SongCursor <= 0) {
+		MBBack.style.opacity = 0.2;
+		MBBack.style.pointerEvents = "none";
+	}
+	else {
+		MBBack.style.opacity = 1;
+		MBBack.style.pointerEvents = "auto";
+	}
+	if(SongCursor >= MusicLibrary.length - 1) {
+		MBNext.style.opacity = 0.2;
+		MBNext.style.pointerEvents = "none";
+	}
+	else {
+		MBNext.style.opacity = 1;
+		MBNext.style.pointerEvents = "auto";
+	}
 }
 
 function UpdateSongTime() {
@@ -541,7 +573,12 @@ function UpdateSongTime() {
 	}
 	MBClockObj.innerText = minutes + ":" + seconds;
 	if(MusicLibrary[SongCursor].player.ended) {
-		NextSong();
+		if(SongCursor == MusicLibrary.length - 1) {
+			MBMain.classList.add("MusicBarHide");			
+		}
+		else {
+			NextSong();
+		}
 	}
 }
 
