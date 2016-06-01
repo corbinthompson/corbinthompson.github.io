@@ -248,6 +248,8 @@ setInterval(function() {
 				document.getElementById("WNCH").classList.add("NavUp");
 				document.getElementById("NeonLL").classList.add("NavUp");
 				document.getElementById("NeonRR").classList.add("NavUp");
+				document.getElementById("DropDownMenu").classList.add("NavUp");
+				CloseDropDownMenu();
 				didScroll = false;
 				ScrollRefPoint = null;
 			}
@@ -259,6 +261,7 @@ setInterval(function() {
 				document.getElementById("WNCH").classList.remove("NavUp");
 				document.getElementById("NeonLL").classList.remove("NavUp");
 				document.getElementById("NeonRR").classList.remove("NavUp");
+				document.getElementById("DropDownMenu").classList.remove("NavUp");
 				didScroll = false;
 				ScrollRefPoint = null;
 			}
@@ -271,6 +274,7 @@ setInterval(function() {
 			document.getElementById("WNCH").classList.remove("NavUp");
 			document.getElementById("NeonLL").classList.remove("NavUp");
 			document.getElementById("NeonRR").classList.remove("NavUp");
+			document.getElementById("DropDownMenu").classList.remove("NavUp");
 			didScroll = false;
 			ScrollRefPoint = null;
 		}
@@ -293,6 +297,19 @@ function SwitchToTwoPerRow()
 	document.getElementById(LeContentObjectID).style.width = "664px";
 	//document.getElementById("backgroundcenter").style.backgroundPosition = "Calc(50% - 166px)";
 	IsThreeRows = false;
+}
+
+//DropDown Menu
+
+function ShowDropDownMenu() {
+	document.getElementById("DropDownMenu").style.maxHeight = "200px";
+	document.getElementById("DropDownModal").classList.add("DropDownModalOn");
+}
+
+function CloseDropDownMenu() {
+	document.getElementById("DropDownMenu").style.maxHeight = "0px";
+	document.getElementById("DropDownModal").style.display = "none";
+	document.getElementById("DropDownModal").classList.remove("DropDownModalOn");
 }
 
 //Modal functions
@@ -471,6 +488,10 @@ window.onhashchange = GoHash = function() {
 	for(var i=0; i < TheElements.length; i++) {
 		TheElements[i].classList.remove("Mobile-Menu-Item-Active");
 	}
+	TheElements = document.getElementById("DropDownMenu").children;
+	for(var i=0; i < TheElements.length; i++) {
+		TheElements[i].classList.remove("DropDown-Menu-Item-Active");
+	}
 	switch(hashvalue) {
 		case "news":
 			OurTitle.src = "index_resources/slice-1a.png";
@@ -487,6 +508,10 @@ window.onhashchange = GoHash = function() {
 		case "videos":
 			OurTitle.src = "index_resources/slice-1d.png";
 			document.getElementById("Mobile-Menu-Item4").classList.add("Mobile-Menu-Item-Active");
+			break;
+		case "uartist":
+			OurTitle.src = "index_resources/slice-1.png";
+			document.getElementById("DropDown-Menu-Item1").classList.add("DropDown-Menu-Item-Active");
 			break;
 		default:
 			OurTitle.src = "index_resources/slice-1.png";

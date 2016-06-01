@@ -26,6 +26,14 @@
 			<img draggable="false" class="UpTitle" id="Title" src="index_resources/Slice-1.png" usemap="#menumap">
 			<img draggable="false" class="UpTitle" id="CompactTitle" src="index_resources/Slice-6.png" usemap="#mobilemenumap">
 			
+			<div id="DropDownMenu" onclick="CloseDropDownMenu()">
+				<div id="DropDown-Menu-Item1" class="DropDown-Menu-Item" onclick="DrawerGo('#uartist')">#UArtist</div>
+				<div id="DropDown-Menu-Item2" class="DropDown-Menu-Item" onclick="DrawerGo('#uartist')">Promotions</div>
+				<div id="DropDown-Menu-Item3" class="DropDown-Menu-Item" onclick="DrawerGo('#uartist')">Events</div>
+			</div>
+			<div id="DropDownModal" onclick="CloseDropDownMenu()">
+			</div>
+			
 			<div class="Drawer-Closed" id="CompactMenuDrawer">
 				<img id="CompactMenuDrawerCloseButton" src="index_resources/close_button.png" onclick="CloseCompactMenu()">
 				<div class="Mobile-Menu-Title">Menu</div>
@@ -56,7 +64,7 @@
 				<area shape="rect" coords="193,240,288,300" href="#music" alt="Amazing songs for your enjoyment!">
 				<area shape="rect" coords="289,240,406,300" href="#photos" alt="Check my pics!">
 				<area shape="rect" coords="629,240,736,300" href="#videos" alt="Watch amazing videos!">
-				<area shape="rect" coords="771,240,860,300" href="" alt="Much more!">
+				<area shape="rect" coords="771,240,860,300" onclick="ShowDropDownMenu()" alt="Much more!">
 			</map>
 			<map name="mobilemenumap">
 				<area shape="circle" coords="320, 167, 106" href="index.html" title="Home!">
