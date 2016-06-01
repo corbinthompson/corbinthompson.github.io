@@ -461,8 +461,27 @@ window.onhashchange = GoHash = function() {
 		Sitemap.map(function(item, index) {
 			if(item.name == hashvalue) {
 				LoadPage(item.address);
+				document.title = item.title;
 			}
 		});
+	}
+	var OurTitle = document.getElementById("Title");
+	switch(hashvalue) {
+		case "news":
+			OurTitle.src = "index_resources/slice-1a.png";
+			break;
+		case "music":
+			OurTitle.src = "index_resources/slice-1b.png";
+			break;
+		case "photos":
+			OurTitle.src = "index_resources/slice-1c.png";
+			break;
+		case "videos":
+			OurTitle.src = "index_resources/slice-1d.png";
+			break;
+		default:
+			OurTitle.src = "index_resources/slice-1.png";
+			break;
 	}
 }
 
