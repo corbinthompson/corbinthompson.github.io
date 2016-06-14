@@ -89,6 +89,86 @@ function HeadLine(imgsrc, msg, url, type)
 	
 	document.getElementById(LeContentObjectID).appendChild(this.Obj);
 	
+	if(this.type == 6) {
+		var TheElements = imgsrc;
+		
+		//Set the Flex Container properties to the this.Obj
+		this.Obj.className = "MusicAlbumsContainer";
+		this.Elements = new Array()
+		
+		for(var i=0;i<imgsrc.length;i++) {
+			var TheElement = imgsrc[i];
+			this.Elements[i] = document.createElement("div");
+			this.Obj.appendChild(this.Elements[i]);
+			this.Elements[i].className = "MusicAlbumOnContainer";
+			this.Elements[i].style.background = "url(" + TheElement.Thumbnail + ")";
+			this.Elements[i].style.backgroundSize = "cover";
+			this.Elements[i].style.backgroundRepeat = "no-repeat";
+			this.Elements[i].style.backgroundPosition = "center center";
+			this.Elements[i].onclick = function() {
+				location.href = TheElement.URL;
+			}
+		}
+		return true;
+	}
+	
+	if(this.type == 7) {
+		this.Obj.className = "MusicAlbumContainer";
+		this.Thumbnail = document.createElement("div");
+		this.Thumbnail.className = "MusicAlbumThumbnail";
+		this.Thumbnail.style.background = "url(" + imgsrc + ")";
+		this.Thumbnail.style.backgroundSize = "cover";
+		this.Thumbnail.style.backgroundRepeat = "no-repeat";
+		this.Thumbnail.style.backgroundPosition = "center center";
+		this.Obj.appendChild(this.Thumbnail);
+		
+		this.Playlist = document.createElement("table");
+		this.Obj.appendChild(this.Playlist);
+		this.PlaylistSongs = new Array();
+		
+		GetJSON(url).then((function(response) {
+			LoadMusicBar(response, 0);
+			for(var i=0;i<response.length;i++) {
+				var ThisTR = document.createElement("tr");
+				that.Playlist.appendChild(ThisTR);
+				ThisTR.className = "MusicAlbumTr";
+				
+				var PlayTD = document.createElement("td");
+				ThisTR.appendChild(PlayTD);
+				var PlayPauseLabel = document.createElement("i");
+				PlayPauseLabel.className = "fa fa-play";
+				PlayTD.appendChild(PlayPauseLabel);
+				
+				var NameTD = document.createElement("td");
+				ThisTR.appendChild(NameTD);
+				NameTD.innerText = response[i].Name;
+				that.PlaylistSongs.push({TR: ThisTR, Status: PlayPauseLabel});
+				//Make listeners to when you click those things
+				ThisTR.onclick = (function() {
+					SelectSong(this.Index);
+					if(!IsPlaying) {
+						PlayPauseSong();
+					}
+				}).bind({Index: i});
+			}
+						
+			that.UpdateLook = function() {
+				for(var i=0;i<that.PlaylistSongs.length;i++) {
+					that.PlaylistSongs[i].TR.className = "MusicAlbumTr";
+					that.PlaylistSongs[i].Status.className = "fa fa-play";
+				}
+				that.PlaylistSongs[SongCursor].TR.className = "MusicAlbumTrSelected";
+				if(IsPlaying) {
+					that.PlaylistSongs[SongCursor].Status.className = "fa fa-pause";
+				}
+			}
+			
+			setInterval(that.UpdateLook ,250);
+			
+		}).bind(this));
+		return true;
+	}
+	
 	this.Pic = document.createElement("div");
 	this.Pic.className = "contentpic";
 	this.Pic.style.background = "url(" + this.imgsrc + ")";
@@ -167,7 +247,8 @@ function HeadLine(imgsrc, msg, url, type)
 			this.Obj.style.order = "2";
 		}
 	}
-
+	
+	return true;
 }
 
 //Grid might be different from now on.
@@ -445,6 +526,12 @@ function LoadPage(url) {
 				case "PolaroidAlbum":
 					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 5));
 					break;
+				case "MusicAlbums":
+					TheHeadLines.push(new HeadLine(item.Elements, undefined, undefined, 6));
+					break;				
+				case "MusicAlbum":
+					TheHeadLines.push(new HeadLine(item.Thumbnail, undefined, item.PlaylistURL, 7));
+					break;				
 			}
 		});
 		//Update the footer
@@ -590,6 +677,22 @@ function NextSong() {
 	MBTimeObj.value = 0;
 	MBClockObj.innerText = "00:00";
 	SongCursor++;
+	if(SongCursor >= MusicLibrary.length) {
+		SongCursor = MusicLibrary.length - 1;
+	}
+	MusicBarUpdateButtonVisibility();
+	if(IsPlaying) {
+		MusicLibrary[SongCursor].player.play();
+	}
+	MBNameObj.innerText = MusicLibrary[SongCursor].Name;
+}
+
+function SelectSong(NewCursor) {
+	MusicLibrary[SongCursor].player.pause();
+	MusicLibrary[SongCursor].player.currentTime = 0;
+	MBTimeObj.value = 0;
+	MBClockObj.innerText = "00:00";
+	SongCursor = NewCursor;
 	if(SongCursor >= MusicLibrary.length) {
 		SongCursor = MusicLibrary.length - 1;
 	}

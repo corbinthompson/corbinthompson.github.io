@@ -1,5 +1,22 @@
 [
 	{
+		"Elements": [
+			{
+				"Thumbnail": "music/Albums/BlueLight/thumb.png",
+				"URL": "#BlueLight"
+			},
+			{
+				"Thumbnail": "music/Albums/GreenLight/thumb.png",
+				"URL": "#GreenLight"
+			},
+			{
+				"Thumbnail": "music/Albums/OrangeLight/thumb.png",
+				"URL": "#OrangeLight"
+			}
+		],
+		"Type": "MusicAlbums"
+	},
+	{
 		"Thumbnail": "music/polaroid_thumb/18.png",
 		"Caption": "18",
 		"PlaylistURL": "music/music.json",
