@@ -17,6 +17,7 @@ Sitemap = undefined;
 
 didScroll = false;
 ScrollRefPoint = null;
+pageheight = undefined;
 
 //May become deprecated
 function SetUIVariables()
@@ -123,6 +124,7 @@ function HeadLine(imgsrc, msg, url, type)
 		this.Obj.appendChild(this.Thumbnail);
 		
 		this.Playlist = document.createElement("table");
+		this.Playlist.className = "MusicAlbumTable";
 		this.Obj.appendChild(this.Playlist);
 		this.PlaylistSongs = new Array();
 		
@@ -134,12 +136,14 @@ function HeadLine(imgsrc, msg, url, type)
 				ThisTR.className = "MusicAlbumTr";
 				
 				var PlayTD = document.createElement("td");
+				PlayTD.className = "MusicAlbumTd";
 				ThisTR.appendChild(PlayTD);
 				var PlayPauseLabel = document.createElement("i");
 				PlayPauseLabel.className = "fa fa-play";
 				PlayTD.appendChild(PlayPauseLabel);
 				
 				var NameTD = document.createElement("td");
+				NameTD.className = "MusicAlbumTd";
 				ThisTR.appendChild(NameTD);
 				NameTD.innerText = response[i].Name;
 				that.PlaylistSongs.push({TR: ThisTR, Status: PlayPauseLabel});
@@ -305,6 +309,14 @@ function OnResize()
     html = document.documentElement;
 	*/
 	document.getElementById(FooterObjectID).style.top = -101;
+	document.getElementById("Whitespace-bottom").style.top = 0;
+	if(pageheight == undefined) {
+		pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
+		document.getElementById("Whitespace-bottom").style.top = pageheight;
+	}
+	else {
+		document.getElementById("Whitespace-bottom").style.top = pageheight - 200;
+	}
 	pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
     document.getElementById(FooterObjectID).style.top = pageheight - 101;
 }
@@ -584,21 +596,21 @@ window.onhashchange = GoHash = function() {
 			OurTitle.src = "index_resources/slice-1a.png";
 			document.getElementById("Mobile-Menu-Item1").classList.add("Mobile-Menu-Item-Active");
 			break;
-		case "music":
+		case "about":
 			OurTitle.src = "index_resources/slice-1b.png";
 			document.getElementById("Mobile-Menu-Item2").classList.add("Mobile-Menu-Item-Active");
 			break;
-		case "photos":
+		case "music":
 			OurTitle.src = "index_resources/slice-1c.png";
+			document.getElementById("Mobile-Menu-Item2").classList.add("Mobile-Menu-Item-Active");
+			break;
+		case "photos":
+			OurTitle.src = "index_resources/slice-1d.png";
 			document.getElementById("Mobile-Menu-Item3").classList.add("Mobile-Menu-Item-Active");
 			break;
 		case "videos":
-			OurTitle.src = "index_resources/slice-1d.png";
+			OurTitle.src = "index_resources/slice-1e.png";
 			document.getElementById("Mobile-Menu-Item4").classList.add("Mobile-Menu-Item-Active");
-			break;
-		case "uartist":
-			OurTitle.src = "index_resources/slice-1.png";
-			document.getElementById("DropDown-Menu-Item1").classList.add("DropDown-Menu-Item-Active");
 			break;
 		default:
 			OurTitle.src = "index_resources/slice-1.png";

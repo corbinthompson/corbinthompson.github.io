@@ -15,6 +15,11 @@
 		"address": "news/index.json"
 	},
 	{
+		"name": "about",
+		"title": "About Corbin Hale",
+		"address": "about/index.json"
+	},
+	{
 		"name": "music",
 		"title": "Corbin Hale Music",
 		"address": "music/index.json"

@@ -59,12 +59,27 @@
 			<div class="pseudo-hidden" id="CompactMenuModal" onclick="CloseCompactMenu()"></div>
 			
 			<map name="menumap">
+				<script>
+					function MenuMouseOver(A,B) {
+						var OurCursor = document.getElementById("MenuCursor");
+						OurCursor.style.opacity = 1;
+						OurCursor.style.marginLeft = A;
+						OurCursor.style.width = B - A;
+					}
+
+					function MenuMouseOut() {
+						var OurCursor = document.getElementById("MenuCursor");
+						OurCursor.style.opacity = 0;
+					}
+				</script>
+				<div id="MenuCursor"></div>
 				<area shape="circle" coords="495,160,106" href="#home" alt="Home!">
-				<area shape="rect" coords="105,240,192,300" href="#news" alt="Check what's new!">
-				<area shape="rect" coords="193,240,288,300" href="#music" alt="Amazing songs for your enjoyment!">
-				<area shape="rect" coords="289,240,406,300" href="#photos" alt="Check my pics!">
-				<area shape="rect" coords="629,240,736,300" href="#videos" alt="Watch amazing videos!">
-				<area shape="rect" coords="771,240,860,300" onclick="ShowDropDownMenu()" alt="Much more!">
+				<area shape="rect" onmouseover="MenuMouseOver(109, 186)" onmouseout="MenuMouseOut()" coords="109,240,186,300" href="#news" alt="Check what's new!">
+				<area shape="rect" onmouseover="MenuMouseOver(200, 294)" onmouseout="MenuMouseOut()" coords="200,240,294,300" href="#about" alt="About me!">
+				<area shape="rect" onmouseover="MenuMouseOver(308, 393)" onmouseout="MenuMouseOut()" coords="308,240,393,300" href="#music" alt="Amazing songs for your enjoyment!">
+				<area shape="rect" onmouseover="MenuMouseOver(592, 699)" onmouseout="MenuMouseOut()" coords="592,240,699,300" href="#photos" alt="Check my pics!">
+				<area shape="rect" onmouseover="MenuMouseOver(707, 803)" onmouseout="MenuMouseOut()" coords="707,240,803,300" href="#videos" alt="Watch amazing videos!">
+				<area shape="rect" onmouseover="MenuMouseOver(811, 889)" onmouseout="MenuMouseOut()" coords="811,240,889,300" onclick="ShowDropDownMenu()" style="cursor:pointer" alt="Much more!">
 			</map>
 			<map name="mobilemenumap">
 				<area shape="circle" coords="320, 167, 106" href="index.html" title="Home!">
@@ -92,7 +107,7 @@
 		
 		<article id="LeArticle">
 		</article>
-
+		
 		<img src="index_resources/Slice-4.png" id="footer" usemap="#footermap">
 
 		<map name="footermap">
@@ -132,6 +147,8 @@
 			</div>
 			<img id="MusicBarCloseButton" src="index_resources/close_button.png" onclick="UnloadMusicBar()">
 		</div>
-
+		
+		<div id="Whitespace-bottom"></div> 
+		
 	</body>
 </html>
