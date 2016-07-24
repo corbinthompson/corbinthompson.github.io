@@ -44,6 +44,7 @@ function OnLoad()
 	//Let's do just that
 	//LoadPage(NavLocation);
 	GetSitemap();
+	setTimeout(OnResizeChangePage, 500);
 	setInterval(OnResize, 1000);
 }
 
@@ -288,37 +289,15 @@ function PutInGrid()
 //Might become deprecated
 function OnResize()
 {
-	/*
-	var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-	var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-	if(w>h)
-	{
-		if(IsThreeRows == false || IsThreeRows == undefined)
-		{
-			SwitchToThreePerRow();
-		}
-	}
-	else
-	{
-		if(IsThreeRows)
-		{
-			SwitchToTwoPerRow();
-		}
-	}
-	var body = document.body,
-    html = document.documentElement;
-	*/
-	document.getElementById(FooterObjectID).style.top = -101;
-	document.getElementById("Whitespace-bottom").style.top = 0;
-	if(pageheight == undefined) {
-		pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
-		document.getElementById("Whitespace-bottom").style.top = pageheight;
-	}
-	else {
-		document.getElementById("Whitespace-bottom").style.top = pageheight - 200;
-	}
 	pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
     document.getElementById(FooterObjectID).style.top = pageheight - 101;
+}
+
+function OnResizeChangePage()
+{
+    document.getElementById(FooterObjectID).style.top = 0;
+	pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
+    document.getElementById(FooterObjectID).style.top = pageheight + 120 - 101;
 }
 
 function OnScroll()
@@ -566,6 +545,7 @@ function ClearPage() {
 //Hash navigation
 
 window.onhashchange = GoHash = function() {
+	setTimeout(OnResizeChangePage, 500);
 	if(location.hash != "") {
 		var hashvalue = location.hash.substring(1, location.hash.length);
 		//LoadPage(hashvalue + "/index.json");
