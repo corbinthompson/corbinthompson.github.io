@@ -314,39 +314,49 @@ setInterval(function() {
 		if(window.scrollY >= 200) {
 			if(ScrollDelta >= 50) {
 				//Hide menu
-				document.getElementById("BackMenu").classList.add("NavUp");
+				/*document.getElementById("BackMenu").classList.add("NavUp");
 				document.getElementById("Title").classList.add("NavUp");
 				document.getElementById("CompactTitle").classList.add("NavUp");
 				document.getElementById("WNCH").classList.add("NavUp");
 				document.getElementById("NeonLL").classList.add("NavUp");
 				document.getElementById("NeonRR").classList.add("NavUp");
 				document.getElementById("DropDownMenu").classList.add("NavUp");
+				*/
+				//show ScrollDownMenu
+				document.getElementById("ScrollDownMenu").style.top = 0;				
 				CloseDropDownMenu();
 				didScroll = false;
 				ScrollRefPoint = null;
 			}
 			if(ScrollDelta <= -50) {
 				//show menu
-				document.getElementById("BackMenu").classList.remove("NavUp");
+				/*document.getElementById("BackMenu").classList.remove("NavUp");
 				document.getElementById("Title").classList.remove("NavUp");
 				document.getElementById("CompactTitle").classList.remove("NavUp");
 				document.getElementById("WNCH").classList.remove("NavUp");
 				document.getElementById("NeonLL").classList.remove("NavUp");
 				document.getElementById("NeonRR").classList.remove("NavUp");
 				document.getElementById("DropDownMenu").classList.remove("NavUp");
+				*/
+				/*
+				//hide ScrollDownMenu
+				document.getElementById("ScrollDownMenu").style.top = -100;
+				*/
 				didScroll = false;
 				ScrollRefPoint = null;
 			}
 		}
 		else {
 			//show menu
-			document.getElementById("BackMenu").classList.remove("NavUp");
+			/*document.getElementById("BackMenu").classList.remove("NavUp");
 			document.getElementById("Title").classList.remove("NavUp");
 			document.getElementById("CompactTitle").classList.remove("NavUp");
 			document.getElementById("WNCH").classList.remove("NavUp");
 			document.getElementById("NeonLL").classList.remove("NavUp");
 			document.getElementById("NeonRR").classList.remove("NavUp");
-			document.getElementById("DropDownMenu").classList.remove("NavUp");
+			document.getElementById("DropDownMenu").classList.remove("NavUp");*/
+			//hide ScrollDownMenu
+			document.getElementById("ScrollDownMenu").style.top = -100;
 			didScroll = false;
 			ScrollRefPoint = null;
 		}
