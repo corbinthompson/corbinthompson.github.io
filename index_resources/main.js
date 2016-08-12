@@ -297,7 +297,7 @@ function OnResizeChangePage()
 {
     document.getElementById(FooterObjectID).style.top = 0;
 	pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
-    document.getElementById(FooterObjectID).style.top = pageheight + 120 - 101;
+    document.getElementById(FooterObjectID).style.top = pageheight - 101;
 }
 
 function OnScroll()
@@ -470,8 +470,7 @@ function GoToURL(towhere)
 	}
 }
 
-function LoadArticle(ArticleHTML)
-{
+function LoadArticle(ArticleHTML) {
 	document.getElementById(LeContentObjectID).innerHTML = "";
 	document.getElementById(LeArticleObjectID).innerHTML = ArticleHTML;
 	document.getElementById(LeArticleObjectID).style.display = "block";
