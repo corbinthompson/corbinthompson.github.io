@@ -15,33 +15,5 @@
 			}
 		],
 		"Type": "MusicAlbums"
-	},
-	{
-		"Thumbnail": "music/polaroid_thumb/18.png",
-		"Caption": "18",
-		"PlaylistURL": "music/music.json",
-		"SongNumber": "0",
-		"Type": "PolaroidMusic"
-	},
-	{
-		"Thumbnail": "music/polaroid_thumb/Do-I-Wanna-Know.png",
-		"Caption": "Do I Wanna Know",
-		"PlaylistURL": "music/music.json",
-		"SongNumber": "1",
-		"Type": "PolaroidMusic"
-	},
-	{
-		"Thumbnail": "music/polaroid_thumb/Photograph.png",
-		"Caption": "Photograph",
-		"PlaylistURL": "music/music.json",
-		"SongNumber": "0",
-		"Type": "PolaroidMusic"
-	},
-	{
-		"Thumbnail": "music/polaroid_thumb/See-you-Again.png",
-		"Caption": "See you Again",
-		"PlaylistURL": "music/music.json",
-		"SongNumber": "1",
-		"Type": "PolaroidMusic"
 	}
 ]

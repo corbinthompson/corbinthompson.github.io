@@ -78,5 +78,15 @@
 		"name": "OrangeLight",
 		"title": "New Journey - Corbin Hale",
 		"address": "music/Albums/OrangeLight/album.json"
+	},
+	{
+		"name": "corbinhalbum",
+		"title": "Corbin H. Album",
+		"address": "photos/CorbinH/index.json"
+	},
+	{
+		"name": "behindthescenes",
+		"title": "Behind the Scenes Photos",
+		"address": "photos/behindthescenes/index.json"
 	}
 ]
