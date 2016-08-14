@@ -19,6 +19,8 @@ didScroll = false;
 ScrollRefPoint = null;
 pageheight = undefined;
 
+MusicAlbumCount = 0;
+
 //May become deprecated
 function SetUIVariables()
 {
@@ -115,7 +117,11 @@ function HeadLine(imgsrc, msg, url, type)
 	}
 	
 	if(this.type == 7) {
+		MusicAlbumCount++;
 		this.Obj.className = "MusicAlbumContainer";
+		if(MusicAlbumCount%2 == 1) {
+			this.Obj.style.flexDirection = "row-reverse";
+		}
 		this.Thumbnail = document.createElement("div");
 		this.Thumbnail.className = "MusicAlbumThumbnail";
 		this.Thumbnail.style.background = "url(" + imgsrc + ")";
