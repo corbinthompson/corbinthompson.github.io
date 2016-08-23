@@ -136,8 +136,10 @@ function HeadLine(imgsrc, msg, url, type)
 		this.PlaylistSongs = new Array();
 		
 		GetJSON(url).then((function(response) {
-			LoadMusicBar(response, 0);
-			for(var i=0;i<response.length;i++) {
+			that.MusicLibrary = response;
+			that.AreWeLoaded = false;
+			
+			for(var i=0;i<that.MusicLibrary.length;i++) {
 				var ThisTR = document.createElement("tr");
 				that.Playlist.appendChild(ThisTR);
 				ThisTR.className = "MusicAlbumTr";
@@ -152,15 +154,28 @@ function HeadLine(imgsrc, msg, url, type)
 				var NameTD = document.createElement("td");
 				NameTD.className = "MusicAlbumTd";
 				ThisTR.appendChild(NameTD);
-				NameTD.innerText = response[i].Name;
+				NameTD.innerText = that.MusicLibrary[i].Name;
 				that.PlaylistSongs.push({TR: ThisTR, Status: PlayPauseLabel});
 				//Make listeners to when you click those things
 				ThisTR.onclick = (function() {
-					SelectSong(this.Index);
-					if(!IsPlaying) {
-						PlayPauseSong();
+					if(that.AreWeLoaded) {
+						SelectSong(this.Index);
+						if(!IsPlaying) {
+							PlayPauseSong();
+						}
+					}
+					else {
+						LoadMusicBar(that.MusicLibrary, this.Index, that.UnloadHandler);
+						if(!IsPlaying) {
+							PlayPauseSong();
+						}
+						that.AreWeLoaded = true;
 					}
 				}).bind({Index: i});
+			}
+			
+			that.UnloadHandler = function() {
+				that.AreWeLoaded = false;
 			}
 						
 			that.UpdateLook = function() {
@@ -168,9 +183,11 @@ function HeadLine(imgsrc, msg, url, type)
 					that.PlaylistSongs[i].TR.className = "MusicAlbumTr";
 					that.PlaylistSongs[i].Status.className = "fa fa-play";
 				}
-				that.PlaylistSongs[SongCursor].TR.className = "MusicAlbumTrSelected";
-				if(IsPlaying) {
-					that.PlaylistSongs[SongCursor].Status.className = "fa fa-pause";
+				if(that.AreWeLoaded) {
+					that.PlaylistSongs[SongCursor].TR.className = "MusicAlbumTrSelected";
+					if(IsPlaying) {
+						that.PlaylistSongs[SongCursor].Status.className = "fa fa-pause";
+					}
 				}
 			}
 			
@@ -631,8 +648,9 @@ IsPlaying = false;
 PreviousIsPlaying = false;
 MusicInterval = undefined;
 MusicIntervalExists = false;
+UnloadCallback = undefined;
 
-function LoadMusicBar(TheLibrary, TheSongCursor) {
+function LoadMusicBar(TheLibrary, TheSongCursor, TheUnloadCallback) {
 	if(TheSongCursor == undefined) {
 		TheSongCursor = 0;
 	}
@@ -646,6 +664,7 @@ function LoadMusicBar(TheLibrary, TheSongCursor) {
 	MBMain = document.getElementById("MusicBar");
 	
 	UnloadMusicBar();
+	UnloadCallback = TheUnloadCallback;
 	MBMain.classList.remove("MusicBarHide");
 	
 	SongCursor = TheSongCursor;
@@ -802,6 +821,7 @@ function UnloadMusicBar() {
 			}
 		}
 		MusicLibrary = undefined;
+		UnloadCallback();
 	}
 }
 
