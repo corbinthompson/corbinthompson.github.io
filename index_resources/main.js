@@ -236,6 +236,7 @@ function HeadLine(imgsrc, msg, url, type)
 	}
 	
 	this.Obj.style.webkitTransform = "rotate(" + (Math.random()*30 - 15) + "deg)"
+	this.Obj.style.MozTransform = "rotate(" + (Math.random()*30 - 15) + "deg)"
 
 	if(this.type == 4) {
 		HeadLineSwitch = !HeadLineSwitch;
