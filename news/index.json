@@ -1,5 +1,12 @@
 [
 	{
+		"Thumbnail": "news/polaroid_thumb/welcome.png",
+		"CaptionTitle": "Welcome!",
+		"Caption": "Don't you think the 50s would've been even cooler with you in it? Welcome to my new website!",
+		"URL": "#welcome",
+		"Type": "PolaroidText"
+	},
+	{
 		"Thumbnail": "news/polaroid_thumb/EP.JPG",
 		"CaptionTitle": "A new Journey",
 		"Caption": "A new journey begins today! Start recording our first EP means a lot more than what it seems...", 
@@ -18,13 +25,6 @@
 		"CaptionTitle": "Can You Believe in Peace Again?",
 		"Caption": "Dreams were swept away forever…", 
 		"URL": "#peace",
-		"Type": "PolaroidText"
-	},
-	{
-		"Thumbnail": "news/polaroid_thumb/welcome.png",
-		"CaptionTitle": "Welcome!",
-		"Caption": "Don't you think the 50s would've been even cooler with you in it? Welcome to my new website!",
-		"URL": "#welcome",
 		"Type": "PolaroidText"
 	}
 ]
