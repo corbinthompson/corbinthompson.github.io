@@ -485,12 +485,13 @@ function GoToURL(towhere)
 	}
 	else
 	{
-			var form = document.createElement("form");
+			/*var form = document.createElement("form");
 			form.method = "GET";
 			form.action = towhere;
 			form.target = "_blank";
 			document.body.appendChild(form);
-			form.submit();
+			form.submit();*/
+			window.open(towhere);
 	}
 }
 
