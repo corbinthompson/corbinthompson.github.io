@@ -88,5 +88,10 @@
 		"name": "behindthescenes",
 		"title": "Behind the Scenes Photos",
 		"address": "photos/behindthescenes/index.json"
+	},
+	{
+		"name": "mathildamotherlyrics",
+		"title": "Mathilda Mother lyrics",
+		"address": "music/Albums/BlueLight/Lyrics/MathildaMother.json"
 	}
 ]

@@ -172,6 +172,26 @@ function HeadLine(imgsrc, msg, url, type)
 						that.AreWeLoaded = true;
 					}
 				}).bind({Index: i});
+			
+				var LyricsTD = document.createElement("td");
+				LyricsTD.className = "MusicAlbumTd";
+				ThisTR.appendChild(LyricsTD);
+				var LyricsSpan = document.createElement("span");
+				LyricsTD.appendChild(LyricsSpan);
+				LyricsSpan.classList.add("fa");
+				LyricsSpan.classList.add("fa-book");
+				LyricsTD.classList.add("LyricsTD");
+				LyricsSpan.onclick = (function() {
+					location.href = this.LyricsURL;
+				}).bind({LyricsURL: that.MusicLibrary[i].LyricsURL});
+				
+				ThisTR.onmouseover = (function() {
+					this.LyricsTD.classList.add("LyricsTDHover");
+				}).bind({LyricsTD: LyricsTD});
+				
+				ThisTR.onmouseout = (function() {
+					this.LyricsTD.classList.remove("LyricsTDHover");
+				}).bind({LyricsTD: LyricsTD});
 			}
 			
 			that.UnloadHandler = function() {
