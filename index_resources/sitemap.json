@@ -65,19 +65,14 @@
 		"address": "news/articles/newjourney/article.json"
 	},
 	{
-		"name": "BlueLight",
-		"title": "New Journey - Corbin Hale",
-		"address": "music/Albums/BlueLight/album.json"
+		"name": "originals",
+		"title": "Originals - Corbin Hale",
+		"address": "music/Albums/Originals/album.json"
 	},
 	{
-		"name": "GreenLight",
-		"title": "New Journey - Corbin Hale",
-		"address": "music/Albums/GreenLight/album.json"
-	},
-	{
-		"name": "OrangeLight",
-		"title": "New Journey - Corbin Hale",
-		"address": "music/Albums/OrangeLight/album.json"
+		"name": "covers",
+		"title": "Covers - Corbin Hale",
+		"address": "music/Albums/Covers/album.json"
 	},
 	{
 		"name": "corbinhalbum",

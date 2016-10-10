@@ -1,0 +1,7 @@
+[
+	{
+		"Thumbnail": "music/Albums/Covers/thumb.png",
+		"PlaylistURL": "music/Albums/Covers/albumsongs.json",
+		"Type": "MusicAlbum"
+	}
+]

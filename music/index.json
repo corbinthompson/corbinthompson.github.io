@@ -1,17 +1,12 @@
 [
 	{
-		"Thumbnail": "music/Albums/OrangeLight/thumb.png",
-		"PlaylistURL": "music/Albums/OrangeLight/albumsongs.json",
+		"Thumbnail": "music/Albums/Originals/thumb.jpg",
+		"PlaylistURL": "music/Albums/Originals/albumsongs.json",
 		"Type": "MusicAlbum"
 	},
 	{
-		"Thumbnail": "music/Albums/GreenLight/thumb.png",
-		"PlaylistURL": "music/Albums/GreenLight/albumsongs.json",
-		"Type": "MusicAlbum"
-	},
-	{
-		"Thumbnail": "music/Albums/BlueLight/thumb.png",
-		"PlaylistURL": "music/Albums/BlueLight/albumsongs.json",
+		"Thumbnail": "music/Albums/Covers/thumb.jpg",
+		"PlaylistURL": "music/Albums/Covers/albumsongs.json",
 		"Type": "MusicAlbum"
 	}
 ]
