@@ -731,7 +731,7 @@ function NextSong() {
 	}
 	MusicBarUpdateButtonVisibility();
 	if(IsPlaying) {
-		MusicLibrary[SongCursor].player.play();
+		MBPlay(SongCursor);
 	}
 	MBNameObj.innerText = MusicLibrary[SongCursor].Name;
 }
@@ -763,7 +763,7 @@ function PreviousSong() {
 	}
 	MusicBarUpdateButtonVisibility();
 	if(IsPlaying) {
-		MusicLibrary[SongCursor].player.play();
+		MBPlay(SongCursor);
 	}
 	MBNameObj.innerText = MusicLibrary[SongCursor].Name;
 }
