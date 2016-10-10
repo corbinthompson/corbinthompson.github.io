@@ -671,6 +671,7 @@ PreviousIsPlaying = false;
 MusicInterval = undefined;
 MusicIntervalExists = false;
 UnloadCallback = undefined;
+IsLoading = false;
 
 function LoadMusicBar(TheLibrary, TheSongCursor, TheUnloadCallback) {
 	if(TheSongCursor == undefined) {
@@ -746,7 +747,7 @@ function SelectSong(NewCursor) {
 	}
 	MusicBarUpdateButtonVisibility();
 	if(IsPlaying) {
-		MusicLibrary[SongCursor].player.play();
+		MBPlay(SongCursor);
 	}
 	MBNameObj.innerText = MusicLibrary[SongCursor].Name;
 }
@@ -787,27 +788,29 @@ function MusicBarUpdateButtonVisibility() {
 }
 
 function UpdateSongTime() {
-	if(IsPlaying) {
-		MBTimeObj.value = (MusicLibrary[SongCursor].player.currentTime/MusicLibrary[SongCursor].player.duration)*1000;
-	}
-	else {
-		MusicLibrary[SongCursor].player.currentTime = (MBTimeObj.value/1000)*MusicLibrary[SongCursor].player.duration;
-	}
-	var minutes = Math.floor(MusicLibrary[SongCursor].player.currentTime/60);
-	var seconds = Math.floor(MusicLibrary[SongCursor].player.currentTime%60);
-	if(minutes < 10) {
-		minutes = "0" + minutes;
-	}
-	if(seconds < 10) {
-		seconds = "0" + seconds;
-	}
-	MBClockObj.innerText = minutes + ":" + seconds;
-	if(MusicLibrary[SongCursor].player.ended) {
-		if(SongCursor == MusicLibrary.length - 1) {
-			UnloadMusicBar();		
+	if(!IsLoading) {
+		if(IsPlaying) {
+			MBTimeObj.value = (MusicLibrary[SongCursor].player.currentTime/MusicLibrary[SongCursor].player.duration)*1000;
 		}
 		else {
-			NextSong();
+			MusicLibrary[SongCursor].player.currentTime = (MBTimeObj.value/1000)*MusicLibrary[SongCursor].player.duration;
+		}
+		var minutes = Math.floor(MusicLibrary[SongCursor].player.currentTime/60);
+		var seconds = Math.floor(MusicLibrary[SongCursor].player.currentTime%60);
+		if(minutes < 10) {
+			minutes = "0" + minutes;
+		}
+		if(seconds < 10) {
+			seconds = "0" + seconds;
+		}
+		MBClockObj.innerText = minutes + ":" + seconds;
+		if(MusicLibrary[SongCursor].player.ended) {
+			if(SongCursor == MusicLibrary.length - 1) {
+				UnloadMusicBar();		
+			}
+			else {
+				NextSong();
+			}
 		}
 	}
 }
@@ -821,10 +824,23 @@ function PlayPauseSong() {
 	}
 	else {
 		//play
-		MusicLibrary[SongCursor].player.play();
-		MBPlayPauseObj.innerHTML = "<i class=\"fa fa-pause\" aria-hidden=\"true\"></i>";		
-		IsPlaying = PreviousIsPlaying  = true;
+		MBPlay(SongCursor);
 	}
+}
+
+function MBPlay(SongCursor) {
+		MusicLibrary[SongCursor].player.play().then(function(response) {
+			MBPlayPauseObj.innerHTML = "<i class=\"fa fa-pause\" aria-hidden=\"true\"></i>";
+			IsPlaying = PreviousIsPlaying  = true;
+			document.getElementById("MusicBar").style.pointerEvents = "auto";
+			document.getElementById("MusicBarFlex").style.display = "flex";
+			document.getElementById("MusicBarLoadingMessage").style.display = "none";
+			IsLoading = false;
+		});
+		document.getElementById("MusicBar").style.pointerEvents = "none";
+		document.getElementById("MusicBarFlex").style.display = "none";
+		document.getElementById("MusicBarLoadingMessage").style.display = "block";
+		IsLoading = true;	
 }
 
 function UnloadMusicBar() {
