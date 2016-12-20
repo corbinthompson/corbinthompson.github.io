@@ -7,6 +7,7 @@ var Nperrow = 4;
 var LeContentObjectID = "LeContent";
 var LeArticleObjectID = "LeArticle";
 var FooterObjectID = "footer";
+var FooterBottomPosition = 101;
 
 //For Headline function
 var HeadLineSwitch = false;
@@ -343,14 +344,14 @@ function PutInGrid()
 function OnResize()
 {
 	pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
-    document.getElementById(FooterObjectID).style.top = pageheight - 101;
+    document.getElementById(FooterObjectID).style.top = pageheight - FooterBottomPosition;
 }
 
 function OnResizeChangePage()
 {
     document.getElementById(FooterObjectID).style.top = 0;
 	pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
-    document.getElementById(FooterObjectID).style.top = pageheight - 101;
+    document.getElementById(FooterObjectID).style.top = pageheight - FooterBottomPosition;
 }
 
 function OnScroll()
@@ -699,6 +700,10 @@ function LoadMusicBar(TheLibrary, TheSongCursor, TheUnloadCallback) {
 	UnloadCallback = TheUnloadCallback;
 	MBMain.classList.remove("MusicBarHide");
 	
+	FooterBottomPosition = 151;
+	pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
+	document.getElementById(FooterObjectID).style.top = pageheight - FooterBottomPosition;
+	
 	SongCursor = TheSongCursor;
 	
 	IsPlaying = false;
@@ -883,6 +888,10 @@ function UnloadMusicBar() {
 		MusicLibrary = undefined;
 		UnloadCallback();
 	}
+	
+	FooterBottomPosition = 101;
+	pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
+	document.getElementById(FooterObjectID).style.top = pageheight - FooterBottomPosition;
 }
 
 
