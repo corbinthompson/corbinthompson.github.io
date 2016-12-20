@@ -36,6 +36,7 @@ var TheGrid = new Object();
 
 function OnLoad()
 {
+	CheckCompatibility();
 	imageMapResize();
 	SetUIVariables();
 	//Now we'll have to load from external JSON
@@ -48,6 +49,14 @@ function OnLoad()
 	GetSitemap();
 	setTimeout(OnResizeChangePage, 500);
 	setInterval(OnResize, 1000);
+}
+
+function CheckCompatibility() {
+	var compatible = true;
+	if(!compatible) {
+		document.getElementById("Compatibility-Notice").style.pointerEvents = "auto";
+		document.getElementById("Compatibility-Notice").style.opacity = "1";
+	}
 }
 
 function HeadLine(imgsrc, msg, url, type)
