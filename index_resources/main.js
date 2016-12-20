@@ -829,7 +829,20 @@ function PlayPauseSong() {
 }
 
 function MBPlay(SongCursor) {
-		MusicLibrary[SongCursor].player.play().then(function(response) {
+		var PlayPromise = MusicLibrary[SongCursor].player.play();
+		//Compatibility code for browsers that do not return promise, such as Safari
+		if(typeof(PlayPromise) != "object") {
+			PlayPromise = new Promise(function(resolve, reject) {
+				var CheckSongAvailability = function() {
+					if(!MusicLibrary[SongCursor].player.paused) {
+						clearInterval(CheckSongAvailability)
+						resolve(true);
+					}
+				}
+				setInterval(CheckSongAvailability, 500);
+			});
+		}
+		PlayPromise.then(function(response) {
 			MBPlayPauseObj.innerHTML = "<i class=\"fa fa-pause\" aria-hidden=\"true\"></i>";
 			IsPlaying = PreviousIsPlaying  = true;
 			document.getElementById("MusicBar").style.pointerEvents = "auto";
