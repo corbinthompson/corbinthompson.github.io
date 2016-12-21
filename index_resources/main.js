@@ -191,7 +191,7 @@ function HeadLine(imgsrc, msg, url, type)
 				LyricsSpan.classList.add("fa");
 				LyricsSpan.classList.add("fa-book");
 				LyricsTD.classList.add("LyricsTD");
-				LyricsSpan.onclick = (function() {
+				LyricsTD.onclick = (function() {
 					location.href = this.LyricsURL;
 				}).bind({LyricsURL: that.MusicLibrary[i].LyricsURL});
 				
