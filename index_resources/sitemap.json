@@ -85,8 +85,48 @@
 		"address": "photos/behindthescenes/index.json"
 	},
 	{
-		"name": "mathildamotherlyrics",
-		"title": "Mathilda Mother lyrics",
-		"address": "music/Albums/BlueLight/Lyrics/MathildaMother.json"
+		"name": "TheManIveGottaBelyrics",
+		"title": "The Man I've Gotta Be Lyrics",
+		"address": "music/Albums/Originals/Lyrics/TheManIveGottaBe.json"
+	},
+	{
+		"name": "WhiteFlaglyrics",
+		"title": "White Flag Lyrics",
+		"address": "music/Albums/Originals/Lyrics/WhiteFlag.json"
+	},
+	{
+		"name": "CantHelpFallingInLovelyrics",
+		"title": "Can't Help Falling In Love Lyrics",
+		"address": "music/Albums/Covers/Lyrics/CantHelpFallingInLove.json"
+	},	
+	{
+		"name": "CanYouFeelTheLoveTonightlyrics",
+		"title": "Can You Feel The Love Tonight Lyrics",
+		"address": "music/Albums/Covers/Lyrics/CanYouFeelTheLoveTonight.json"
+	},	
+	{
+		"name": "DoIWannaKnowlyrics",
+		"title": "Do I Wanna Know Lyrics",
+		"address": "music/Albums/Covers/Lyrics/DoIWannaKnow.json"
+	},	
+	{
+		"name": "ItsYoulyrics",
+		"title": "It's You Lyrics",
+		"address": "music/Albums/Covers/Lyrics/ItsYou.json"
+	},	
+	{
+		"name": "Photographlyrics",
+		"title": "Photograph Lyrics",
+		"address": "music/Albums/Covers/Lyrics/Photograph.json"
+	},	
+	{
+		"name": "TheBlowersDaughterlyrics",
+		"title": "The Blower's Daughter Lyrics",
+		"address": "music/Albums/Covers/Lyrics/TheBlowersDaughter.json"
+	},	
+	{
+		"name": "TheScientistlyrics",
+		"title": "The Scientist Lyrics",
+		"address": "music/Albums/Covers/Lyrics/TheScientist.json"
 	}
 ]
