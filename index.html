@@ -18,11 +18,9 @@
 
 	</head>
 	<body onload="OnLoad()" onresize="OnResize()" onscroll="OnScroll()">
-		<div id="PaperBack"></div>
 		
 		<div id="LeMenu" draggable="false">
-			<div class="UpTitle" id="BackMenu"></div>
-
+		
 			<img draggable="false" class="UpTitle" id="Title" src="index_resources/Slice-1.png" usemap="#menumap">
 			<img draggable="false" class="UpTitle" id="CompactTitle" src="index_resources/Slice-6.png" usemap="#mobilemenumap">
 			
@@ -71,7 +69,7 @@
 						OurCursor.style.marginLeft = A;
 						OurCursor.style.width = B - A;
 					}
-
+		
 					function MenuMouseOut() {
 						var OurCursor = document.getElementById("MenuCursor");
 						OurCursor.style.opacity = 0;
