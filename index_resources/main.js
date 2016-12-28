@@ -240,8 +240,26 @@ function HeadLine(imgsrc, msg, url, type)
 	this.Obj.appendChild(this.Frame);
 
 	this.Label = document.createElement("div");
-	this.Label.innerHTML = this.msg;
+	this.LabelInside = document.createElement("p");
+	this.LabelInside.style.alignSelf = "center";
+	this.LabelInside.innerHTML = this.msg;
 	this.Obj.appendChild(this.Label);
+	this.Label.appendChild(this.LabelInside);
+	this.LabelMask = document.createElement("div");
+	this.LabelMask.className = "ContentLabelMask";
+	this.Obj.appendChild(this.LabelMask);
+	this.Obj.onmouseover = function() {
+		that.Label.style.opacity = 1;
+		that.LabelMask.style.opacity = 0.6;
+		that.Label.style.transform = "scale(1)";
+	}
+	
+	this.Obj.onmouseout = function() {
+		that.Label.style.opacity = 0;
+		that.LabelMask.style.opacity = 0;
+		that.Label.style.transform = "scale(1.2)";
+	}
+
 
 	if(this.type == 3)
 	{
@@ -252,7 +270,7 @@ function HeadLine(imgsrc, msg, url, type)
 	}
 	else if(this.type == 5)
 	{
-		this.Frame.src = "index_resources/Polaroid-Album.png";
+		this.Frame.src = "index_resources/frame.png";
 		this.Frame.className = "contentframe";
 		this.Obj.className = "PieceOfContentPolaroid";
 		this.Label.className = "contentlabelPolaroid";
@@ -265,8 +283,10 @@ function HeadLine(imgsrc, msg, url, type)
 		this.Label.className = "contentlabelPolaroid";
 	}
 	
-	this.Obj.style.webkitTransform = "rotate(" + (Math.random()*30 - 15) + "deg)"
-	this.Obj.style.MozTransform = "rotate(" + (Math.random()*30 - 15) + "deg)"
+	
+	//Deprecated
+	//this.Obj.style.webkitTransform = "rotate(" + (Math.random()*30 - 15) + "deg)"
+	//this.Obj.style.MozTransform = "rotate(" + (Math.random()*30 - 15) + "deg)"
 
 	if(this.type == 4) {
 		HeadLineSwitch = !HeadLineSwitch;
