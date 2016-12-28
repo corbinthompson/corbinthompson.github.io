@@ -66,20 +66,6 @@
 			<div class="pseudo-hidden" id="CompactMenuModal" onclick="CloseCompactMenu()"></div>
 			
 			<map name="menumap">
-				<script>
-					function MenuMouseOver(A,B) {
-						var OurCursor = document.getElementById("MenuCursor");
-						OurCursor.style.opacity = 1;
-						OurCursor.style.marginLeft = A;
-						OurCursor.style.width = B - A;
-					}
-		
-					function MenuMouseOut() {
-						var OurCursor = document.getElementById("MenuCursor");
-						OurCursor.style.opacity = 0;
-					}
-				</script>
-				<div id="MenuCursor"></div>
 				<area shape="rect" coords="0,4,114,53" href="#about" alt="About me!">
 				<area shape="rect" coords="114,4,216,53" href="#news" alt="Check what's new!">
 				<area shape="rect" coords="216,4,346,53" href="#photos" alt="Check my pics!">
