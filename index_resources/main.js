@@ -635,31 +635,33 @@ window.onhashchange = GoHash = function() {
 	for(var i=0; i < TheElements.length; i++) {
 		TheElements[i].classList.remove("DropDown-Menu-Item-Active");
 	}
+	//Code section A
 	switch(hashvalue) {
 		case "news":
-			OurTitle.src = "index_resources/slice-1a.png";
-			document.getElementById("Mobile-Menu-Item1").classList.add("Mobile-Menu-Item-Active");
+			//OurTitle.src = "index_resources/slice-1a.png";
+			//document.getElementById("Mobile-Menu-Item1").classList.add("Mobile-Menu-Item-Active");
 			break;
 		case "about":
-			OurTitle.src = "index_resources/slice-1b.png";
-			document.getElementById("Mobile-Menu-Item2").classList.add("Mobile-Menu-Item-Active");
+			//OurTitle.src = "index_resources/slice-1b.png";
+			//document.getElementById("Mobile-Menu-Item2").classList.add("Mobile-Menu-Item-Active");
 			break;
 		case "music":
-			OurTitle.src = "index_resources/slice-1c.png";
-			document.getElementById("Mobile-Menu-Item2").classList.add("Mobile-Menu-Item-Active");
+			//OurTitle.src = "index_resources/slice-1c.png";
+			//document.getElementById("Mobile-Menu-Item2").classList.add("Mobile-Menu-Item-Active");
 			break;
 		case "photos":
-			OurTitle.src = "index_resources/slice-1d.png";
-			document.getElementById("Mobile-Menu-Item3").classList.add("Mobile-Menu-Item-Active");
+			//OurTitle.src = "index_resources/slice-1d.png";
+			//document.getElementById("Mobile-Menu-Item3").classList.add("Mobile-Menu-Item-Active");
 			break;
 		case "videos":
-			OurTitle.src = "index_resources/slice-1e.png";
-			document.getElementById("Mobile-Menu-Item4").classList.add("Mobile-Menu-Item-Active");
+			//OurTitle.src = "index_resources/slice-1e.png";
+			//document.getElementById("Mobile-Menu-Item4").classList.add("Mobile-Menu-Item-Active");
 			break;
 		default:
-			OurTitle.src = "index_resources/slice-1.png";
+			//OurTitle.src = "index_resources/slice-1.png";
 			break;
 	}
+	//End Code section A
 }
 
 function ResetMobileSocialButtons() {
