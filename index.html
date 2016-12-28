@@ -20,9 +20,13 @@
 	<body onload="OnLoad()" onresize="OnResize()" onscroll="OnScroll()">
 		
 		<div id="LeMenu" draggable="false">
-		
-			<img draggable="false" class="UpTitle" id="Title" src="index_resources/Slice-1.png" usemap="#menumap">
+			
+			<!-- old menu-->
+			<!--<img draggable="false" class="UpTitle" id="Title" src="index_resources/Slice-1.png" usemap="#menumap">-->
 			<img draggable="false" class="UpTitle" id="CompactTitle" src="index_resources/Slice-6.png" usemap="#mobilemenumap">
+			<!-- new -->
+			<a href="#home"><img draggable="false" class="UpTitle" id="MenuLogo" src="index_resources/logo.png"></a>
+			<img draggable="false" class="UpTitle" id="MenuMenu" src="index_resources/Menu-main.png" usemap="#menumap">
 			
 			<div id="ScrollDownMenu">
 				<img id="ScrollDownMenuLogo" src="index_resources/logo_shadow.png" style="margin-left: 30px; margin-right: 30px; cursor: pointer;" onclick="location.href = '#home';">
@@ -76,13 +80,12 @@
 					}
 				</script>
 				<div id="MenuCursor"></div>
-				<area shape="circle" coords="495,160,106" href="#home" alt="Home!">
-				<area shape="rect" onmouseover="MenuMouseOver(109, 186)" onmouseout="MenuMouseOut()" coords="109,240,186,300" href="#news" alt="Check what's new!">
-				<area shape="rect" onmouseover="MenuMouseOver(200, 294)" onmouseout="MenuMouseOut()" coords="200,240,294,300" href="#about" alt="About me!">
-				<area shape="rect" onmouseover="MenuMouseOver(308, 393)" onmouseout="MenuMouseOut()" coords="308,240,393,300" href="#music" alt="Amazing songs for your enjoyment!">
-				<area shape="rect" onmouseover="MenuMouseOver(592, 699)" onmouseout="MenuMouseOut()" coords="592,240,699,300" href="#photos" alt="Check my pics!">
-				<area shape="rect" onmouseover="MenuMouseOver(707, 803)" onmouseout="MenuMouseOut()" coords="707,240,803,300" href="#videos" alt="Watch amazing videos!">
-				<area shape="rect" onmouseover="MenuMouseOver(811, 889)" onmouseout="MenuMouseOut()" coords="811,240,889,300" onclick="ShowDropDownMenu()" style="cursor:pointer" alt="Much more!">
+				<area shape="rect" coords="0,4,114,53" href="#about" alt="About me!">
+				<area shape="rect" coords="114,4,216,53" href="#news" alt="Check what's new!">
+				<area shape="rect" coords="216,4,346,53" href="#photos" alt="Check my pics!">
+				<area shape="rect" coords="459,4,578,53" href="#music" alt="Amazing songs for your enjoyment!">
+				<area shape="rect" coords="578,4,702,53" href="#videos" alt="Watch amazing videos!">
+				<area shape="rect" coords="702,4,800,53" onclick="ShowDropDownMenu()" style="cursor:pointer" alt="Much more!">
 			</map>
 			<map name="mobilemenumap">
 				<area shape="circle" coords="320, 167, 106" href="#home" title="Home!">
