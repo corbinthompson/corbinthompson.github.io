@@ -385,7 +385,7 @@ setInterval(function() {
 	}
 	else if(didScroll) {
 		var ScrollDelta = window.scrollY - ScrollRefPoint;
-		if(window.scrollY >= 200) {
+		if(window.scrollY >= 250) {
 			if(ScrollDelta >= 50) {
 				//Hide menu
 				/*document.getElementById("BackMenu").classList.add("NavUp");
@@ -399,6 +399,11 @@ setInterval(function() {
 				//show ScrollDownMenu
 				document.getElementById("ScrollDownMenu").style.top = 0;				
 				CloseDropDownMenu();
+				//Hide spotlights
+				document.getElementById("backgroundtop").style.opacity = 0;
+				document.getElementById("backgroundcenter").style.opacity = 0;
+				document.getElementById("backgroundbottom").style.opacity = 0;
+				document.getElementById("backgroundall").style.opacity = 0.8;
 				didScroll = false;
 				ScrollRefPoint = null;
 			}
@@ -420,6 +425,13 @@ setInterval(function() {
 				ScrollRefPoint = null;
 			}
 		}
+		else if(window.scrollY >= 120) {
+					//Hide spotlights
+					document.getElementById("backgroundtop").style.opacity = 0;
+					document.getElementById("backgroundcenter").style.opacity = 0;
+					document.getElementById("backgroundbottom").style.opacity = 0;
+					document.getElementById("backgroundall").style.opacity = 0.8;
+		}
 		else {
 			//show menu
 			/*document.getElementById("BackMenu").classList.remove("NavUp");
@@ -429,10 +441,18 @@ setInterval(function() {
 			document.getElementById("NeonLL").classList.remove("NavUp");
 			document.getElementById("NeonRR").classList.remove("NavUp");
 			document.getElementById("DropDownMenu").classList.remove("NavUp");*/
-			//hide ScrollDownMenu
-			document.getElementById("ScrollDownMenu").style.top = -100;
+			//Restart spotlight
+			document.getElementById("backgroundtop").style.opacity = 0.8;
+			document.getElementById("backgroundcenter").style.opacity = 0.8;
+			document.getElementById("backgroundbottom").style.opacity = 0.8;
+			document.getElementById("backgroundall").style.opacity = 0;
+
 			didScroll = false;
 			ScrollRefPoint = null;
+		}
+		if(parseInt(document.getElementById("ScrollDownMenu").style.top) == 0 && window.scrollY <= 250) {
+			//hide ScrollDownMenu
+			document.getElementById("ScrollDownMenu").style.top = -100;			
 		}
 	}
 }, 250);
