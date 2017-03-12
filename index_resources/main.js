@@ -365,6 +365,7 @@ function OnResize()
 {
 	pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
     document.getElementById(FooterObjectID).style.top = pageheight - FooterBottomPosition;
+    document.getElementById("backgroundbottom").style.height = pageheight - 613;
 }
 
 function OnResizeChangePage()
@@ -372,6 +373,7 @@ function OnResizeChangePage()
     document.getElementById(FooterObjectID).style.top = 0;
 	pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
     document.getElementById(FooterObjectID).style.top = pageheight - FooterBottomPosition;
+    document.getElementById("backgroundbottom").style.height = pageheight - 613;
 }
 
 function OnScroll()
