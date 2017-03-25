@@ -89,6 +89,7 @@ function HeadLine(imgsrc, msg, url, type)
 			PicturesCursor = that.Position;
 			OpenModal(that.url, that.msg);
 		}
+		IsSeeingPhotos = true;
 	}
 	
 	if(this.type == 2)
@@ -707,6 +708,7 @@ function ClearPage() {
 	TheHeadLines = new Array();
 	Pictures = null;
 	Pictures = new Array();
+	IsSeeingPhotos = false;
 	document.getElementById(LeContentObjectID).innerHTML = "";
 	document.getElementById(LeArticleObjectID).innerHTML = "";
 	document.getElementById(LeArticleObjectID).style.display = "none";
