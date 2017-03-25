@@ -16,10 +16,14 @@ var HeadLineSwitch = false;
 NavLocation = "resources.json";
 Sitemap = undefined;
 
+//For the scrolling
 didScroll = false;
 ScrollRefPoint = null;
 lastScrollY = 0;
 pageheight = undefined;
+
+//For the spotlights
+var IsSeeingPhotos = false;
 
 MusicAlbumCount = 0;
 
@@ -275,6 +279,7 @@ function HeadLine(imgsrc, msg, url, type)
 		this.Frame.className = "contentframe";
 		this.Obj.className = "PieceOfContentPolaroid";
 		this.Label.className = "contentlabelPolaroid";
+		IsSeeingPhotos = true;
 	}
 	else
 	{
@@ -380,17 +385,14 @@ function OnResizeChangePage()
 function OnScroll()
 {
 	didScroll = true;
-	console.log("OnScroll!!");
 }
 
 setInterval(function() {
 	if(didScroll && ScrollRefPoint == null) {
 		ScrollRefPoint = lastScrollY;
-		console.log("SET REF!")
 	}
 	else if(didScroll) {
 		lastScrollY = window.scrollY;
-		console.log("DID SCROLL!!!");
 		var ScrollDelta = window.scrollY - ScrollRefPoint;
 		if(window.scrollY >= 250) {
 			if(ScrollDelta >= 50) {
@@ -406,59 +408,26 @@ setInterval(function() {
 				//show ScrollDownMenu
 				document.getElementById("ScrollDownMenu").style.top = 0;				
 				CloseDropDownMenu();
-				//Hide spotlights
-				document.getElementById("backgroundtop").style.opacity = 0;
-				document.getElementById("backgroundcenter").style.opacity = 0;
-				document.getElementById("backgroundbottom").style.opacity = 0;
-				document.getElementById("backgroundall").style.opacity = 0.8;
-				console.log("DROP");
+				HideSpotlights();
 				didScroll = false;
 				ScrollRefPoint = null;
 			}
 			if(ScrollDelta <= -50) {
 				//show menu
-				/*document.getElementById("BackMenu").classList.remove("NavUp");
-				document.getElementById("Title").classList.remove("NavUp");
-				document.getElementById("CompactTitle").classList.remove("NavUp");
-				document.getElementById("WNCH").classList.remove("NavUp");
-				document.getElementById("NeonLL").classList.remove("NavUp");
-				document.getElementById("NeonRR").classList.remove("NavUp");
-				document.getElementById("DropDownMenu").classList.remove("NavUp");
-				*/
-				/*
-				//hide ScrollDownMenu
-				document.getElementById("ScrollDownMenu").style.top = -100;
-				*/
 				didScroll = false;
 				ScrollRefPoint = null;
-				console.log("DROP");
 			}
 		}
 		else if(window.scrollY >= 120) {
-					//Hide spotlights
-					document.getElementById("backgroundtop").style.opacity = 0;
-					document.getElementById("backgroundcenter").style.opacity = 0;
-					document.getElementById("backgroundbottom").style.opacity = 0;
-					document.getElementById("backgroundall").style.opacity = 0.8;
+					HideSpotlights();
 					didScroll = false;
 					ScrollRefPoint = null;
-					console.log("DROP");
 		}
 		else {
-			//show menu
-			/*document.getElementById("BackMenu").classList.remove("NavUp");
-			document.getElementById("Title").classList.remove("NavUp");
-			document.getElementById("CompactTitle").classList.remove("NavUp");
-			document.getElementById("WNCH").classList.remove("NavUp");
-			document.getElementById("NeonLL").classList.remove("NavUp");
-			document.getElementById("NeonRR").classList.remove("NavUp");
-			document.getElementById("DropDownMenu").classList.remove("NavUp");*/
 			//Restart spotlight
-			document.getElementById("backgroundtop").style.opacity = 0.8;
-			document.getElementById("backgroundcenter").style.opacity = 0.8;
-			document.getElementById("backgroundbottom").style.opacity = 0.8;
-			document.getElementById("backgroundall").style.opacity = 0;
-			console.log("DROP");
+			if(IsSeeingPhotos) {
+				RestartSpotlights();
+			}
 			didScroll = false;
 			ScrollRefPoint = null;
 		}
@@ -468,6 +437,20 @@ setInterval(function() {
 		}
 	}
 }, 250);
+
+function HideSpotlights() {
+		document.getElementById("backgroundtop").style.opacity = 0;
+		document.getElementById("backgroundcenter").style.opacity = 0;
+		document.getElementById("backgroundbottom").style.opacity = 0;
+		document.getElementById("backgroundall").style.opacity = 0.8;	
+}
+
+function RestartSpotlights() {
+		document.getElementById("backgroundtop").style.opacity = 0.8;
+		document.getElementById("backgroundcenter").style.opacity = 0.8;
+		document.getElementById("backgroundbottom").style.opacity = 0.8;
+		document.getElementById("backgroundall").style.opacity = 0;	
+}
 
 //Might become deprecated
 function SwitchToThreePerRow()
@@ -643,6 +626,12 @@ function LoadPage(url) {
 		});
 		//Update the footer
 		OnResize();
+		if(IsSeeingPhotos) {
+			RestartSpotlights();
+		}
+		else {
+			HideSpotlights();
+		}
 	})
 	.catch(function(response) {
 		console.log("Failed to open page." + response);
