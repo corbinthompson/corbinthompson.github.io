@@ -128,15 +128,15 @@
 			<area shape="circle" coords="572,47,20" href="mailto:contact@corbinhale.com" alt="Contact me!">
 		</map>
 
-		<div id="ModalView">
+		<div id="ModalView" onclick="CloseModal()">
 			<span id="closebtn" onclick="CloseModal()"><img src="index_resources/close_button_white.png" style="width: 30px; height: 30px;"></span>
 			<div id="photonav">
-				<img id="GoBack" onclick="ModalPrevious()" src="index_resources/GoBack.png">
+				<img id="GoBack" onclick="event.stopPropagation();ModalPrevious()" src="index_resources/GoBack.png">
 				<div id="photocontainer">
-					<img id="modalpic">
+					<img id="modalpic" onclick="event.stopPropagation()">
 					<div id="LoadingSpinner"></div>
 				</div>
-				<img id="GoFwd" onclick="ModalNext()" src="index_resources/GoFwd.png">
+				<img id="GoFwd" onclick="event.stopPropagation();ModalNext()" src="index_resources/GoFwd.png">
 			</div>
 			<span id="modalcaption"> </span>
 		</div>

@@ -394,6 +394,7 @@ function FitModalImageToBoudingBox() {
 	var NaturalHeight = document.getElementById("modalpic").naturalHeight;
 	var ContainerWidth = document.getElementById("photocontainer").offsetWidth;
 	var ContainerHeight = document.getElementById("photocontainer").offsetHeight;
+	document.getElementById("photocontainer").style.height = document.getElementById("photonav").offsetHeight;
 	if(NaturalWidth/NaturalHeight > ContainerWidth/ContainerHeight) {
 		document.getElementById("modalpic").style.width = ContainerWidth;
 		document.getElementById("modalpic").style.height = (ContainerWidth/NaturalWidth)*NaturalHeight;
@@ -539,6 +540,8 @@ function ModalNext() {
 		else {
 			document.getElementById("GoFwd").style.pointerEvents = "auto";
 			document.getElementById("GoFwd").style.opacity = 1;		
+			document.getElementById("GoBack").style.pointerEvents = "auto";
+			document.getElementById("GoBack").style.opacity = 1;
 		}
 	}
 }
@@ -556,6 +559,8 @@ function ModalPrevious() {
 			document.getElementById("GoBack").style.opacity = 0.5;
 		}
 		else {
+			document.getElementById("GoFwd").style.pointerEvents = "auto";
+			document.getElementById("GoFwd").style.opacity = 1;		
 			document.getElementById("GoBack").style.pointerEvents = "auto";
 			document.getElementById("GoBack").style.opacity = 1;
 		}
