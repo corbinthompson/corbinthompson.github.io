@@ -26,6 +26,7 @@ pageheight = undefined;
 var IsSeeingPhotos = false;
 
 MusicAlbumCount = 0;
+PicturesCursor = 0;
 
 //May become deprecated
 function SetUIVariables()
@@ -53,6 +54,7 @@ function OnLoad()
 	//Let's do just that
 	//LoadPage(NavLocation);
 	GetSitemap();
+	document.getElementById("ModalView").style.display = "none";
 	setTimeout(OnResizeChangePage, 500);
 	setInterval(OnResize, 1000);
 }
@@ -72,6 +74,7 @@ function HeadLine(imgsrc, msg, url, type)
 	this.msg = msg;
 	this.url = url;
 	this.type = type;
+	this.Position = TheHeadLines.length;
 
 	this.Obj = document.createElement("div");
 
@@ -83,6 +86,7 @@ function HeadLine(imgsrc, msg, url, type)
 	if(this.type == 0)
 	{
 		this.Obj.onclick = function() {
+			PicturesCursor = that.Position;
 			OpenModal(that.url, that.msg);
 		}
 	}
@@ -336,6 +340,7 @@ function HeadLine(imgsrc, msg, url, type)
 	return true;
 }
 
+
 //Grid might be different from now on.
 
 function PutInGrid()
@@ -372,6 +377,7 @@ function OnResize()
 	pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
     document.getElementById(FooterObjectID).style.top = pageheight - FooterBottomPosition;
     document.getElementById("backgroundbottom").style.height = pageheight - 613;
+    FitModalImageToBoudingBox()
 }
 
 function OnResizeChangePage()
@@ -380,6 +386,22 @@ function OnResizeChangePage()
 	pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
     document.getElementById(FooterObjectID).style.top = pageheight - FooterBottomPosition;
     document.getElementById("backgroundbottom").style.height = pageheight - 613;
+    FitModalImageToBoudingBox()
+}
+
+function FitModalImageToBoudingBox() {
+	var NaturalWidth = document.getElementById("modalpic").naturalWidth;
+	var NaturalHeight = document.getElementById("modalpic").naturalHeight;
+	var ContainerWidth = document.getElementById("photocontainer").offsetWidth;
+	var ContainerHeight = document.getElementById("photocontainer").offsetHeight;
+	if(NaturalWidth/NaturalHeight > ContainerWidth/ContainerHeight) {
+		document.getElementById("modalpic").style.width = ContainerWidth;
+		document.getElementById("modalpic").style.height = (ContainerWidth/NaturalWidth)*NaturalHeight;
+	}
+	else {
+		document.getElementById("modalpic").style.height = ContainerHeight;
+		document.getElementById("modalpic").style.width = (ContainerHeight/NaturalHeight)*NaturalWidth;
+	}	
 }
 
 function OnScroll()
@@ -494,20 +516,57 @@ function CloseModal()
 function OpenModal(imgUrl, imgCaption)
 {
 	document.body.classList.add("ModalOpen");
-	document.getElementById("ModalView").style.display = "block";
+	document.getElementById("ModalView").style.display = "flex";
 	document.getElementById("modalcaption").innerHTML = imgCaption;
-	document.getElementById("modalpic").style.background = "url(" + imgUrl + ")";
-	document.getElementById("modalpic").style.backgroundPosition = "center center";
-	document.getElementById("modalpic").style.backgroundSize = "contain";
-	document.getElementById("modalpic").style.backgroundRepeat = "no-repeat";
-	document.getElementById("modalpic").innerHTML = "";
+	document.getElementById("modalpic").src = imgUrl;
+	document.getElementById("modalpic").style.display = "none";
+	document.getElementById("LoadingSpinner").style.display = "block";
+	document.getElementById("modalpic").onload = function() {
+		FitModalImageToBoudingBox();
+		document.getElementById("modalpic").style.display = "block";
+		document.getElementById("LoadingSpinner").style.display = "none";
+	}
+}
+
+function ModalNext() {
+	if(PicturesCursor < TheHeadLines.length-1) {
+		PicturesCursor++;
+		LoadModalByIndex(PicturesCursor);
+		if(PicturesCursor >= TheHeadLines.length-1) {
+			document.getElementById("GoFwd").style.pointerEvents = "none";
+			document.getElementById("GoFwd").style.opacity = 0.5;
+		}
+		else {
+			document.getElementById("GoFwd").style.pointerEvents = "auto";
+			document.getElementById("GoFwd").style.opacity = 1;		
+		}
+	}
+}
+
+function LoadModalByIndex(TheIndex) {
+	OpenModal(TheHeadLines[TheIndex].url, TheHeadLines[TheIndex].msg);
+}
+
+function ModalPrevious() {
+	if(PicturesCursor > 0) {
+		PicturesCursor--;
+		LoadModalByIndex(PicturesCursor);
+		if(PicturesCursor <= 0) {
+			document.getElementById("GoBack").style.pointerEvents = "none";
+			document.getElementById("GoBack").style.opacity = 0.5;
+		}
+		else {
+			document.getElementById("GoBack").style.pointerEvents = "auto";
+			document.getElementById("GoBack").style.opacity = 1;
+		}
+	}
 }
 
 //May become deprecated soon
 function OpenMusicModal(songUrl)
 {
 	document.body.classList.add("ModalOpen");
-	document.getElementById("ModalView").style.display = "block";
+	document.getElementById("ModalView").style.display = "flex";
 	document.getElementById("modalcaption").innerHTML = "";
 	document.getElementById("modalpic").style.background = "";
 	document.getElementById("modalpic").style.backgroundPosition = "center center";
@@ -641,6 +700,8 @@ function LoadPage(url) {
 function ClearPage() {
 	TheHeadLines = null;
 	TheHeadLines = new Array();
+	Pictures = null;
+	Pictures = new Array();
 	document.getElementById(LeContentObjectID).innerHTML = "";
 	document.getElementById(LeArticleObjectID).innerHTML = "";
 	document.getElementById(LeArticleObjectID).style.display = "none";
