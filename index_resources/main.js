@@ -18,6 +18,7 @@ Sitemap = undefined;
 
 didScroll = false;
 ScrollRefPoint = null;
+lastScrollY = 0;
 pageheight = undefined;
 
 MusicAlbumCount = 0;
@@ -379,13 +380,17 @@ function OnResizeChangePage()
 function OnScroll()
 {
 	didScroll = true;
+	console.log("OnScroll!!");
 }
 
 setInterval(function() {
-	if(didScroll && !ScrollRefPoint) {
-		ScrollRefPoint = window.scrollY;	
+	if(didScroll && ScrollRefPoint == null) {
+		ScrollRefPoint = lastScrollY;
+		console.log("SET REF!")
 	}
 	else if(didScroll) {
+		lastScrollY = window.scrollY;
+		console.log("DID SCROLL!!!");
 		var ScrollDelta = window.scrollY - ScrollRefPoint;
 		if(window.scrollY >= 250) {
 			if(ScrollDelta >= 50) {
@@ -406,6 +411,7 @@ setInterval(function() {
 				document.getElementById("backgroundcenter").style.opacity = 0;
 				document.getElementById("backgroundbottom").style.opacity = 0;
 				document.getElementById("backgroundall").style.opacity = 0.8;
+				console.log("DROP");
 				didScroll = false;
 				ScrollRefPoint = null;
 			}
@@ -425,6 +431,7 @@ setInterval(function() {
 				*/
 				didScroll = false;
 				ScrollRefPoint = null;
+				console.log("DROP");
 			}
 		}
 		else if(window.scrollY >= 120) {
@@ -433,6 +440,9 @@ setInterval(function() {
 					document.getElementById("backgroundcenter").style.opacity = 0;
 					document.getElementById("backgroundbottom").style.opacity = 0;
 					document.getElementById("backgroundall").style.opacity = 0.8;
+					didScroll = false;
+					ScrollRefPoint = null;
+					console.log("DROP");
 		}
 		else {
 			//show menu
@@ -448,7 +458,7 @@ setInterval(function() {
 			document.getElementById("backgroundcenter").style.opacity = 0.8;
 			document.getElementById("backgroundbottom").style.opacity = 0.8;
 			document.getElementById("backgroundall").style.opacity = 0;
-
+			console.log("DROP");
 			didScroll = false;
 			ScrollRefPoint = null;
 		}
