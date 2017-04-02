@@ -238,6 +238,24 @@ function HeadLine(imgsrc, msg, url, type)
 		return true;
 	}
 	
+	//Billboard
+	if(this.type == 8) {
+		this.Pic = document.createElement("div");
+		this.Pic.className = "contentpic";
+		this.Pic.style.background = "url(" + this.imgsrc + ")";
+		this.Pic.style.backgroundSize = "cover";
+		this.Pic.style.backgroundRepeat = "no-repeat";
+		this.Pic.style.backgroundPosition = "center top";
+		this.Obj.appendChild(this.Pic);
+
+		this.Frame = document.createElement("img");
+		this.Frame.draggable = false;
+		this.Frame.src = "index_resources/Frame billboard.png";
+		this.Frame.className = "BillboardFrame";
+		this.Obj.appendChild(this.Frame);
+		return true;
+	}
+	
 	this.Pic = document.createElement("div");
 	this.Pic.className = "contentpic";
 	this.Pic.style.background = "url(" + this.imgsrc + ")";
@@ -690,7 +708,10 @@ function LoadPage(url) {
 					break;				
 				case "MusicAlbum":
 					TheHeadLines.push(new HeadLine(item.Thumbnail, undefined, item.PlaylistURL, 7));
-					break;				
+					break;
+				case "Billboard":
+					TheHeadLines.push(new HeadLine(undefined, undefined, item.Picture, 8));
+					break;
 			}
 		});
 		//Update the footer
