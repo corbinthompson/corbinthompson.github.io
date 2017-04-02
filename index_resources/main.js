@@ -240,9 +240,10 @@ function HeadLine(imgsrc, msg, url, type)
 	
 	//Billboard
 	if(this.type == 8) {
+		IsSeeingPhotos = true;
 		this.Pic = document.createElement("div");
-		this.Pic.className = "contentpic";
-		this.Pic.style.background = "url(" + this.imgsrc + ")";
+		this.Pic.className = "billboardpic";
+		this.Pic.style.background = "url(" + this.url + ")";
 		this.Pic.style.backgroundSize = "cover";
 		this.Pic.style.backgroundRepeat = "no-repeat";
 		this.Pic.style.backgroundPosition = "center top";
