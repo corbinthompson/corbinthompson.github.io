@@ -87,6 +87,7 @@ function HeadLine(imgsrc, msg, url, type)
 	{
 		this.Obj.onclick = function() {
 			PicturesCursor = that.Position;
+			ModalUpdateButtons();
 			OpenModal(that.url, that.msg);
 		}
 		IsSeeingPhotos = true;
@@ -534,17 +535,8 @@ function ModalNext() {
 	if(PicturesCursor < TheHeadLines.length-1) {
 		PicturesCursor++;
 		LoadModalByIndex(PicturesCursor);
-		if(PicturesCursor >= TheHeadLines.length-1) {
-			document.getElementById("GoFwd").style.pointerEvents = "none";
-			document.getElementById("GoFwd").style.opacity = 0.5;
-		}
-		else {
-			document.getElementById("GoFwd").style.pointerEvents = "auto";
-			document.getElementById("GoFwd").style.opacity = 1;		
-			document.getElementById("GoBack").style.pointerEvents = "auto";
-			document.getElementById("GoBack").style.opacity = 1;
-		}
 	}
+	ModalUpdateButtons();
 }
 
 function LoadModalByIndex(TheIndex) {
@@ -555,16 +547,28 @@ function ModalPrevious() {
 	if(PicturesCursor > 0) {
 		PicturesCursor--;
 		LoadModalByIndex(PicturesCursor);
-		if(PicturesCursor <= 0) {
-			document.getElementById("GoBack").style.pointerEvents = "none";
-			document.getElementById("GoBack").style.opacity = 0.5;
-		}
-		else {
-			document.getElementById("GoFwd").style.pointerEvents = "auto";
-			document.getElementById("GoFwd").style.opacity = 1;		
-			document.getElementById("GoBack").style.pointerEvents = "auto";
-			document.getElementById("GoBack").style.opacity = 1;
-		}
+	}
+	ModalUpdateButtons();
+}
+
+function ModalUpdateButtons() {
+	if(PicturesCursor <= 0) {
+		document.getElementById("GoBack").style.pointerEvents = "none";
+		document.getElementById("GoBack").style.opacity = 0.5;
+		document.getElementById("GoFwd").style.pointerEvents = "auto";
+		document.getElementById("GoFwd").style.opacity = 1;		
+	}
+	else if(PicturesCursor >= TheHeadLines.length-1) {
+		document.getElementById("GoFwd").style.pointerEvents = "none";
+		document.getElementById("GoFwd").style.opacity = 0.5;
+		document.getElementById("GoBack").style.pointerEvents = "auto";
+		document.getElementById("GoBack").style.opacity = 1;
+	}
+	else {
+		document.getElementById("GoFwd").style.pointerEvents = "auto";
+		document.getElementById("GoFwd").style.opacity = 1;		
+		document.getElementById("GoBack").style.pointerEvents = "auto";
+		document.getElementById("GoBack").style.opacity = 1;
 	}
 }
 
