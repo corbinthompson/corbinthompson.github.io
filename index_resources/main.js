@@ -7,7 +7,7 @@ var Nperrow = 4;
 var LeContentObjectID = "LeContent";
 var LeArticleObjectID = "LeArticle";
 var FooterObjectID = "footer";
-var FooterBottomPosition = 101;
+var FooterBottomPosition = 98;
 
 //For Headline function
 var HeadLineSwitch = false;
