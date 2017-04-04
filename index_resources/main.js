@@ -112,6 +112,53 @@ function HeadLine(imgsrc, msg, url, type)
 		}
 	}
 	
+	//Billboard
+	if(this.type == 8) {
+		this.Pictures = this.imgsrc.Pictures;
+		this.urls = this.url;
+		
+		this.Pic = document.createElement("div");
+		this.Pic.className = "billboardpic";
+		this.Pic.style.background = "url(" + this.url + ")";
+		this.Pic.style.backgroundSize = "cover";
+		this.Pic.style.backgroundRepeat = "no-repeat";
+		this.Pic.style.backgroundPosition = "center top";
+		this.Obj.appendChild(this.Pic);
+
+		this.Frame = document.createElement("img");
+		this.Frame.draggable = false;
+		this.Frame.src = "index_resources/Frame billboard.png";
+		this.Frame.className = "BillboardFrame";
+		this.Obj.appendChild(this.Frame);
+		
+		this.Cursor = 0;
+		
+		setInterval(function() {
+			that.Cursor++;
+			that.Cursor = that.Cursor%that.Pictures.length;
+			that.Pic.style.background = "url(" + that.Pictures[that.Cursor] + ")";
+			that.Pic.style.backgroundSize = "cover";
+			that.Pic.style.backgroundRepeat = "no-repeat";
+			that.Pic.style.backgroundPosition = "center top";
+			that.Frame.onclick = function() {
+				window.open(that.urls[that.Cursor]);
+			}
+		}, 5000);
+		
+		OnResize = function() {
+			if(window.innerWidth < 640) {
+				that.Pictures = that.imgsrc.PicturesSmall;
+			}
+			else {
+				that.Pictures = that.imgsrc.Pictures;
+			}
+			return OnResize();
+		}
+		
+		document.getElementById("BillboardContainer").appendChild(this.Obj);
+		return true;
+	}
+	
 	document.getElementById(LeContentObjectID).appendChild(this.Obj);
 	
 	if(this.type == 6) {
@@ -238,41 +285,6 @@ function HeadLine(imgsrc, msg, url, type)
 		return true;
 	}
 	
-	//Billboard
-	if(this.type == 8) {
-		this.Pictures = this.imgsrc;
-		this.urls = this.url;
-		
-		this.Pic = document.createElement("div");
-		this.Pic.className = "billboardpic";
-		this.Pic.style.background = "url(" + this.url + ")";
-		this.Pic.style.backgroundSize = "cover";
-		this.Pic.style.backgroundRepeat = "no-repeat";
-		this.Pic.style.backgroundPosition = "center top";
-		this.Obj.appendChild(this.Pic);
-
-		this.Frame = document.createElement("img");
-		this.Frame.draggable = false;
-		this.Frame.src = "index_resources/Frame billboard.png";
-		this.Frame.className = "BillboardFrame";
-		this.Obj.appendChild(this.Frame);
-		
-		this.Cursor = 0;
-		
-		setInterval(function() {
-			that.Cursor++;
-			that.Cursor = that.Cursor%that.Pictures.length;
-			that.Pic.style.background = "url(" + that.Pictures[that.Cursor] + ")";
-			that.Pic.style.backgroundSize = "cover";
-			that.Pic.style.backgroundRepeat = "no-repeat";
-			that.Pic.style.backgroundPosition = "center top";
-			that.Frame.onclick = function() {
-				window.open(that.urls[that.Cursor]);
-			}
-		}, 5000);
-		
-		return true;
-	}
 	
 	this.Pic = document.createElement("div");
 	this.Pic.className = "contentpic";
@@ -421,10 +433,7 @@ function OnResize()
 function OnResizeChangePage()
 {
     document.getElementById(FooterObjectID).style.top = 0;
-	pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
-    document.getElementById(FooterObjectID).style.top = pageheight - FooterBottomPosition;
-    document.getElementById("backgroundbottom").style.height = pageheight - 613;
-    FitModalImageToBoudingBox()
+	OnResize();
 }
 
 function FitModalImageToBoudingBox() {
@@ -728,7 +737,10 @@ function LoadPage(url) {
 					TheHeadLines.push(new HeadLine(item.Thumbnail, undefined, item.PlaylistURL, 7));
 					break;
 				case "Billboard":
-					TheHeadLines.push(new HeadLine(item.Pictures, undefined, item.urls, 8));
+					var AllPics = new Object();
+					AllPics.Pictures = item.Pictures;
+					AllPics.PicturesSmall = item.PicturesSmall;
+					TheHeadLines.push(new HeadLine(AllPics, undefined, item.urls, 8));
 					break;
 			}
 		});
