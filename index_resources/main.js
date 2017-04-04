@@ -240,6 +240,9 @@ function HeadLine(imgsrc, msg, url, type)
 	
 	//Billboard
 	if(this.type == 8) {
+		this.Pictures = this.imgsrc;
+		this.urls = this.url;
+		
 		this.Pic = document.createElement("div");
 		this.Pic.className = "billboardpic";
 		this.Pic.style.background = "url(" + this.url + ")";
@@ -253,6 +256,21 @@ function HeadLine(imgsrc, msg, url, type)
 		this.Frame.src = "index_resources/Frame billboard.png";
 		this.Frame.className = "BillboardFrame";
 		this.Obj.appendChild(this.Frame);
+		
+		this.Cursor = 0;
+		
+		setInterval(function() {
+			that.Cursor++;
+			that.Cursor = that.Cursor%that.Pictures.length;
+			that.Pic.style.background = "url(" + that.Pictures[that.Cursor] + ")";
+			that.Pic.style.backgroundSize = "cover";
+			that.Pic.style.backgroundRepeat = "no-repeat";
+			that.Pic.style.backgroundPosition = "center top";
+			that.Frame.onclick = function() {
+				window.open(that.urls[that.Cursor]);
+			}
+		}, 5000);
+		
 		return true;
 	}
 	
@@ -710,7 +728,7 @@ function LoadPage(url) {
 					TheHeadLines.push(new HeadLine(item.Thumbnail, undefined, item.PlaylistURL, 7));
 					break;
 				case "Billboard":
-					TheHeadLines.push(new HeadLine(undefined, undefined, item.Picture, 8));
+					TheHeadLines.push(new HeadLine(item.Pictures, undefined, item.urls, 8));
 					break;
 			}
 		});
