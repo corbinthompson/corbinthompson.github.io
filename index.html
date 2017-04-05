@@ -16,6 +16,23 @@
 		<!--Deprecated probably-->
 		<!--<script type="text/javascript" src="resources.js"></script>-->
 
+		
+		<!--PhotoSwipe Framework-->
+		<!-- Core CSS file -->
+		<link rel="stylesheet" href="frameworks/photoswipe/photoswipe.css"> 
+
+		<!-- Skin CSS file (styling of UI - buttons, caption, etc.)
+			 In the folder of skin CSS file there are also:
+			 - .png and .svg icons sprite, 
+			 - preloader.gif (for browsers that do not support CSS animations) -->
+		<link rel="stylesheet" href="frameworks/photoswipe/default-skin/default-skin.css"> 
+
+		<!-- Core JS file -->
+		<script src="frameworks/photoswipe/photoswipe.min.js"></script> 
+
+		<!-- UI JS file -->
+		<script src="frameworks/photoswipe/photoswipe-ui-default.min.js"></script> 
+
 	</head>
 	<body onload="OnLoad()" onresize="OnResize()" onscroll="OnScroll()">
 		
@@ -31,7 +48,7 @@
 			</div>
 			
 			<div id="DropDownMenu" onclick="CloseDropDownMenu()">
-				<div id="DropDown-Menu-Item1" class="DropDown-Menu-Item" onclick="DrawerGo('#uartist')">#UArtist</div>
+				<div id="DropDown-Menu-Item1" class="DropDown-Menu-Item" onclick="//DrawerGo('#uartist')">Soon...</div>
 				<!--<div id="DropDown-Menu-Item2" class="DropDown-Menu-Item" onclick="DrawerGo('#uartist')">Promotions</div>-->
 				<!--<div id="DropDown-Menu-Item3" class="DropDown-Menu-Item" onclick="DrawerGo('#uartist')">Events</div>-->
 			</div>
@@ -139,6 +156,73 @@
 			<area shape="circle" coords="502,47,20" target="blank" href="https://twitter.com/CorbinHaleMusic" alt="Follow me on Twitter!">
 			<area shape="circle" coords="572,47,20" href="mailto:contact@corbinhale.com" alt="Contact me!">
 		</map>-->
+		
+		<!-- Root element of PhotoSwipe. Must have class pswp. -->
+		<div class="pswp" id="PhotoSwipeSS" tabindex="-1" role="dialog" aria-hidden="true">
+
+			<!-- Background of PhotoSwipe. 
+				 It's a separate element as animating opacity is faster than rgba(). -->
+			<div class="pswp__bg"></div>
+
+			<!-- Slides wrapper with overflow:hidden. -->
+			<div class="pswp__scroll-wrap">
+
+				<!-- Container that holds slides. 
+					PhotoSwipe keeps only 3 of them in the DOM to save memory.
+					Don't modify these 3 pswp__item elements, data is added later on. -->
+				<div class="pswp__container">
+					<div class="pswp__item"></div>
+					<div class="pswp__item"></div>
+					<div class="pswp__item"></div>
+				</div>
+
+				<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+				<div class="pswp__ui pswp__ui--hidden">
+
+					<div class="pswp__top-bar">
+
+						<!--  Controls are self-explanatory. Order can be changed. -->
+				
+						<div class="pswp__counter"></div>
+
+						<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+						<button class="pswp__button pswp__button--share" title="Share"></button>
+
+						<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+						<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+						<!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+						<!-- element will get class pswp__preloader--active when preloader is running -->
+						<div class="pswp__preloader">
+							<div class="pswp__preloader__icn">
+							  <div class="pswp__preloader__cut">
+								<div class="pswp__preloader__donut"></div>
+							  </div>
+							</div>
+						</div>
+					</div>
+
+					<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+						<div class="pswp__share-tooltip"></div> 
+					</div>
+
+					<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+					</button>
+			
+					<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+					</button>
+
+					<div class="pswp__caption">
+						<div class="pswp__caption__center"></div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
 
 		<div id="ModalView" onclick="CloseModal()">
 			<span id="closebtn" onclick="CloseModal()"><img src="index_resources/close_button_white.png" style="width: 30px; height: 30px;"></span>
