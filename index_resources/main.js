@@ -145,6 +145,8 @@ function HeadLine(imgsrc, msg, url, type)
 			}
 		}, 5000);
 		
+		
+		var OriginalFunc = OnResize;
 		OnResize = function() {
 			if(window.innerWidth < 640) {
 				that.Pictures = that.imgsrc.PicturesSmall;
@@ -152,7 +154,7 @@ function HeadLine(imgsrc, msg, url, type)
 			else {
 				that.Pictures = that.imgsrc.Pictures;
 			}
-			return OnResize();
+			return OriginalFunc();
 		}
 		
 		document.getElementById("BillboardContainer").appendChild(this.Obj);
@@ -427,7 +429,7 @@ function OnResize()
 	pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
     document.getElementById(FooterObjectID).style.top = pageheight - FooterBottomPosition;
     document.getElementById("backgroundbottom").style.height = pageheight - 613;
-    FitModalImageToBoudingBox()
+    FitModalImageToBoudingBox();
 }
 
 function OnResizeChangePage()
@@ -768,6 +770,7 @@ function ClearPage() {
 	document.getElementById(LeArticleObjectID).innerHTML = "";
 	document.getElementById(LeArticleObjectID).style.display = "none";
 	document.getElementById("LeMenu").className = "UpTitleAbsolute";
+	document.getElementById("BillboardContainer").innerHTML = "";
 }
 
 //Hash navigation

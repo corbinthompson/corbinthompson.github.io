@@ -2,7 +2,7 @@
 	{
 		"Type": "Billboard",
 		"Pictures": ["/photos/behindthescenes/photos/1.png", "/photos/behindthescenes/photos/2.png"],
-		"PicturesSmall": ["/photos/behindthescenes/photos/1.png", "/photos/behindthescenes/photos/2.png"],
+		"PicturesSmall": ["/photos/behindthescenes/photos/3.png", "/photos/behindthescenes/photos/4.png"],
 		"urls": ["https://danielwalnut.com", "https://orbit.bitballoon.com"]
 	}
 ]
