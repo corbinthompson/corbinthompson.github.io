@@ -86,9 +86,42 @@ function HeadLine(imgsrc, msg, url, type)
 	if(this.type == 0)
 	{
 		this.Obj.onclick = function() {
-			PicturesCursor = that.Position;
-			ModalUpdateButtons();
-			OpenModal(that.url, that.msg);
+			var TriggerSlideShow = new Promise(function(resolve, reject) {
+				var items = new Array();
+				var imagesloaded = 0;
+				var totalimages = 0;
+				for(var i=0;i < TheHeadLines.length; i++) {
+					if(TheHeadLines[i].type == 0) {
+						totalimages++;
+						(new Promise(function(resolve, reject) {
+							var TheImage = new Image();
+							TheImage.src = TheHeadLines[i].url;
+							TheImage.onload = function() {
+								debugger;
+								items.push({
+									src: TheImage.src,
+									w: this.width,
+									h: this.height
+								});
+								imagesloaded++;
+								if(imagesloaded >= totalimages) {
+									resolve(items);
+								}
+							}
+						})).then(resolve).catch(reject);
+					}
+				}
+			});
+			TriggerSlideShow.then(function(result) {
+				var options = {
+					index: that.Position
+				};
+				var gallery = new PhotoSwipe( document.getElementById("PhotoSwipeSS"), PhotoSwipeUI_Default, result, options);
+				gallery.init();
+			});
+			//PicturesCursor = that.Position;
+			//ModalUpdateButtons();
+			//OpenModal(that.url, that.msg);
 		}
 		IsSeeingPhotos = true;
 	}
