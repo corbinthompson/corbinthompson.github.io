@@ -157,7 +157,38 @@ function HeadLine(imgsrc, msg, url, type)
 		this.Pic.style.backgroundRepeat = "no-repeat";
 		this.Pic.style.backgroundPosition = "center top";
 		this.Obj.appendChild(this.Pic);
+		
+		this.ButtonBck = document.createElement("img");
+		this.ButtonFwd = document.createElement("img");
+		this.ButtonBck.className = "BillboardButtonBck";
+		this.ButtonFwd.className = "BillboardButtonFwd";
+		this.ButtonFwd.src = "index_resources/GoFwd.png";
+		this.ButtonBck.src = "index_resources/GoBack.png";
+		this.ButtonBck.src = that.Butttures[that.Cursor];
+		this.ButtonBck.onclick = function() {
+			that.Cursor++;
+			that.Cursor = that.Cursor%that.Pictures.length;
+			that.Pic.style.backgroundSize = "cover";
+			that.Pic.style.backgroundRepeat = "no-repeat";
+			that.Pic.style.backgroundPosition = "center top";
+			that.Frame.onclick = function() {
+				window.open(that.urls[that.Cursor]);
+			}
+		}
+		
+		this.ButtonBck.onclick = function() {
+			that.Cursor--;
+			that.Cursor = that.Cursor%that.Pictures.length;
+			that.Pic.style.background = "url(" + that.Pictures[that.Cursor] + ")";
+			that.Pic.style.backgroundSize = "cover";
+			that.Pic.style.backgroundRepeat = "no-repeat";
+			that.Pic.style.backgroundPosition = "center top";
+			that.Frame.onclick = function() {
+				window.open(that.urls[that.Cursor]);
+			}
+		}
 
+		
 		this.Frame = document.createElement("img");
 		this.Frame.draggable = false;
 		this.Frame.src = "index_resources/Frame billboard.png";
