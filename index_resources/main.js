@@ -163,7 +163,7 @@ function HeadLine(imgsrc, msg, url, type)
 		this.ButtonFwd.className = "BillboardButtonFwd";
 		this.ButtonFwd.src = "index_resources/GoFwd.png";
 		this.ButtonBck.src = "index_resources/GoBack.png";
-		this.ButtonBck.src = that.Butttures[that.Cursor];
+		this.ButtonBck.src = that.Pictures[that.Cursor];
 		this.ButtonBck.onclick = function() {
 			that.Cursor++;
 			that.Cursor = that.Cursor%that.Pictures.length;
@@ -818,9 +818,9 @@ function LoadPage(url) {
 			HideSpotlights();
 		}
 	})
-	.catch(function(response) {
+	/*.catch(function(response) {
 		console.log("Failed to open page." + response);
-	});
+	});*/
 }
 
 function ClearPage() {
