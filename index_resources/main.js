@@ -97,7 +97,6 @@ function HeadLine(imgsrc, msg, url, type)
 							var TheImage = new Image();
 							TheImage.src = TheHeadLines[i].url;
 							TheImage.onload = function() {
-								debugger;
 								items.push({
 									src: TheImage.src,
 									w: this.width,
