@@ -129,8 +129,8 @@ function HeadLine(imgsrc, msg, url, type)
 		this.ButtonFwd = document.createElement("img");
 		this.ButtonBck.className = "BillboardButtonBck";
 		this.ButtonFwd.className = "BillboardButtonFwd";
-		this.ButtonFwd.src = "index_resouces/GoFwd.png";
-		this.ButtonBck.src = "index_resouces/GoBack.png";
+		this.ButtonFwd.src = "index_resources/GoFwd.png";
+		this.ButtonBck.src = "index_resources/GoBack.png";
 		this.ButtonBck.src = that.Butttures[that.Cursor];
 		this.ButtonBck.onclick = function() {
 			that.Cursor++;
