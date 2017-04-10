@@ -149,7 +149,7 @@ function HeadLine(imgsrc, msg, url, type)
 		this.Pictures = this.imgsrc.Pictures;
 		this.urls = this.url;
 		
-		this.Pic = document.createElement("div");
+		/*this.Pic = document.createElement("div");
 		this.Pic.className = "billboardpic";
 		this.Pic.style.background = "url(" + this.url + ")";
 		this.Pic.style.backgroundSize = "cover";
@@ -189,6 +189,7 @@ function HeadLine(imgsrc, msg, url, type)
 		}
 
 		
+		//Will be deprecated after resizable billboard is done.
 		this.Frame = document.createElement("img");
 		this.Frame.draggable = false;
 		this.Frame.src = "index_resources/Frame billboard.png";
@@ -222,6 +223,7 @@ function HeadLine(imgsrc, msg, url, type)
 		}
 		
 		document.getElementById("BillboardContainer").appendChild(this.Obj);
+		*/
 		return true;
 	}
 	
@@ -834,7 +836,7 @@ function ClearPage() {
 	document.getElementById(LeArticleObjectID).innerHTML = "";
 	document.getElementById(LeArticleObjectID).style.display = "none";
 	document.getElementById("LeMenu").className = "UpTitleAbsolute";
-	document.getElementById("BillboardContainer").innerHTML = "";
+	//document.getElementById("BillboardContainer").innerHTML = "";
 }
 
 //Hash navigation
