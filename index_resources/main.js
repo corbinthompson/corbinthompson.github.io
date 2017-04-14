@@ -6,7 +6,8 @@ var IsMobile = false;
 var Nperrow = 4;
 var LeContentObjectID = "LeContent";
 var LeArticleObjectID = "LeArticle";
-var FooterObjectID = "footer";
+var LeArticleContainerObjectID = "LeArticleContainer";
+var FooterObjectID = "TheFooter";
 var FooterBottomPosition = 98;
 
 //For Headline function
@@ -57,6 +58,7 @@ function OnLoad()
 	document.getElementById("ModalView").style.display = "none";
 	setTimeout(OnResizeChangePage, 500);
 	setInterval(OnResize, 1000);
+	ClearPage();
 }
 
 function CheckCompatibility() {
@@ -149,7 +151,7 @@ function HeadLine(imgsrc, msg, url, type)
 		this.Pictures = this.imgsrc.Pictures;
 		this.urls = this.url;
 		
-		/*this.Pic = document.createElement("div");
+		this.Pic = document.createElement("div");
 		this.Pic.className = "billboardpic";
 		this.Pic.style.background = "url(" + this.url + ")";
 		this.Pic.style.backgroundSize = "cover";
@@ -157,7 +159,7 @@ function HeadLine(imgsrc, msg, url, type)
 		this.Pic.style.backgroundPosition = "center top";
 		this.Obj.appendChild(this.Pic);
 		
-		this.ButtonBck = document.createElement("img");
+		/*this.ButtonBck = document.createElement("img");
 		this.ButtonFwd = document.createElement("img");
 		this.ButtonBck.className = "BillboardButtonBck";
 		this.ButtonFwd.className = "BillboardButtonFwd";
@@ -186,15 +188,15 @@ function HeadLine(imgsrc, msg, url, type)
 			that.Frame.onclick = function() {
 				window.open(that.urls[that.Cursor]);
 			}
-		}
+		}*/
 
 		
 		//Will be deprecated after resizable billboard is done.
-		this.Frame = document.createElement("img");
+		/*this.Frame = document.createElement("img");
 		this.Frame.draggable = false;
 		this.Frame.src = "index_resources/Frame billboard.png";
 		this.Frame.className = "BillboardFrame";
-		this.Obj.appendChild(this.Frame);
+		this.Obj.appendChild(this.Frame);*/
 		
 		this.Cursor = 0;
 		
@@ -223,7 +225,7 @@ function HeadLine(imgsrc, msg, url, type)
 		}
 		
 		document.getElementById("BillboardContainer").appendChild(this.Obj);
-		*/
+		
 		return true;
 	}
 	
@@ -493,14 +495,14 @@ function PutInGrid()
 function OnResize()
 {
 	pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
-    document.getElementById(FooterObjectID).style.top = pageheight - FooterBottomPosition;
-    document.getElementById("backgroundbottom").style.height = pageheight - 613;
+    //document.getElementById(FooterObjectID).style.top = pageheight - FooterBottomPosition;
+    //document.getElementById("backgroundbottom").style.height = pageheight - 613;
     FitModalImageToBoudingBox();
 }
 
 function OnResizeChangePage()
 {
-    document.getElementById(FooterObjectID).style.top = 0;
+    //document.getElementById(FooterObjectID).style.top = 0;
 	OnResize();
 }
 
@@ -745,7 +747,8 @@ function GoToURL(towhere)
 function LoadArticle(ArticleHTML) {
 	document.getElementById(LeContentObjectID).innerHTML = "";
 	document.getElementById(LeArticleObjectID).innerHTML = ArticleHTML;
-	document.getElementById(LeArticleObjectID).style.display = "block";
+	document.getElementById(LeArticleContainerObjectID).style.display = "block";
+	document.getElementById("LeContent").style.display = "none";
 	document.getElementById("LeMenu").className = "UpTitleAbsolute";
 	OnResize();
 }
@@ -770,7 +773,7 @@ function GetJSON(url) {
 }
 
 function LoadPage(url) {
-	document.getElementById(FooterObjectID).style.top = -101;
+	//document.getElementById(FooterObjectID).style.top = -101;
 	NavLocation = url;
 	ClearPage();
 	GetJSON(NavLocation).then(function(response) {
@@ -808,6 +811,8 @@ function LoadPage(url) {
 					var AllPics = new Object();
 					AllPics.Pictures = item.Pictures;
 					AllPics.PicturesSmall = item.PicturesSmall;
+					document.getElementById("LeContent").style.display = "none";
+					document.getElementById("BillboardContainer").style.display = "block";
 					TheHeadLines.push(new HeadLine(AllPics, undefined, item.urls, 8));
 					break;
 			}
@@ -834,7 +839,9 @@ function ClearPage() {
 	IsSeeingPhotos = false;
 	document.getElementById(LeContentObjectID).innerHTML = "";
 	document.getElementById(LeArticleObjectID).innerHTML = "";
-	document.getElementById(LeArticleObjectID).style.display = "none";
+	document.getElementById(LeArticleContainerObjectID).style.display = "none";
+	document.getElementById("BillboardContainer").style.display = "none";
+	document.getElementById("LeContent").style.display = "flex";
 	document.getElementById("LeMenu").className = "UpTitleAbsolute";
 	//document.getElementById("BillboardContainer").innerHTML = "";
 }
@@ -937,7 +944,7 @@ function LoadMusicBar(TheLibrary, TheSongCursor, TheUnloadCallback) {
 	
 	FooterBottomPosition = 151;
 	pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
-	document.getElementById(FooterObjectID).style.top = pageheight - FooterBottomPosition;
+	//document.getElementById(FooterObjectID).style.top = pageheight - FooterBottomPosition;
 	
 	SongCursor = TheSongCursor;
 	
@@ -1126,7 +1133,7 @@ function UnloadMusicBar() {
 	
 	FooterBottomPosition = 101;
 	pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
-	document.getElementById(FooterObjectID).style.top = pageheight - FooterBottomPosition;
+	//document.getElementById(FooterObjectID).style.top = pageheight - FooterBottomPosition;
 }
 
 
