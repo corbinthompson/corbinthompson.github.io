@@ -149,7 +149,21 @@ function HeadLine(imgsrc, msg, url, type)
 	
 	//Billboard
 	if(this.type == 8) {
-		this.Pictures = this.imgsrc.Pictures;
+		this.Pics = new Array();
+		
+		for(var i = 0;i < imgsrc.Pictures.length;i++) {
+			this.Pics[i] = document.createElement("img");
+			this.Pics[i].src = imgsrc.Pictures[i];
+			this.Pics[i].className = "billboardpic";
+			document.getElementById("BillboardContent").appendChild(this.Pics[i]);
+			
+		}
+		
+		this.Slider = new IdealImageSlider.Slider('#BillboardContent');
+		this.Slider.addBulletNav();
+		this.Slider.start();
+				
+		/*this.Pictures = this.imgsrc.Pictures;
 		this.urls = this.url;
 		
 		this.Pic = document.createElement("div");
@@ -160,7 +174,7 @@ function HeadLine(imgsrc, msg, url, type)
 		this.Pic.style.backgroundPosition = "center top";
 		this.Obj.appendChild(this.Pic);
 		
-		/*this.ButtonBck = document.createElement("img");
+		this.ButtonBck = document.createElement("img");
 		this.ButtonFwd = document.createElement("img");
 		this.ButtonBck.className = "BillboardButtonBck";
 		this.ButtonFwd.className = "BillboardButtonFwd";
@@ -189,7 +203,7 @@ function HeadLine(imgsrc, msg, url, type)
 			that.Frame.onclick = function() {
 				window.open(that.urls[that.Cursor]);
 			}
-		}*/
+		}
 
 		
 		//Will be deprecated after resizable billboard is done.
@@ -197,7 +211,8 @@ function HeadLine(imgsrc, msg, url, type)
 		this.Frame.draggable = false;
 		this.Frame.src = "index_resources/Frame billboard.png";
 		this.Frame.className = "BillboardFrame";
-		this.Obj.appendChild(this.Frame);*/
+		this.Obj.appendChild(this.Frame);
+		PUT THE END COMMENT THING HERE
 		this.Cursor = 0;
 		
 		BillboardTimer = setInterval(function() {
@@ -206,10 +221,11 @@ function HeadLine(imgsrc, msg, url, type)
 			that.Pic.style.background = "url(" + that.Pictures[that.Cursor] + ")";
 			that.Pic.style.backgroundSize = "cover";
 			that.Pic.style.backgroundRepeat = "no-repeat";
-			that.Pic.style.backgroundPosition = "center top";
+			that.Pic.style.backgroundPosition = "center center";
 			/*that.Frame.onclick = function() {
 				window.open(that.urls[that.Cursor]);
-			}*/
+			}
+			PUT THE END COMMENT THING HERE
 		}, 5000);
 		
 		
@@ -222,9 +238,8 @@ function HeadLine(imgsrc, msg, url, type)
 				that.Pictures = that.imgsrc.Pictures;
 			}
 			return OriginalFunc();
-		}
+		}*/
 		
-		document.getElementById("BillboardContainer").appendChild(this.Obj);
 		
 		return true;
 	}
@@ -845,7 +860,7 @@ function ClearPage() {
 	document.getElementById(LeArticleObjectID).innerHTML = "";
 	document.getElementById(LeArticleContainerObjectID).style.display = "none";
 	document.getElementById("BillboardContainer").style.display = "none";
-	document.getElementById("BillboardContainer").innerHTML = "";
+	document.getElementById("BillboardContent").innerHTML = "";
 	document.getElementById("LeContent").style.display = "flex";
 	document.getElementById("LeMenu").className = "UpTitleAbsolute";
 	//document.getElementById("BillboardContainer").innerHTML = "";

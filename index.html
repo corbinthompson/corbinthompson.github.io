@@ -20,12 +20,19 @@
 		<!--PhotoSwipe Framework-->
 		<!-- Core CSS file -->
 		<link rel="stylesheet" href="frameworks/photoswipe/photoswipe.css"> 
-
+		
 		<!-- Skin CSS file (styling of UI - buttons, caption, etc.)
 			 In the folder of skin CSS file there are also:
 			 - .png and .svg icons sprite, 
 			 - preloader.gif (for browsers that do not support CSS animations) -->
 		<link rel="stylesheet" href="frameworks/photoswipe/default-skin/default-skin.css"> 
+
+		<!-- Ideal Image Slider Framework -->
+		<link rel="stylesheet" href="frameworks/Ideal-Image-Slider/ideal-image-slider.css">
+		<link rel="stylesheet" href="frameworks/Ideal-Image-Slider/themes/default/default.css">
+		<script src="frameworks/Ideal-Image-Slider/ideal-image-slider.js"></script>
+		<script src="frameworks/Ideal-Image-Slider/extensions/bullet-nav/iis-bullet-nav.js"></script>
+		
 
 		<!-- Core JS file -->
 		<script src="frameworks/photoswipe/photoswipe.min.js"></script> 
@@ -126,9 +133,11 @@
 				<article id="LeArticle">
 				</article>
 			</div>
-		
-			<div id="BillboardContainer">
 			
+			
+			<div id="BillboardContainer">
+				<div id="BillboardFrame"></div>
+				<div id="BillboardContent"></div>
 			</div>
 		
 
