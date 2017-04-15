@@ -207,9 +207,9 @@ function HeadLine(imgsrc, msg, url, type)
 			that.Pic.style.backgroundSize = "cover";
 			that.Pic.style.backgroundRepeat = "no-repeat";
 			that.Pic.style.backgroundPosition = "center top";
-			that.Frame.onclick = function() {
+			/*that.Frame.onclick = function() {
 				window.open(that.urls[that.Cursor]);
-			}
+			}*/
 		}, 5000);
 		
 		
