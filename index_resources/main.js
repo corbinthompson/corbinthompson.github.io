@@ -9,6 +9,7 @@ var LeArticleObjectID = "LeArticle";
 var LeArticleContainerObjectID = "LeArticleContainer";
 var FooterObjectID = "TheFooter";
 var FooterBottomPosition = 98;
+var BillboardTimer = undefined;
 
 //For Headline function
 var HeadLineSwitch = false;
@@ -197,10 +198,9 @@ function HeadLine(imgsrc, msg, url, type)
 		this.Frame.src = "index_resources/Frame billboard.png";
 		this.Frame.className = "BillboardFrame";
 		this.Obj.appendChild(this.Frame);*/
-		
 		this.Cursor = 0;
 		
-		setInterval(function() {
+		BillboardTimer = setInterval(function() {
 			that.Cursor++;
 			that.Cursor = that.Cursor%that.Pictures.length;
 			that.Pic.style.background = "url(" + that.Pictures[that.Cursor] + ")";
@@ -836,11 +836,16 @@ function ClearPage() {
 	TheHeadLines = new Array();
 	Pictures = null;
 	Pictures = new Array();
+	if(BillboardTimer) {
+		clearInterval(BillboardTimer);
+		BillboardTimer = undefined;
+	}
 	IsSeeingPhotos = false;
 	document.getElementById(LeContentObjectID).innerHTML = "";
 	document.getElementById(LeArticleObjectID).innerHTML = "";
 	document.getElementById(LeArticleContainerObjectID).style.display = "none";
 	document.getElementById("BillboardContainer").style.display = "none";
+	document.getElementById("BillboardContainer").innerHTML = "";
 	document.getElementById("LeContent").style.display = "flex";
 	document.getElementById("LeMenu").className = "UpTitleAbsolute";
 	//document.getElementById("BillboardContainer").innerHTML = "";
