@@ -56,7 +56,7 @@ function OnLoad()
 	//Let's do just that
 	//LoadPage(NavLocation);
 	GetSitemap();
-	document.getElementById("ModalView").style.display = "none";
+	//document.getElementById("ModalView").style.display = "none";
 	setTimeout(OnResizeChangePage, 500);
 	setInterval(OnResize, 1000);
 	ClearPage();
@@ -512,7 +512,7 @@ function OnResize()
 	pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
     //document.getElementById(FooterObjectID).style.top = pageheight - FooterBottomPosition;
     //document.getElementById("backgroundbottom").style.height = pageheight - 613;
-    FitModalImageToBoudingBox();
+    //FitModalImageToBoudingBox();
 }
 
 function OnResizeChangePage()
@@ -521,9 +521,9 @@ function OnResizeChangePage()
 	OnResize();
 }
 
-function FitModalImageToBoudingBox() {
-	var NaturalWidth = document.getElementById("modalpic").naturalWidth;
-	var NaturalHeight = document.getElementById("modalpic").naturalHeight;
+/*function FitModalImageToBoudingBox() {
+	//var NaturalWidth = document.getElementById("modalpic").naturalWidth;
+	//var NaturalHeight = document.getElementById("modalpic").naturalHeight;
 	var ContainerWidth = document.getElementById("photocontainer").offsetWidth;
 	var ContainerHeight = document.getElementById("photocontainer").offsetHeight;
 	document.getElementById("photocontainer").style.height = document.getElementById("photonav").offsetHeight;
@@ -535,7 +535,7 @@ function FitModalImageToBoudingBox() {
 		document.getElementById("modalpic").style.height = ContainerHeight;
 		document.getElementById("modalpic").style.width = (ContainerHeight/NaturalHeight)*NaturalWidth;
 	}	
-}
+}*/
 
 function OnScroll()
 {
@@ -655,7 +655,7 @@ function OpenModal(imgUrl, imgCaption)
 	document.getElementById("modalpic").style.display = "none";
 	document.getElementById("LoadingSpinner").style.display = "block";
 	document.getElementById("modalpic").onload = function() {
-		FitModalImageToBoudingBox();
+		//FitModalImageToBoudingBox();
 		document.getElementById("modalpic").style.display = "block";
 		document.getElementById("LoadingSpinner").style.display = "none";
 	}
