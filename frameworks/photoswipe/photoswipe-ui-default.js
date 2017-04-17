@@ -81,10 +81,21 @@ var PhotoSwipeUI_Default =
 				{id:'twitter', label:'Tweet', url:'https://twitter.com/intent/tweet?text={{text}}&url={{url}}'},
 				{id:'pinterest', label:'Pin it', url:'http://www.pinterest.com/pin/create/button/'+
 													'?url={{url}}&media={{image_url}}&description={{text}}'},
-				{id:'download', label:'Download image', url:'{{raw_image_url}}', download:true}
+				{id:'download', label:'Download image', url:'{{full_image_url}}', download:true}
 			],
 			getImageURLForShare: function( /* shareButtonData */ ) {
 				return pswp.currItem.src || '';
+			},
+			getFullImageURLForShare: function( /* shareButtonData */ ) {
+				if(pswp.currItem.src) {
+					if(pswp.currItem.src[pswp.currItem.src.length-1] == "/") {
+						pswp.currItem.src = pswp.currItem.src.substring(0,pswp.currItem.src.length-1);
+					}
+					return pswp.currItem.src.substring(0, pswp.currItem.src.lastIndexOf("/")) + "/Full" + pswp.currItem.src.substring(pswp.currItem.src.lastIndexOf("/"), pswp.currItem.src.length);
+				}
+				else {
+					return '';
+				}
 			},
 			getPageURLForShare: function( /* shareButtonData */ ) {
 				return window.location.href;
@@ -225,6 +236,7 @@ var PhotoSwipeUI_Default =
 				shareButtonData,
 				shareURL,
 				image_url,
+				full_image_url,
 				page_url,
 				share_text;
 
@@ -232,12 +244,14 @@ var PhotoSwipeUI_Default =
 				shareButtonData = _options.shareButtons[i];
 
 				image_url = _options.getImageURLForShare(shareButtonData);
+				full_image_url = _options.getFullImageURLForShare(shareButtonData);
 				page_url = _options.getPageURLForShare(shareButtonData);
 				share_text = _options.getTextForShare(shareButtonData);
 
 				shareURL = shareButtonData.url.replace('{{url}}', encodeURIComponent(page_url) )
 									.replace('{{image_url}}', encodeURIComponent(image_url) )
 									.replace('{{raw_image_url}}', image_url )
+									.replace('{{full_image_url}}', full_image_url )
 									.replace('{{text}}', encodeURIComponent(share_text) );
 
 				shareButtonOut += '<a href="' + shareURL + '" target="_blank" '+

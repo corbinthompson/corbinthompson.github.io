@@ -20,6 +20,11 @@
 		<!--PhotoSwipe Framework-->
 		<!-- Core CSS file -->
 		<link rel="stylesheet" href="frameworks/photoswipe/photoswipe.css"> 
+		<!-- Core JS file -->
+		<script src="frameworks/photoswipe/photoswipe.min.js"></script> 
+
+		<!-- UI JS file -->
+		<script src="frameworks/photoswipe/photoswipe-ui-default.js"></script> 
 		
 		<!-- Skin CSS file (styling of UI - buttons, caption, etc.)
 			 In the folder of skin CSS file there are also:
@@ -34,11 +39,6 @@
 		<script src="frameworks/Ideal-Image-Slider/extensions/bullet-nav/iis-bullet-nav.js"></script>
 		
 
-		<!-- Core JS file -->
-		<script src="frameworks/photoswipe/photoswipe.min.js"></script> 
-
-		<!-- UI JS file -->
-		<script src="frameworks/photoswipe/photoswipe-ui-default.min.js"></script> 
 
 	</head>
 	<body onload="OnLoad()" onresize="OnResize()" onscroll="OnScroll()">
@@ -222,6 +222,9 @@
 			</div>
 
 
+			<div id="ModalView">
+				<div id="LoadingSpinner"></div>
+			</div>
 			<!--Deprecated-->
 			<!--<div id="ModalView" onclick="CloseModal()">
 				<span id="closebtn" onclick="CloseModal()"><img src="index_resources/close_button_white.png" style="width: 30px; height: 30px;"></span>

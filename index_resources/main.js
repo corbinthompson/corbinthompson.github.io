@@ -89,7 +89,9 @@ function HeadLine(imgsrc, msg, url, type)
 	if(this.type == 0)
 	{
 		this.Obj.onclick = function() {
+			
 			var TriggerSlideShow = new Promise(function(resolve, reject) {
+				OpenLoadingModal();
 				var items = new Array();
 				var imagesloaded = 0;
 				var totalimages = 0;
@@ -99,17 +101,22 @@ function HeadLine(imgsrc, msg, url, type)
 						(new Promise(function(resolve, reject) {
 							var TheImage = new Image();
 							TheImage.src = TheHeadLines[i].url;
-							TheImage.onload = function() {
-								items.push({
-									src: TheImage.src,
-									w: this.width,
-									h: this.height
-								});
-								imagesloaded++;
-								if(imagesloaded >= totalimages) {
-									resolve(items);
+							//Poll many times for size until we have it. Once we do, delete image.
+							var poll = setInterval(function() {
+								if(TheImage.naturalWidth) {
+									clearInterval(poll);
+									items.push({
+										src: TheImage.src,
+										w: TheImage.naturalWidth,
+										h: TheImage.naturalHeight
+									});
+									TheImage = null;
+									imagesloaded++;
+									if(imagesloaded >= totalimages) {
+										resolve(items);
+									}										
 								}
-							}
+							}, 10);
 						})).then(resolve).catch(reject);
 					}
 				}
@@ -120,6 +127,7 @@ function HeadLine(imgsrc, msg, url, type)
 				};
 				var gallery = new PhotoSwipe( document.getElementById("PhotoSwipeSS"), PhotoSwipeUI_Default, result, options);
 				gallery.init();
+				CloseLoadingModal();
 			});
 			//PicturesCursor = that.Position;
 			//ModalUpdateButtons();
@@ -646,28 +654,22 @@ function CloseDropDownMenu() {
 
 //Modal functions
 
-function CloseModal()
+function CloseLoadingModal()
 {
 	document.body.classList.remove("ModalOpen");
 	document.getElementById("ModalView").style.display = "none";
+	document.getElementById("LoadingSpinner").style.display = "none";
 }
 
-function OpenModal(imgUrl, imgCaption)
+function OpenLoadingModal()
 {
 	document.body.classList.add("ModalOpen");
 	document.getElementById("ModalView").style.display = "flex";
-	document.getElementById("modalcaption").innerHTML = imgCaption;
-	document.getElementById("modalpic").src = imgUrl;
-	document.getElementById("modalpic").style.display = "none";
 	document.getElementById("LoadingSpinner").style.display = "block";
-	document.getElementById("modalpic").onload = function() {
-		//FitModalImageToBoudingBox();
-		document.getElementById("modalpic").style.display = "block";
-		document.getElementById("LoadingSpinner").style.display = "none";
-	}
 }
 
-function ModalNext() {
+//Deprecated
+/*function ModalNext() {
 	if(PicturesCursor < TheHeadLines.length-1) {
 		PicturesCursor++;
 		LoadModalByIndex(PicturesCursor);
@@ -707,6 +709,7 @@ function ModalUpdateButtons() {
 		document.getElementById("GoBack").style.opacity = 1;
 	}
 }
+*/
 
 //May become deprecated soon
 function OpenMusicModal(songUrl)
