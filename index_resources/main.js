@@ -597,7 +597,9 @@ function HideSpotlights() {
 		document.getElementById("backgroundtop").style.opacity = 0;
 		document.getElementById("backgroundcenter").style.opacity = 0;
 		document.getElementById("backgroundbottom").style.opacity = 0;
-		document.getElementById("backgroundbottom").style.display = "none";
+		setTimeout(function() {
+			document.getElementById("backgroundbottom").style.display = "none";
+			}, 500);
 		document.getElementById("backgroundall").style.opacity = 0.8;	
 }
 
