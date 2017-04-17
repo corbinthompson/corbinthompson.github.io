@@ -511,7 +511,7 @@ function OnResize()
 {
 	pageheight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
     //document.getElementById(FooterObjectID).style.top = pageheight - FooterBottomPosition;
-    //document.getElementById("backgroundbottom").style.height = pageheight - 613;
+    document.getElementById("backgroundbottom").style.height = pageheight - 613;
     //FitModalImageToBoudingBox();
 }
 
@@ -597,6 +597,7 @@ function HideSpotlights() {
 		document.getElementById("backgroundtop").style.opacity = 0;
 		document.getElementById("backgroundcenter").style.opacity = 0;
 		document.getElementById("backgroundbottom").style.opacity = 0;
+		document.getElementById("backgroundbottom").style.display = "none";
 		document.getElementById("backgroundall").style.opacity = 0.8;	
 }
 
@@ -604,6 +605,9 @@ function RestartSpotlights() {
 		document.getElementById("backgroundtop").style.opacity = 0.8;
 		document.getElementById("backgroundcenter").style.opacity = 0.8;
 		document.getElementById("backgroundbottom").style.opacity = 0.8;
+		setTimeout(function() {
+			document.getElementById("backgroundbottom").style.display = "block";
+			}, 500);
 		document.getElementById("backgroundall").style.opacity = 0;	
 }
 
