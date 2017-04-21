@@ -601,24 +601,33 @@ setInterval(function() {
 	}
 }, 250);
 
+var SpotlightLock = false;
+
 function HideSpotlights() {
-		document.getElementById("backgroundtop").style.opacity = 0;
-		document.getElementById("backgroundcenter").style.opacity = 0;
-		document.getElementById("backgroundbottom").style.opacity = 0;
-		setTimeout(function() {
-			document.getElementById("backgroundbottom").style.display = "none";
-			}, 500);
+		SpotlightLock = true;
 		document.getElementById("backgroundall").style.opacity = 0.8;	
+		setTimeout(function() {
+			document.getElementById("backgroundtop").style.opacity = 0;
+			document.getElementById("backgroundcenter").style.opacity = 0;
+			document.getElementById("backgroundbottom").style.opacity = 0;
+				setTimeout(function() {
+					document.getElementById("backgroundbottom").style.display = "none";
+					SpotlightLock = false;
+				}, 500);
+		}, 100);
 }
 
 function RestartSpotlights() {
+		if(SpotlightLock) {
+			return false;
+		}
 		document.getElementById("backgroundtop").style.opacity = 0.8;
 		document.getElementById("backgroundcenter").style.opacity = 0.8;
+		document.getElementById("backgroundbottom").style.display = "block";
 		document.getElementById("backgroundbottom").style.opacity = 0.8;
 		setTimeout(function() {
-			document.getElementById("backgroundbottom").style.display = "block";
-			}, 500);
-		document.getElementById("backgroundall").style.opacity = 0;	
+			document.getElementById("backgroundall").style.opacity = 0;
+		}, 100);
 }
 
 //Might become deprecated
