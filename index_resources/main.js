@@ -750,6 +750,20 @@ function CloseCompactMenu()
 	document.getElementById("CompactMenuModal").className = "pseudo-hidden";
 }
 
+function MenuCursorMove(xA, yA, xF, yF) {
+	var y0 = 213;
+	document.getElementById("MenuCursor").style.left = "calc(50% - 400px + " + xA + "px)";
+	document.getElementById("MenuCursor").style.top = yA + y0;
+	document.getElementById("MenuCursor").style.height = yF - yA;
+	document.getElementById("MenuCursor").style.width = xF - xA;
+	document.getElementById("MenuCursor").style.opacity = 1;
+}
+
+function MenuCursorHide() {
+	document.getElementById("MenuCursor").style.opacity = 0;
+}
+
+
 function DrawerGo(towhere)
 {
 	GoToURL(towhere);

@@ -87,13 +87,16 @@
 				<div class="pseudo-hidden" id="CompactMenuModal" onclick="CloseCompactMenu()"></div>
 			
 				<map name="menumap">
-					<area shape="rect" coords="0,4,114,53" href="#about" alt="About me!">
-					<area shape="rect" coords="114,4,216,53" href="#news" alt="Check what's new!">
-					<area shape="rect" coords="216,4,346,53" href="#photos" alt="Check my pics!">
-					<area shape="rect" coords="459,4,578,53" href="#music" alt="Amazing songs for your enjoyment!">
-					<area shape="rect" coords="578,4,702,53" href="#videos" alt="Watch amazing videos!">
-					<area shape="rect" coords="702,4,800,53" onclick="ShowDropDownMenu()" style="cursor:pointer" alt="Much more!">
+					<area shape="rect" coords="0,4,114,53" onmouseover="MenuCursorMove(0, 5, 114, 53)" onmouseout="MenuCursorHide()" href="#about" alt="About me!">
+					<area shape="rect" coords="114,4,216,53" onmouseover="MenuCursorMove(114,5,216,53)" onmouseout="MenuCursorHide()" href="#news" alt="Check what's new!">
+					<area shape="rect" coords="216,4,346,53" onmouseover="MenuCursorMove(216,5,346,53)" onmouseout="MenuCursorHide()" href="#photos" alt="Check my pics!">
+					<area shape="rect" coords="459,4,578,53" onmouseover="MenuCursorMove(459,5,578,53)" onmouseout="MenuCursorHide()" href="#music" alt="Amazing songs for your enjoyment!">
+					<area shape="rect" coords="578,4,702,53" onmouseover="MenuCursorMove(578,5,702,53)" onmouseout="MenuCursorHide()" href="#videos" alt="Watch amazing videos!">
+					<area shape="rect" coords="702,4,800,53" onmouseover="MenuCursorMove(702,5,800,53)" onmouseout="MenuCursorHide()" onclick="ShowDropDownMenu()" style="cursor:pointer" alt="Much more!">
+					<div id="MenuCursor"></div>
 				</map>
+				
+				
 				<map name="mobilemenumap">
 					<!--<area shape="circle" coords="385, 400, 593" href="#home" title="Home!">-->
 					<area shape="rect" coords="472, 4, 533, 53" onclick="OpenCompactMenu()" title="Open Menu">
