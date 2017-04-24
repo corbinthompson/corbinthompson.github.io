@@ -320,6 +320,10 @@ function HeadLine(imgsrc, msg, url, type)
 				//Make listeners to when you click those things
 				ThisTR.onclick = (function() {
 					if(that.AreWeLoaded) {
+						if(MBNameObj.innerText == MusicLibrary[this.Index].Name) {
+							PlayPauseSong();
+							return;
+						}
 						SelectSong(this.Index);
 						if(!IsPlaying) {
 							PlayPauseSong();
