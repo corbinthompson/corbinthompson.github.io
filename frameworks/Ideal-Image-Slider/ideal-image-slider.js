@@ -9,7 +9,7 @@
  */
 
 var IdealImageSlider = (function() {
-	"use strict";
+	//"use strict";
 
 	/*
 	 * requestAnimationFrame polyfill
@@ -112,6 +112,7 @@ var IdealImageSlider = (function() {
 	};
 
 	var _addEvent = function(object, type, callback) {
+		//debugger;
 		if (object === null || typeof(object) === 'undefined') return;
 
 		if (object.addEventListener) {
@@ -246,6 +247,7 @@ var IdealImageSlider = (function() {
 		},
 
 		start: function(event) {
+			
 			if (_hasClass(this._attributes.container, this.settings.classes.animating)) return;
 
 			var touches = event.touches[0];
@@ -274,6 +276,7 @@ var IdealImageSlider = (function() {
 				x: touches.pageX - _touch.vars.start.x,
 				y: touches.pageY - _touch.vars.start.y
 			};
+			
 
 			if (typeof _touch.vars.isScrolling == 'undefined') {
 				_touch.vars.isScrolling = !!(_touch.vars.isScrolling || Math.abs(_touch.vars.delta.x) < Math.abs(_touch.vars.delta.y));
@@ -441,6 +444,7 @@ var IdealImageSlider = (function() {
 
 		// Slider (container) element
 		var sliderEl = document.querySelector(this.settings.selector);
+		var sliderEl2 = document.getElementById("BillboardContainer");
 		if (!sliderEl) return null;
 
 		// Slides
@@ -548,9 +552,9 @@ var IdealImageSlider = (function() {
 				nextNav.style.display = 'none';
 				_addClass(sliderEl, this.settings.classes.touchEnabled);
 
-				_addEvent(sliderEl, 'touchstart', _touch.start.bind(this), false);
-				_addEvent(sliderEl, 'touchmove', _touch.move.bind(this), false);
-				_addEvent(sliderEl, 'touchend', _touch.end.bind(this), false);
+				_addEvent(sliderEl2, 'touchstart', _touch.start.bind(this), false);
+				_addEvent(sliderEl2, 'touchmove', _touch.move.bind(this), false);
+				_addEvent(sliderEl2, 'touchend', _touch.end.bind(this), false);
 			}
 
 			// Keyboard Navigation
