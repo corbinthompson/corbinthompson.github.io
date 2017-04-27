@@ -752,6 +752,7 @@ var IdealImageSlider = (function() {
 	};
 
 	Slider.prototype.gotoSlide = function(index) {
+		//Daniel: I will put stuff here.
 		this.settings.beforeChange.apply(this);
 		this.stop();
 
@@ -783,7 +784,7 @@ var IdealImageSlider = (function() {
 		_addClass(this._attributes.nextSlide, this.settings.classes.nextSlide);
 		this._attributes.currentSlide.setAttribute('aria-hidden', 'false');
 
-		if (index < oldIndex) {
+		if ((index < oldIndex) && !(oldIndex == slides.length - 1 && index == 0) || (index == slides.length-1 && oldIndex == 0)) {
 			_addClass(this._attributes.container, this.settings.classes.directionPrevious);
 			_requestTimeout(function() {
 				_removeClass(this._attributes.container, this.settings.classes.directionPrevious);
