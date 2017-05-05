@@ -823,6 +823,61 @@ function GetJSON(url) {
 	});
 }
 
+function LoadMasterMobilePage() {
+	ClearPage();
+	HideSpotlights();
+	document.title = "Corbin Hale";
+	Sitemap.map(function(item, index) {
+		GetJSON(item.address).then(function(response) {
+			var ThisTitleDiv = document.createElement("div");
+			var ThisTitle = document.createElement("h1");
+			ThisTitleDiv.appendChild(ThisTitle);
+			ThisTitleDiv.className = "PolaroidSideText";
+			document.getElementById(LeContentObjectID).appendChild(ThisTitleDiv);
+			ThisTitle.innerText = item.title;
+			response.map(function(item, index) {
+			switch(item.Type)
+			{
+				case "Picture":
+					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.Picture, 0));
+					break;
+				case "PolaroidLink":
+					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 1));
+					break;
+				case "PolaroidMusic":
+					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, {PlaylistURL: item.PlaylistURL, SongNumber: item.SongNumber}, 2));
+					break;
+				case "PostIt":
+					TheHeadLines.push(new HeadLine("", item.Caption, item.URL, 3));
+					break;
+				case "PolaroidText":
+					TheHeadLines.push(new HeadLine(item.Thumbnail, {Title: item.CaptionTitle, Message: item.Caption}, item.URL, 4));
+					break;
+				case "PolaroidAlbum":
+					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 5));
+					break;
+				case "MusicAlbums":
+					TheHeadLines.push(new HeadLine(item.Elements, undefined, undefined, 6));
+					break;				
+				case "MusicAlbum":
+					TheHeadLines.push(new HeadLine(item.Thumbnail, undefined, item.PlaylistURL, 7));
+					break;
+				case "Billboard":
+					var AllPics = new Object();
+					AllPics.Pictures = item.Pictures;
+					AllPics.PicturesSmall = item.PicturesSmall;
+					document.getElementById("BillboardContainer").style.display = "block";
+					TheHeadLines.push(new HeadLine(AllPics, undefined, item.urls, 8));
+					break;
+			}
+		});
+		});
+	});
+	IsSeeingPhoto = false;
+	HideSpotlights();
+	OnResize();
+}
+
 function LoadPage(url) {
 	//document.getElementById(FooterObjectID).style.top = -101;
 	NavLocation = url;
@@ -912,6 +967,11 @@ window.onhashchange = GoHash = function() {
 	}
 	else {
 		var hashvalue = "home";
+	}
+	//Check if it's mobile!!
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && hashvalue == "home") {
+		LoadMasterMobilePage();
+		return;
 	}
 	if(Sitemap) {
 		Sitemap.map(function(item, index) {
