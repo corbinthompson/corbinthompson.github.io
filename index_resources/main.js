@@ -563,6 +563,7 @@ function OnScroll()
 }
 
 setInterval(function() {
+	UpdateScrollHashValue();
 	if(didScroll && ScrollRefPoint == null) {
 		ScrollRefPoint = lastScrollY;
 	}
@@ -976,8 +977,12 @@ function ClearPage() {
 }
 
 //Hash navigation
-
+var BypassALL = false;
 window.onhashchange = GoHash = function(BypassMobile) {
+	if(BypassALL == true) {
+		BypassALL = false;
+		return;
+	}
 	setTimeout(OnResizeChangePage, 500);
 	if(location.hash != "") {
 		var hashvalue = location.hash.substring(1, location.hash.length);
@@ -1001,6 +1006,7 @@ window.onhashchange = GoHash = function(BypassMobile) {
 						});
 					}
 					else {
+						debugger;
 						MasterPageMap[index].TitleObj.scrollIntoView();
 						document.title = item.title;						
 					}
@@ -1079,6 +1085,32 @@ GetMasterPage = function() {
 		LoadMasterMobilePage();
 		return response;
 	});
+}
+
+function UpdateScrollHashValue() {
+	if(MasterPageMap == undefined) {
+		return false;
+	}
+	for(var i = 0; i < MasterPageMap.length;i++) {
+		if(MasterPageMap[i].TitleObj == undefined) {
+			continue;
+		}
+		if(IsInViewport(MasterPageMap[i].TitleObj)) {
+			BypassALL = true;
+			location.hash = MasterPageMap[i].name;
+			break;
+		}
+	}
+}
+
+function IsInViewport(el) {
+	var rect = el.getBoundingClientRect();
+	return (
+		rect.top >= 0 &&
+		rect.left >= 0 &&
+		rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+		rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+	);
 }
 
 
