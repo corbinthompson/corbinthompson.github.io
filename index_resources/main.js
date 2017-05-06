@@ -2,7 +2,6 @@ var TheHeadLines = new Array();
 
 //May become deprecated
 var IsThreeRows = undefined;
-var IsMobile = false;
 var Nperrow = 4;
 var LeContentObjectID = "LeContent";
 var LeArticleObjectID = "LeArticle";
@@ -17,6 +16,9 @@ var HeadLineSwitch = false;
 //New Variables
 NavLocation = "resources.json";
 Sitemap = undefined;
+MasterPageMap = undefined;
+var IsMobile = false;
+MasterMobilePageLoaded = false;
 
 //For the scrolling
 didScroll = false;
@@ -55,7 +57,13 @@ function OnLoad()
 	
 	//Let's do just that
 	//LoadPage(NavLocation);
+	//Check if it's mobile!!
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+		GetMasterPage().then(GoHash);
+		IsMobile = true;
+	}
 	GetSitemap();
+	GoHash();
 	//document.getElementById("ModalView").style.display = "none";
 	setTimeout(OnResizeChangePage, 500);
 	setInterval(OnResize, 1000);
@@ -824,58 +832,67 @@ function GetJSON(url) {
 }
 
 function LoadMasterMobilePage() {
-	ClearPage();
-	HideSpotlights();
-	document.title = "Corbin Hale";
-	Sitemap.map(function(item, index) {
-		GetJSON(item.address).then(function(response) {
-			var ThisTitleDiv = document.createElement("div");
-			var ThisTitle = document.createElement("h1");
-			ThisTitleDiv.appendChild(ThisTitle);
-			ThisTitleDiv.className = "PolaroidSideText";
-			document.getElementById(LeContentObjectID).appendChild(ThisTitleDiv);
-			ThisTitle.innerText = item.title;
-			response.map(function(item, index) {
-			switch(item.Type)
-			{
-				case "Picture":
-					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.Picture, 0));
-					break;
-				case "PolaroidLink":
-					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 1));
-					break;
-				case "PolaroidMusic":
-					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, {PlaylistURL: item.PlaylistURL, SongNumber: item.SongNumber}, 2));
-					break;
-				case "PostIt":
-					TheHeadLines.push(new HeadLine("", item.Caption, item.URL, 3));
-					break;
-				case "PolaroidText":
-					TheHeadLines.push(new HeadLine(item.Thumbnail, {Title: item.CaptionTitle, Message: item.Caption}, item.URL, 4));
-					break;
-				case "PolaroidAlbum":
-					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 5));
-					break;
-				case "MusicAlbums":
-					TheHeadLines.push(new HeadLine(item.Elements, undefined, undefined, 6));
-					break;				
-				case "MusicAlbum":
-					TheHeadLines.push(new HeadLine(item.Thumbnail, undefined, item.PlaylistURL, 7));
-					break;
-				case "Billboard":
-					var AllPics = new Object();
-					AllPics.Pictures = item.Pictures;
-					AllPics.PicturesSmall = item.PicturesSmall;
-					document.getElementById("BillboardContainer").style.display = "block";
-					TheHeadLines.push(new HeadLine(AllPics, undefined, item.urls, 8));
-					break;
-			}
+	return new Promise(function(resolve, reject) {
+		ClearPage();
+		HideSpotlights();
+		document.title = "Corbin Hale";
+		MasterPageMap.map(function(item, index) {
+			GetJSON(item.address).then(function(response) {
+				if(item.title != "") {
+					var ThisTitleDiv = document.createElement("div");
+					var ThisTitle = document.createElement("h1");
+					ThisTitleDiv.appendChild(ThisTitle);
+					ThisTitleDiv.className = "MasterPageHeader";
+					document.getElementById(LeContentObjectID).appendChild(ThisTitleDiv);
+					ThisTitle.innerText = item.title;
+					MasterPageMap[index].TitleObj = ThisTitleDiv;
+				}
+				response.map(function(item, index) {
+					switch(item.Type)
+					{
+						case "Picture":
+							TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.Picture, 0));
+							break;
+						case "PolaroidLink":
+							TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 1));
+							break;
+						case "PolaroidMusic":
+							TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, {PlaylistURL: item.PlaylistURL, SongNumber: item.SongNumber}, 2));
+							break;
+						case "PostIt":
+							TheHeadLines.push(new HeadLine("", item.Caption, item.URL, 3));
+							break;
+						case "PolaroidText":
+							TheHeadLines.push(new HeadLine(item.Thumbnail, {Title: item.CaptionTitle, Message: item.Caption}, item.URL, 4));
+							break;
+						case "PolaroidAlbum":
+							TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 5));
+							break;
+						case "MusicAlbums":
+							TheHeadLines.push(new HeadLine(item.Elements, undefined, undefined, 6));
+							break;				
+						case "MusicAlbum":
+							TheHeadLines.push(new HeadLine(item.Thumbnail, undefined, item.PlaylistURL, 7));
+							break;
+						case "Billboard":
+							var AllPics = new Object();
+							AllPics.Pictures = item.Pictures;
+							AllPics.PicturesSmall = item.PicturesSmall;
+							document.getElementById("BillboardContainer").style.display = "block";
+							TheHeadLines.push(new HeadLine(AllPics, undefined, item.urls, 8));
+							break;
+					}
+					IsSeeingPhotos = false;
+					MasterMobilePageLoaded = true;
+					if(index == MasterPageMap.length -1) {
+						resolve();
+					}
+				});
+			});
 		});
-		});
+		HideSpotlights();
+		OnResize();
 	});
-	IsSeeingPhoto = false;
-	HideSpotlights();
-	OnResize();
 }
 
 function LoadPage(url) {
@@ -942,6 +959,7 @@ function ClearPage() {
 	TheHeadLines = new Array();
 	Pictures = null;
 	Pictures = new Array();
+	MasterMobilePageLoaded = false;
 	if(BillboardTimer) {
 		clearInterval(BillboardTimer);
 		BillboardTimer = undefined;
@@ -959,7 +977,7 @@ function ClearPage() {
 
 //Hash navigation
 
-window.onhashchange = GoHash = function() {
+window.onhashchange = GoHash = function(BypassMobile) {
 	setTimeout(OnResizeChangePage, 500);
 	if(location.hash != "") {
 		var hashvalue = location.hash.substring(1, location.hash.length);
@@ -968,9 +986,35 @@ window.onhashchange = GoHash = function() {
 	else {
 		var hashvalue = "home";
 	}
-	//Check if it's mobile!!
-	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && hashvalue == "home") {
-		LoadMasterMobilePage();
+	if(IsMobile && BypassMobile != true) {
+		if(MasterPageMap) {
+			var Found = false;
+			MasterPageMap.map(function(item, index) {
+				if(Found) {
+					return;
+				}
+				if(item.name == hashvalue) {
+					if(!MasterMobilePageLoaded) {
+						LoadMasterMobilePage().then(function() {
+							MasterPageMap[index].TitleObj.scrollIntoView();
+							document.title = item.title;
+						});
+					}
+					else {
+						MasterPageMap[index].TitleObj.scrollIntoView();
+						document.title = item.title;						
+					}
+					Found = true;
+					return;
+				}
+				if(index == MasterPageMap.length - 1 && !Found) {
+					GoHash(true);
+				}
+			});
+		}
+		else {
+			//Wait
+		}
 		return;
 	}
 	if(Sitemap) {
@@ -1026,9 +1070,17 @@ function ResetMobileSocialButtons() {
 GetSitemap = function() {
 	GetJSON("index_resources/sitemap.json").then(function(response) {
 		Sitemap = response;
-		GoHash();
 	});
 }
+
+GetMasterPage = function() {
+	return GetJSON("index_resources/MasterPage.json").then(function(response) {
+		MasterPageMap = response;
+		LoadMasterMobilePage();
+		return response;
+	});
+}
+
 
 //Music Bar
 
