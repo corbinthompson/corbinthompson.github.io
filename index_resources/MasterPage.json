@@ -1,0 +1,47 @@
+[
+	{
+		"name": "",
+		"title": "",
+		"address": "home/index.json"
+	},
+	{
+		"name": "news",
+		"title": "Corbin Hale News",
+		"address": "news/index.json"
+	},
+	{
+		"name": "music",
+		"title": "Corbin Hale Music",
+		"address": "music/index.json"
+	},
+	{
+		"name": "photos",
+		"title": "Corbin Hale Photos",
+		"address": "photos/index.json"
+	},
+	{
+		"name": "videos",
+		"title": "Corbin Hale Videos",
+		"address": "videos/index.json"
+	},
+	{
+		"name": "originals",
+		"title": "Originals - Corbin Hale",
+		"address": "music/Albums/Originals/album.json"
+	},
+	{
+		"name": "covers",
+		"title": "Covers - Corbin Hale",
+		"address": "music/Albums/Covers/album.json"
+	},
+	{
+		"name": "corbinhalbum",
+		"title": "Corbin H. Album",
+		"address": "photos/CorbinH/index.json"
+	},
+	{
+		"name": "behindthescenes",
+		"title": "Behind the Scenes Photos",
+		"address": "photos/behindthescenes/index.json"
+	}
+]
