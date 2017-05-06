@@ -18,7 +18,7 @@ NavLocation = "resources.json";
 Sitemap = undefined;
 MasterPageMap = undefined;
 var IsMobile = false;
-MasterMobilePageLoaded = false;
+MasterMobilePageLoaded = null;
 
 //For the scrolling
 didScroll = false;
@@ -67,7 +67,9 @@ function OnLoad()
 	//document.getElementById("ModalView").style.display = "none";
 	setTimeout(OnResizeChangePage, 500);
 	setInterval(OnResize, 1000);
-	ClearPage();
+	if(!IsMobile) {
+		ClearPage();
+	}
 }
 
 function CheckCompatibility() {
@@ -834,7 +836,7 @@ function GetJSON(url) {
 
 function LoadMasterMobilePage() {
 	return new Promise(function(resolve, reject) {
-		ClearPage();
+		ClearPage(true);
 		HideSpotlights();
 		document.title = "Corbin Hale";
 		MasterPageMap.map(function(item, index) {
@@ -955,12 +957,14 @@ function LoadPage(url) {
 	});*/
 }
 
-function ClearPage() {
+function ClearPage(WillLoadMasterPageAfter) {
 	TheHeadLines = null;
 	TheHeadLines = new Array();
 	Pictures = null;
 	Pictures = new Array();
-	MasterMobilePageLoaded = false;
+	if(WillLoadMasterPageAfter != true) {
+		MasterMobilePageLoaded = false;
+	}
 	if(BillboardTimer) {
 		clearInterval(BillboardTimer);
 		BillboardTimer = undefined;
@@ -999,14 +1003,17 @@ window.onhashchange = GoHash = function(BypassMobile) {
 					return;
 				}
 				if(item.name == hashvalue) {
-					if(!MasterMobilePageLoaded) {
+					if(MasterMobilePageLoaded == null) {
+						//Still might load... let's wait
+						setTimeout(GoHash, 1000);
+					}
+					else if(MasterMobilePageLoaded == false) {
 						LoadMasterMobilePage().then(function() {
 							MasterPageMap[index].TitleObj.scrollIntoView();
-							document.title = item.title;
+							document.title = item.title;						
 						});
 					}
 					else {
-						debugger;
 						MasterPageMap[index].TitleObj.scrollIntoView();
 						document.title = item.title;						
 					}
