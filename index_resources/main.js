@@ -965,6 +965,11 @@ function ClearPage(WillLoadMasterPageAfter) {
 	if(WillLoadMasterPageAfter != true) {
 		MasterMobilePageLoaded = false;
 	}
+	if(MasterMobilePageLoaded) {
+		for(var i=0;i < MasterPageMap.length;i++) {
+			MasterPageMap[i].TitleObj = null;
+		}
+	}
 	if(BillboardTimer) {
 		clearInterval(BillboardTimer);
 		BillboardTimer = undefined;

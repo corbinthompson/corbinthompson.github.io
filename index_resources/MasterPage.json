@@ -15,11 +15,6 @@
 		"address": "music/index.json"
 	},
 	{
-		"name": "photos",
-		"title": "Corbin Hale Photos",
-		"address": "photos/index.json"
-	},
-	{
 		"name": "videos",
 		"title": "Corbin Hale Videos",
 		"address": "videos/index.json"
