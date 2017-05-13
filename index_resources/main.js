@@ -962,13 +962,13 @@ function ClearPage(WillLoadMasterPageAfter) {
 	TheHeadLines = new Array();
 	Pictures = null;
 	Pictures = new Array();
-	if(WillLoadMasterPageAfter != true) {
-		MasterMobilePageLoaded = false;
-	}
 	if(MasterMobilePageLoaded) {
 		for(var i=0;i < MasterPageMap.length;i++) {
 			MasterPageMap[i].TitleObj = null;
 		}
+	}
+	if(WillLoadMasterPageAfter != true) {
+		MasterMobilePageLoaded = false;
 	}
 	if(BillboardTimer) {
 		clearInterval(BillboardTimer);
@@ -1108,8 +1108,10 @@ function UpdateScrollHashValue() {
 			continue;
 		}
 		if(IsInViewport(MasterPageMap[i].TitleObj)) {
-			BypassALL = true;
-			location.hash = MasterPageMap[i].name;
+			if(location.hash.substring(1, location.hash.length) != MasterPageMap[i].name) {
+				BypassALL = true;
+				location.hash = MasterPageMap[i].name;
+			}
 			break;
 		}
 	}
