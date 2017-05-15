@@ -844,8 +844,11 @@ function LoadMasterMobilePage() {
 				if(item.title != "") {
 					var ThisTitleDiv = document.createElement("div");
 					var ThisTitle = document.createElement("h1");
+					var ThisHR = document.createElement("hr");				
 					ThisTitleDiv.appendChild(ThisTitle);
+					ThisTitleDiv.appendChild(ThisHR);
 					ThisTitleDiv.className = "MasterPageHeader";
+					ThisHR.className = "Master-Page-Header-HR";
 					document.getElementById(LeContentObjectID).appendChild(ThisTitleDiv);
 					ThisTitle.innerText = item.title;
 					MasterPageMap[index].TitleObj = ThisTitleDiv;
