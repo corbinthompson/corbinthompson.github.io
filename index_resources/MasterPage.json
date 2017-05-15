@@ -5,41 +5,49 @@
 		"address": "home/index.json"
 	},
 	{
+		"maxelements": 3,
 		"name": "news",
 		"title": " News",
 		"address": "news/index.json"
 	},
 	{
+		"maxelements": 5,
 		"name": "music",
 		"title": "Music",
 		"address": "music/index.json"
 	},
 	{
+		"maxelements": 10,
 		"name": "photos",
 		"title": "Photos",
 		"address": "photos/index.json"
 	},
 	{
+		"maxelements": 10,
 		"name": "videos",
 		"title": "Videos",
 		"address": "videos/index.json"
 	},
 	{
+		"maxelements": 5,
 		"name": "originals",
 		"title": "Originals",
 		"address": "music/Albums/Originals/album.json"
 	},
 	{
+		"maxelements": 5,
 		"name": "covers",
 		"title": "Covers",
 		"address": "music/Albums/Covers/album.json"
 	},
 	{
+		"maxelements": 10,
 		"name": "corbinhalbum",
 		"title": "Corbin H. Album",
 		"address": "photos/CorbinH/index.json"
 	},
 	{
+		"maxelements": 10,
 		"name": "behindthescenes",
 		"title": "Behind the Scenes Photos",
 		"address": "photos/behindthescenes/index.json"

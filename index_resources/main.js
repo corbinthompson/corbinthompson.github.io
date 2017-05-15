@@ -76,8 +76,11 @@ function CheckCompatibility() {
 	}
 }
 
-function HeadLine(imgsrc, msg, url, type)
+function HeadLine(imgsrc, msg, url, type, appendWhere)
 {
+	if(appendWhere == undefined) {
+		appendWhere = document.getElementById(LeContentObjectID);
+	}
 	var that = this;
 	this.imgsrc = imgsrc;
 	this.msg = msg;
@@ -258,7 +261,7 @@ function HeadLine(imgsrc, msg, url, type)
 		return true;
 	}
 	
-	document.getElementById(LeContentObjectID).appendChild(this.Obj);
+	appendWhere.appendChild(this.Obj);
 	
 	if(this.type == 6) {
 		var TheElements = imgsrc;
@@ -446,16 +449,12 @@ function HeadLine(imgsrc, msg, url, type)
 		this.Label.className = "contentlabelPolaroid";
 	}
 	
-	
-	//Deprecated
-	//this.Obj.style.webkitTransform = "rotate(" + (Math.random()*30 - 15) + "deg)"
-	//this.Obj.style.MozTransform = "rotate(" + (Math.random()*30 - 15) + "deg)"
 
 	if(this.type == 4) {
 		HeadLineSwitch = !HeadLineSwitch;
 		
 		this.UpperObj = document.createElement("div");
-		document.getElementById(LeContentObjectID).appendChild(this.UpperObj);
+		appendWhere.appendChild(this.UpperObj);
 		this.UpperObj.className = "PolaroidTextObj";
 		this.UpperObj.appendChild(this.Obj);
 		
@@ -538,22 +537,6 @@ function OnResizeChangePage()
     //document.getElementById(FooterObjectID).style.top = 0;
 	OnResize();
 }
-
-/*function FitModalImageToBoudingBox() {
-	//var NaturalWidth = document.getElementById("modalpic").naturalWidth;
-	//var NaturalHeight = document.getElementById("modalpic").naturalHeight;
-	var ContainerWidth = document.getElementById("photocontainer").offsetWidth;
-	var ContainerHeight = document.getElementById("photocontainer").offsetHeight;
-	document.getElementById("photocontainer").style.height = document.getElementById("photonav").offsetHeight;
-	if(NaturalWidth/NaturalHeight > ContainerWidth/ContainerHeight) {
-		document.getElementById("modalpic").style.width = ContainerWidth;
-		document.getElementById("modalpic").style.height = (ContainerWidth/NaturalWidth)*NaturalHeight;
-	}
-	else {
-		document.getElementById("modalpic").style.height = ContainerHeight;
-		document.getElementById("modalpic").style.width = (ContainerHeight/NaturalHeight)*NaturalWidth;
-	}	
-}*/
 
 function OnScroll()
 {
@@ -688,63 +671,6 @@ function OpenLoadingModal()
 	document.getElementById("LoadingSpinner").style.display = "block";
 }
 
-//Deprecated
-/*function ModalNext() {
-	if(PicturesCursor < TheHeadLines.length-1) {
-		PicturesCursor++;
-		LoadModalByIndex(PicturesCursor);
-	}
-	ModalUpdateButtons();
-}
-
-function LoadModalByIndex(TheIndex) {
-	OpenModal(TheHeadLines[TheIndex].url, TheHeadLines[TheIndex].msg);
-}
-
-function ModalPrevious() {
-	if(PicturesCursor > 0) {
-		PicturesCursor--;
-		LoadModalByIndex(PicturesCursor);
-	}
-	ModalUpdateButtons();
-}
-
-function ModalUpdateButtons() {
-	if(PicturesCursor <= 0) {
-		document.getElementById("GoBack").style.pointerEvents = "none";
-		document.getElementById("GoBack").style.opacity = 0.5;
-		document.getElementById("GoFwd").style.pointerEvents = "auto";
-		document.getElementById("GoFwd").style.opacity = 1;		
-	}
-	else if(PicturesCursor >= TheHeadLines.length-1) {
-		document.getElementById("GoFwd").style.pointerEvents = "none";
-		document.getElementById("GoFwd").style.opacity = 0.5;
-		document.getElementById("GoBack").style.pointerEvents = "auto";
-		document.getElementById("GoBack").style.opacity = 1;
-	}
-	else {
-		document.getElementById("GoFwd").style.pointerEvents = "auto";
-		document.getElementById("GoFwd").style.opacity = 1;		
-		document.getElementById("GoBack").style.pointerEvents = "auto";
-		document.getElementById("GoBack").style.opacity = 1;
-	}
-}
-*/
-
-//May become deprecated soon
-function OpenMusicModal(songUrl)
-{
-	document.body.classList.add("ModalOpen");
-	document.getElementById("ModalView").style.display = "flex";
-	document.getElementById("modalcaption").innerHTML = "";
-	document.getElementById("modalpic").style.background = "";
-	document.getElementById("modalpic").style.backgroundPosition = "center center";
-	document.getElementById("modalpic").style.backgroundSize = "contain";
-	document.getElementById("modalpic").style.backgroundRepeat = "no-repeat";
-	document.getElementById("modalpic").innerHTML = '<iframe width="500" style="position: relative; top: calc(50vh - 50px - 150px);left: calc(50% - 250px);" height="300" scrolling="no" frameborder="no" src="' + songUrl + '"></iframe>';
-}
-
-
 //Mobile specific
 
 function OpenCompactMenu()
@@ -835,58 +761,95 @@ function LoadMasterMobilePage() {
 		ClearPage(true);
 		HideSpotlights();
 		document.title = "Corbin Hale";
-		MasterPageMap.map(function(item, index) {
+		MasterPageMap.map(function(item, MapIndex) {
 			GetJSON(item.address).then(function(response) {
 				if(item.title != "") {
+					var ThisSectionDiv = document.createElement("div");
+					ThisSectionDiv.className = "MasterPageSection";
+					document.getElementById(LeContentObjectID).appendChild(ThisSectionDiv);
 					var ThisTitleDiv = document.createElement("div");
 					var ThisTitle = document.createElement("h1");
-					var ThisHR = document.createElement("hr");				
+					var ThisHR = document.createElement("hr");
 					ThisTitleDiv.appendChild(ThisTitle);
 					ThisTitleDiv.appendChild(ThisHR);
 					ThisTitleDiv.className = "MasterPageHeader";
 					ThisHR.className = "Master-Page-Header-HR";
-					document.getElementById(LeContentObjectID).appendChild(ThisTitleDiv);
+					ThisSectionDiv.appendChild(ThisTitleDiv);
 					ThisTitle.innerText = item.title;
-					MasterPageMap[index].TitleObj = ThisTitleDiv;
+					MasterPageMap[MapIndex].TitleObj = ThisTitleDiv;
+					MasterPageMap[MapIndex].SectionDiv = ThisSectionDiv;
+					MasterPageMap[MapIndex].ElementsLoaded = item.maxelements || response.length;	
 				}
-				response.map(function(item, index) {
+				var MaxElements = undefined;
+				if(item.maxelements) {
+					MaxElements = item.maxelements;
+				}
+				var AddToSection = function(item) {
 					switch(item.Type)
 					{
 						case "Picture":
-							TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.Picture, 0));
+							TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.Picture, 0, MasterPageMap[MapIndex].SectionDiv));
 							break;
 						case "PolaroidLink":
-							TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 1));
+							TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 1, MasterPageMap[MapIndex].SectionDiv));
 							break;
 						case "PolaroidMusic":
-							TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, {PlaylistURL: item.PlaylistURL, SongNumber: item.SongNumber}, 2));
+							TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, {PlaylistURL: item.PlaylistURL, SongNumber: item.SongNumber}, 2, MasterPageMap[MapIndex].SectionDiv));
 							break;
 						case "PostIt":
-							TheHeadLines.push(new HeadLine("", item.Caption, item.URL, 3));
+							TheHeadLines.push(new HeadLine("", item.Caption, item.URL, 3, MasterPageMap[MapIndex].SectionDiv));
 							break;
 						case "PolaroidText":
-							TheHeadLines.push(new HeadLine(item.Thumbnail, {Title: item.CaptionTitle, Message: item.Caption}, item.URL, 4));
+							TheHeadLines.push(new HeadLine(item.Thumbnail, {Title: item.CaptionTitle, Message: item.Caption}, item.URL, 4, MasterPageMap[MapIndex].SectionDiv));
 							break;
 						case "PolaroidAlbum":
-							TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 5));
+							TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 5, MasterPageMap[MapIndex].SectionDiv));
 							break;
 						case "MusicAlbums":
-							TheHeadLines.push(new HeadLine(item.Elements, undefined, undefined, 6));
+							TheHeadLines.push(new HeadLine(item.Elements, undefined, undefined, 6, MasterPageMap[MapIndex].SectionDiv));
 							break;				
 						case "MusicAlbum":
-							TheHeadLines.push(new HeadLine(item.Thumbnail, undefined, item.PlaylistURL, 7));
+							TheHeadLines.push(new HeadLine(item.Thumbnail, undefined, item.PlaylistURL, 7, MasterPageMap[MapIndex].SectionDiv));
 							break;
 						case "Billboard":
 							var AllPics = new Object();
 							AllPics.Pictures = item.Pictures;
 							AllPics.PicturesSmall = item.PicturesSmall;
 							document.getElementById("BillboardContainer").style.display = "block";
-							TheHeadLines.push(new HeadLine(AllPics, undefined, item.urls, 8));
+							TheHeadLines.push(new HeadLine(AllPics, undefined, item.urls, 8, MasterPageMap[MapIndex].SectionDiv));
 							break;
 					}
+				}
+				response.map(function(ThisItem, index) {
+					if(MaxElements) {
+						if(index == MaxElements-1) {
+							var SeeMoreButton = document.createElement("button");
+							SeeMoreButton.className = "LoadMoreButton";
+							MasterPageMap[MapIndex].SectionDiv.appendChild(SeeMoreButton);
+							SeeMoreButton.innerText = "Load More…";
+							SeeMoreButton.onclick = function() {
+								MasterPageMap[MapIndex].SectionDiv.removeChild(SeeMoreButton);
+								for(var i=0;i < Math.min(MaxElements, response.length - MasterPageMap[MapIndex].ElementsLoaded);i++) {
+									AddToSection(response[MasterPageMap[MapIndex].ElementsLoaded+i]);
+									MasterPageMap[MapIndex].SectionDiv.appendChild(SeeMoreButton);
+								}
+								MasterPageMap[MapIndex].ElementsLoaded += i;
+							}
+							return;
+						}
+						else if(index >= MaxElements) {
+							//Skip
+							return;
+						}
+						else {
+							//Keep going
+							MasterPageMap[MapIndex].ElementsLoaded += 1;
+						}
+					}
+					AddToSection(ThisItem);
 					IsSeeingPhotos = false;
 					MasterMobilePageLoaded = true;
-					if(index == MasterPageMap.length -1) {
+					if(MapIndex == MasterPageMap.length -1) {
 						resolve();
 					}
 				});
