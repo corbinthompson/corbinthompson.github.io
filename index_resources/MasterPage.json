@@ -6,32 +6,32 @@
 	},
 	{
 		"name": "news",
-		"title": "Corbin Hale News",
+		"title": " News",
 		"address": "news/index.json"
 	},
 	{
 		"name": "music",
-		"title": "Corbin Hale Music",
+		"title": "Music",
 		"address": "music/index.json"
 	},
 	{
 		"name": "photos",
-		"title": "Corbin Hale Photos",
+		"title": "Photos",
 		"address": "photos/index.json"
 	},
 	{
 		"name": "videos",
-		"title": "Corbin Hale Videos",
+		"title": "Videos",
 		"address": "videos/index.json"
 	},
 	{
 		"name": "originals",
-		"title": "Originals - Corbin Hale",
+		"title": "Originals",
 		"address": "music/Albums/Originals/album.json"
 	},
 	{
 		"name": "covers",
-		"title": "Covers - Corbin Hale",
+		"title": "Covers",
 		"address": "music/Albums/Covers/album.json"
 	},
 	{
