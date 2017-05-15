@@ -981,7 +981,7 @@ function ClearPage(WillLoadMasterPageAfter) {
 	document.getElementById("BillboardContainer").style.display = "none";
 	document.getElementById("BillboardContent").innerHTML = "";
 	document.getElementById("LeContent").style.display = "flex";
-	document.getElementById("LeMenu").className = "UpTitleAbsolute";
+	document.getElementById("LeMenu").className = "UpTitle";
 	//document.getElementById("BillboardContainer").innerHTML = "";
 }
 
