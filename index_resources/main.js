@@ -59,17 +59,13 @@ function OnLoad()
 	//LoadPage(NavLocation);
 	//Check if it's mobile!!
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-		GetMasterPage().then(GoHash);
 		IsMobile = true;
 	}
+	GetMasterPage().then(GoHash);
 	GetSitemap();
-	GoHash();
 	//document.getElementById("ModalView").style.display = "none";
 	setTimeout(OnResizeChangePage, 500);
 	setInterval(OnResize, 1000);
-	if(!IsMobile) {
-		ClearPage();
-	}
 }
 
 function CheckCompatibility() {
@@ -990,7 +986,7 @@ function ClearPage(WillLoadMasterPageAfter) {
 
 //Hash navigation
 var BypassALL = false;
-window.onhashchange = GoHash = function(BypassMobile) {
+window.onhashchange = GoHash = function(BypassMasterPage) {
 	if(BypassALL == true) {
 		BypassALL = false;
 		return;
@@ -1003,7 +999,7 @@ window.onhashchange = GoHash = function(BypassMobile) {
 	else {
 		var hashvalue = "home";
 	}
-	if(IsMobile && BypassMobile != true) {
+	if(BypassMasterPage != true) {
 		if(MasterPageMap) {
 			var Found = false;
 			MasterPageMap.map(function(item, index) {
