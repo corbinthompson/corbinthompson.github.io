@@ -1088,6 +1088,7 @@ function ResetMobileSocialButtons() {
 GetSitemap = function() {
 	GetJSON("index_resources/sitemap.json").then(function(response) {
 		Sitemap = response;
+		GoHash();
 	});
 }
 
