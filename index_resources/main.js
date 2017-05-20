@@ -76,17 +76,20 @@ function CheckCompatibility() {
 	}
 }
 
-function HeadLine(imgsrc, msg, url, type, appendWhere)
+function HeadLine(imgsrc, msg, url, type, appendWhere, SubHeadLine)
 {
 	if(appendWhere == undefined) {
 		appendWhere = document.getElementById(LeContentObjectID);
+	}
+	if(SubHeadLine == undefined) {
+		SubHeadLine = TheHeadLines[0];
 	}
 	var that = this;
 	this.imgsrc = imgsrc;
 	this.msg = msg;
 	this.url = url;
 	this.type = type;
-	this.Position = TheHeadLines.length;
+	this.Position = SubHeadLine.length;
 
 	this.Obj = document.createElement("div");
 
@@ -104,21 +107,21 @@ function HeadLine(imgsrc, msg, url, type, appendWhere)
 				var items = new Array();
 				var imagesloaded = 0;
 				var totalimages = 0;
-				for(var i=0;i < TheHeadLines.length; i++) {
-					if(TheHeadLines[i].type == 0) {
+				for(var i=0;i < SubHeadLine.length; i++) {
+					if(SubHeadLine[i].type == 0) {
 						totalimages++;
 						(new Promise(function(resolve, reject) {
 							var TheImage = new Image();
-							TheImage.src = TheHeadLines[i].url;
+							TheImage.src = SubHeadLine[i].url;
 							//Poll many times for size until we have it. Once we do, delete image.
 							var poll = setInterval(function() {
 								if(TheImage.naturalWidth) {
 									clearInterval(poll);
-									items.push({
+									items[imagesloaded] = {
 										src: TheImage.src,
 										w: TheImage.naturalWidth,
 										h: TheImage.naturalHeight
-									});
+									};
 									TheImage = null;
 									imagesloaded++;
 									if(imagesloaded >= totalimages) {
@@ -131,6 +134,8 @@ function HeadLine(imgsrc, msg, url, type, appendWhere)
 				}
 			});
 			TriggerSlideShow.then(function(result) {
+				console.log(that.Position);
+				console.log(SubHeadLine);
 				var options = {
 					index: that.Position
 				};
@@ -514,7 +519,7 @@ function PutInGrid()
 
 	TheGrid.rows = new Array();
 	TheGrid.cells = new Array();
-	for(i=0;i<Math.ceil(TheHeadLines.length/Nperrow);i++)
+	for(i=0;i<Math.ceil(SubHeadLine.length/Nperrow);i++)
 	{
 		TheGrid.rows[i] = document.createElement("tr");
 		TheGrid.table.appendChild(TheGrid.rows[i]);
@@ -525,9 +530,9 @@ function PutInGrid()
 
 			TheGrid.cells[i][j] = document.createElement("td");
 			TheGrid.rows[i].appendChild(TheGrid.cells[i][j]);
-			if((i*Nperrow + j) < TheHeadLines.length)
+			if((i*Nperrow + j) < SubHeadLine.length)
 			{
-						TheGrid.cells[i][j].appendChild(TheHeadLines[i*Nperrow + j].Obj);
+						TheGrid.cells[i][j].appendChild(SubHeadLine[i*Nperrow + j].Obj);
 			}
 		}
 	}
@@ -772,6 +777,7 @@ function LoadMasterMobilePage() {
 		HideSpotlights();
 		document.title = "Corbin Hale";
 		MasterPageMap.map(function(item, MapIndex) {
+			TheHeadLines[MapIndex] = new Array();
 			GetJSON(item.address).then(function(response) {
 				if(item.title != "") {
 					var ThisSectionDiv = document.createElement("div");
@@ -799,38 +805,38 @@ function LoadMasterMobilePage() {
 					switch(item.Type)
 					{
 						case "Picture":
-							TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.Picture, 0, MasterPageMap[MapIndex].SectionDiv));
+							TheHeadLines[MapIndex].push(new HeadLine(item.Thumbnail, item.Caption, item.Picture, 0, MasterPageMap[MapIndex].SectionDiv, TheHeadLines[MapIndex]));
 							break;
 						case "PolaroidLink":
-							TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 1, MasterPageMap[MapIndex].SectionDiv));
+							TheHeadLines[MapIndex].push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 1, MasterPageMap[MapIndex].SectionDiv, TheHeadLines[MapIndex]));
 							break;
 						case "PolaroidMusic":
-							TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, {PlaylistURL: item.PlaylistURL, SongNumber: item.SongNumber}, 2, MasterPageMap[MapIndex].SectionDiv));
+							TheHeadLines[MapIndex].push(new HeadLine(item.Thumbnail, item.Caption, {PlaylistURL: item.PlaylistURL, SongNumber: item.SongNumber}, 2, MasterPageMap[MapIndex].SectionDiv, TheHeadLines[MapIndex]));
 							break;
 						case "PostIt":
-							TheHeadLines.push(new HeadLine("", item.Caption, item.URL, 3, MasterPageMap[MapIndex].SectionDiv));
+							TheHeadLines[MapIndex].push(new HeadLine("", item.Caption, item.URL, 3, MasterPageMap[MapIndex].SectionDiv, TheHeadLines[MapIndex]));
 							break;
 						case "PolaroidText":
-							TheHeadLines.push(new HeadLine(item.Thumbnail, {Title: item.CaptionTitle, Message: item.Caption}, item.URL, 4, MasterPageMap[MapIndex].SectionDiv));
+							TheHeadLines[MapIndex].push(new HeadLine(item.Thumbnail, {Title: item.CaptionTitle, Message: item.Caption}, item.URL, 4, MasterPageMap[MapIndex].SectionDiv, TheHeadLines[MapIndex]));
 							break;
 						case "PolaroidAlbum":
-							TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 5, MasterPageMap[MapIndex].SectionDiv));
+							TheHeadLines[MapIndex].push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 5, MasterPageMap[MapIndex].SectionDiv, TheHeadLines[MapIndex]));
 							break;
 						case "MusicAlbums":
-							TheHeadLines.push(new HeadLine(item.Elements, undefined, undefined, 6, MasterPageMap[MapIndex].SectionDiv));
+							TheHeadLines[MapIndex].push(new HeadLine(item.Elements, undefined, undefined, 6, MasterPageMap[MapIndex].SectionDiv, TheHeadLines[MapIndex]));
 							break;				
 						case "MusicAlbum":
-							TheHeadLines.push(new HeadLine(item.Thumbnail, undefined, item.PlaylistURL, 7, MasterPageMap[MapIndex].SectionDiv));
+							TheHeadLines[MapIndex].push(new HeadLine(item.Thumbnail, undefined, item.PlaylistURL, 7, MasterPageMap[MapIndex].SectionDiv, TheHeadLines[MapIndex]));
 							break;
 						case "Billboard":
 							var AllPics = new Object();
 							AllPics.Pictures = item.Pictures;
 							AllPics.PicturesSmall = item.PicturesSmall;
 							document.getElementById("BillboardContainer").style.display = "block";
-							TheHeadLines.push(new HeadLine(AllPics, undefined, item.urls, 8, MasterPageMap[MapIndex].SectionDiv));
+							TheHeadLines[MapIndex].push(new HeadLine(AllPics, undefined, item.urls, 8, MasterPageMap[MapIndex].SectionDiv, TheHeadLines[MapIndex]));
 							break;
 						case "VideoLink":
-							TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 9, MasterPageMap[MapIndex].SectionDiv));
+							TheHeadLines[MapIndex].push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 9, MasterPageMap[MapIndex].SectionDiv, TheHeadLines[MapIndex]));
 							break;
 					}
 				}
@@ -880,6 +886,7 @@ function LoadPage(url) {
 	//document.getElementById(FooterObjectID).style.top = -101;
 	NavLocation = url;
 	ClearPage();
+	TheHeadLines[0] = new Array();
 	GetJSON(NavLocation).then(function(response) {
 		response.map(function(item, index) {
 			switch(item.Type)
@@ -888,28 +895,28 @@ function LoadPage(url) {
 					LoadArticle(item.HTML);
 					break;
 				case "Picture":
-					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.Picture, 0));
+					TheHeadLines[0].push(new HeadLine(item.Thumbnail, item.Caption, item.Picture, 0));
 					break;
 				case "PolaroidLink":
-					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 1));
+					TheHeadLines[0].push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 1));
 					break;
 				case "PolaroidMusic":
-					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, {PlaylistURL: item.PlaylistURL, SongNumber: item.SongNumber}, 2));
+					TheHeadLines[0].push(new HeadLine(item.Thumbnail, item.Caption, {PlaylistURL: item.PlaylistURL, SongNumber: item.SongNumber}, 2));
 					break;
 				case "PostIt":
-					TheHeadLines.push(new HeadLine("", item.Caption, item.URL, 3));
+					TheHeadLines[0].push(new HeadLine("", item.Caption, item.URL, 3));
 					break;
 				case "PolaroidText":
-					TheHeadLines.push(new HeadLine(item.Thumbnail, {Title: item.CaptionTitle, Message: item.Caption}, item.URL, 4));
+					TheHeadLines[0].push(new HeadLine(item.Thumbnail, {Title: item.CaptionTitle, Message: item.Caption}, item.URL, 4));
 					break;
 				case "PolaroidAlbum":
-					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 5));
+					TheHeadLines[0].push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 5));
 					break;
 				case "MusicAlbums":
-					TheHeadLines.push(new HeadLine(item.Elements, undefined, undefined, 6));
+					TheHeadLines[0].push(new HeadLine(item.Elements, undefined, undefined, 6));
 					break;				
 				case "MusicAlbum":
-					TheHeadLines.push(new HeadLine(item.Thumbnail, undefined, item.PlaylistURL, 7));
+					TheHeadLines[0].push(new HeadLine(item.Thumbnail, undefined, item.PlaylistURL, 7));
 					break;
 				case "Billboard":
 					var AllPics = new Object();
@@ -917,10 +924,10 @@ function LoadPage(url) {
 					AllPics.PicturesSmall = item.PicturesSmall;
 					document.getElementById("LeContent").style.display = "none";
 					document.getElementById("BillboardContainer").style.display = "block";
-					TheHeadLines.push(new HeadLine(AllPics, undefined, item.urls, 8));
+					TheHeadLines[0].push(new HeadLine(AllPics, undefined, item.urls, 8));
 					break;
 				case "VideoLink":
-					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 9, MasterPageMap[MapIndex].SectionDiv));
+					TheHeadLines[0].push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 9, MasterPageMap[MapIndex].SectionDiv));
 					break;
 			}
 		});
