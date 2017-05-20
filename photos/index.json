@@ -1,0 +1,14 @@
+[
+	{
+		"Thumbnail": "photos/polaroid_thumb/CorbinH_thumb.png",
+		"Caption": "Corbin H.",
+		"URL": "#corbinhalbum",
+		"Type": "PolaroidAlbum"
+	},
+	{
+		"Thumbnail": "photos/polaroid_thumb/behindthescenes_thumb.png",
+		"Caption": "Behind the Scenes",
+		"URL": "#behindthescenes",
+		"Type": "PolaroidAlbum"
+	}
+]

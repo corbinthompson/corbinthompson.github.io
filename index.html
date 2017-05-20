@@ -1,12 +1,293 @@
-<html>
-<head>
-<!--Made by The Daniel Walnut-->
-<title>Corbin Hale</title>
-<link rel="SHORTCUT ICON" href="Logo.ico">
-<meta name="google-site-verification" content="usim5WZliA3pKIbyoP6TFDKfQ9FAKe7SLt-oIp1Ea88" />
- </head>
-<body style="background-image:url(TheBackground.png); background-position: center;">
-<!--<img src="TheHero.png" style="position:absolute;top:calc(50% - 204px);left:calc(50% - 204px)">-->
-<!--<img src="Signature.png" style="position:absolute;bottom:0px;left:calc(50% - 105px)">-->
-</body>
+<html lang="en">
+	<meta http-equiv="content-language" content="en" />
+	<head>
+		<title>Corbin Hale</title>
+		<!--<link rel="SHORTCUT ICON" href="index_resources/Logo.ico">-->
+		<meta name="google-site-verification" content="usim5WZliA3pKIbyoP6TFDKfQ9FAKe7SLt-oIp1Ea88" />
+		<link rel="stylesheet" type="text/css" href="index_resources/main.css">
+		<link rel="stylesheet" type="text/css" href="index_resources/font-awesome/css/font-awesome.css">
+		<script src="index_resources/imageMapResizer.min.js"></script>
+		<script src="index_resources/main.js"></script>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+		
+		<link href='https://fonts.googleapis.com/css?family=Merriweather|Lobster+Two|Allerta+Stencil' rel='stylesheet' type='text/css'>
+		
+		<!--Deprecated probably-->
+		<!--<script type="text/javascript" src="resources.js"></script>-->
+
+		
+		<!--PhotoSwipe Framework-->
+		<!-- Core CSS file -->
+		<link rel="stylesheet" href="frameworks/photoswipe/photoswipe.css"> 
+		<!-- Core JS file -->
+		<script src="frameworks/photoswipe/photoswipe.min.js"></script> 
+
+		<!-- UI JS file -->
+		<script src="frameworks/photoswipe/photoswipe-ui-default.js"></script> 
+		
+		<!-- Skin CSS file (styling of UI - buttons, caption, etc.)
+			 In the folder of skin CSS file there are also:
+			 - .png and .svg icons sprite, 
+			 - preloader.gif (for browsers that do not support CSS animations) -->
+		<link rel="stylesheet" href="frameworks/photoswipe/default-skin/default-skin.css"> 
+
+		<!-- Ideal Image Slider Framework -->
+		<link rel="stylesheet" href="frameworks/Ideal-Image-Slider/ideal-image-slider.css">
+		<link rel="stylesheet" href="frameworks/Ideal-Image-Slider/themes/default/default.css">
+		<script src="frameworks/Ideal-Image-Slider/ideal-image-slider.js"></script>
+		<script src="frameworks/Ideal-Image-Slider/extensions/bullet-nav/iis-bullet-nav.js"></script>
+		
+
+
+	</head>
+	<body onload="OnLoad()" onresize="OnResize()" onscroll="OnScroll()">
+		<div class="page-wrap">
+			<div id="LeMenu" draggable="false">
+				<div id="TheHeadingButtons">
+					<a class="Header-Social-Button" href="http://facebook.com/corbinhale/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+					<a class="Header-Social-Button" href="https://www.youtube.com/corbinhale" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+					<a class="Header-Social-Button" href="https://instagram.com/corbinhale/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+					<a class="Header-Social-Button" href="https://play.spotify.com/artist/2RO7djUmzilbneD45QWsGS" target="_blank"><i class="fa fa-spotify" aria-hidden="true"></i></a>
+					<a class="Header-Social-Button" href="https://twitter.com/CorbinHale" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					<a class="Header-Social-Button" href="https://soundcloud.com/CorbinHale" target="_blank"><i class="fa fa-soundcloud" aria-hidden="true" style="font-size: 21px;"></i></a>
+					<a class="Header-Social-Button" href="mailto:contact@corbinhale.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+				</div>
+			
+				<img draggable="false" class="UpTitle" id="MenuLogo" src="index_resources/logo.png" usemap="#MenuLogoMap">
+				<img draggable="false" class="UpTitle" id="MenuMenu" src="index_resources/Menu-main.png" usemap="#menumap">
+				<img draggable="false" class="UpTitle" id="MenuMobile" src="index_resources/Menu-mobile.png" usemap="#mobilemenumap">
+			
+				<div id="ScrollDownMenu">
+					<img id="ScrollDownMenuLogo" src="index_resources/logo_shadow.png" style="margin-left: 30px; margin-right: 30px; cursor: pointer;" onclick="location.href = '#home';">
+					<img src="index_resources/menu_sandwich.png" style="width: 50px; height: 50px;margin-left: 30px; margin-right: 30px;cursor: pointer; pointer-events: auto;" onclick="OpenCompactMenu()">
+				</div>
+			
+				<div id="DropDownMenu" onclick="CloseDropDownMenu()">
+					<div id="DropDown-Menu-Item1" class="DropDown-Menu-Item" onclick="//DrawerGo('#uartist')">Soon...</div>
+					<!--<div id="DropDown-Menu-Item2" class="DropDown-Menu-Item" onclick="DrawerGo('#uartist')">Promotions</div>-->
+					<!--<div id="DropDown-Menu-Item3" class="DropDown-Menu-Item" onclick="DrawerGo('#uartist')">Events</div>-->
+				</div>
+				<div id="DropDownModal" onclick="CloseDropDownMenu()">
+				</div>
+			
+				<div class="Drawer-Closed" id="CompactMenuDrawer">
+					<img id="CompactMenuDrawerCloseButton" src="index_resources/close_button.png" onclick="CloseCompactMenu()">
+					<div class="Mobile-Menu-Title">Menu</div>
+					<hr class="Mobile-Menu-HR" />
+					<div id="Mobile-Menu-Items">
+						<div id="Mobile-Menu-Item1" class="Mobile-Menu-Item" onclick="DrawerGo('#about')">About</div>
+						<div id="Mobile-Menu-Item2" class="Mobile-Menu-Item" onclick="DrawerGo('#news')">News</div>
+						<div id="Mobile-Menu-Item3" class="Mobile-Menu-Item" onclick="DrawerGo('#music')">Music</div>
+						<div id="Mobile-Menu-Item4" class="Mobile-Menu-Item" onclick="DrawerGo('#photos')">Photos</div>
+						<div id="Mobile-Menu-Item5" class="Mobile-Menu-Item" onclick="DrawerGo('#videos')">Videos</div>
+					</div>
+				
+					<div id="Mobile-Social-Buttons">
+						<!--<a class="Mobile-Social-Button" href="http://facebook.com/corbinhalemusic/" target="_blank"><img src="index_resources/icons/Beige/facebook.png"></a>
+						<a class="Mobile-Social-Button" href="https://www.youtube.com/corbinhale" target="_blank"><img src="index_resources/icons/Beige/youtube.png"></a>
+						<a class="Mobile-Social-Button" href="https://instagram.com/corbinhale/" target="_blank"><img src="index_resources/icons/Beige/instagram.png"></a>
+						<a class="Mobile-Social-Button" href="https://play.spotify.com/artist/2RO7djUmzilbneD45QWsGS" target="_blank"><img src="index_resources/icons/Beige/spotify.png"></a>
+						<a class="Mobile-Social-Button" href="https://twitter.com/CorbinHaleMusic" target="_blank"><img src="index_resources/icons/Beige/twitter.png"></a>
+						<a class="Mobile-Social-Button" href="https://soundcloud.com/CorbinHale" target="_blank"><img src="index_resources/icons/Beige/soundcloud.png"></a>
+						<a class="Mobile-Social-Button" href="mailto:contact@corbinhale.com" target="_blank"><img src="index_resources/icons/Beige/email.png"></a>-->
+
+						<a class="Mobile-Social-Button" href="http://facebook.com/corbinhale/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+						<a class="Mobile-Social-Button" href="https://www.youtube.com/corbinhale" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+						<a class="Mobile-Social-Button" href="https://instagram.com/corbinhale/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+						<a class="Mobile-Social-Button" href="https://play.spotify.com/artist/2RO7djUmzilbneD45QWsGS" target="_blank"><i class="fa fa-spotify" aria-hidden="true"></i></a>
+						<a class="Mobile-Social-Button" href="https://twitter.com/CorbinHale" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+						<a class="Mobile-Social-Button" href="https://soundcloud.com/CorbinHale" target="_blank"><i class="fa fa-soundcloud" aria-hidden="true" style="font-size: 21px;"></i></a>
+						<a class="Mobile-Social-Button" href="mailto:contact@corbinhale.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+					</div>
+				</div>
+				<div class="pseudo-hidden" id="CompactMenuModal" onclick="CloseCompactMenu()"></div>
+			
+				<map name="menumap">
+					<area shape="rect" coords="0,4,114,53" onmouseover="MenuCursorMove(0, 7, 114, 53)" onmouseout="MenuCursorHide()" href="#about" alt="About me!">
+					<area shape="rect" coords="114,4,216,53" onmouseover="MenuCursorMove(114,7,216,53)" onmouseout="MenuCursorHide()" href="#news" alt="Check what's new!">
+					<area shape="rect" coords="216,4,346,53" onmouseover="MenuCursorMove(216,7,340,53)" onmouseout="MenuCursorHide()" href="#photos" alt="Check my pics!">
+					<area shape="rect" coords="459,4,578,53" onmouseover="MenuCursorMove(469,7,578,53)" onmouseout="MenuCursorHide()" href="#music" alt="Amazing songs for your enjoyment!">
+					<area shape="rect" coords="578,4,702,53" onmouseover="MenuCursorMove(578,7,702,53)" onmouseout="MenuCursorHide()" href="#videos" alt="Watch amazing videos!">
+					<area shape="rect" coords="702,4,800,53" onmouseover="MenuCursorMove(702,7,800,53)" onmouseout="MenuCursorHide()" onclick="ShowDropDownMenu()" style="cursor:pointer" alt="Much more!">
+					<div id="MenuCursor"></div>
+				</map>
+				
+				
+				<map name="mobilemenumap">
+					<!--<area shape="circle" coords="385, 400, 593" href="#home" title="Home!">-->
+					<area shape="rect" coords="472, 4, 533, 53" onclick="OpenCompactMenu()" title="Open Menu">
+				</map>
+			
+				<map name="MenuLogoMap">
+					<area shape="circle" coords="385, 400, 281.5" href="#home" title="Home!">
+				</map>
+
+				<div class="UpTitle" id="NeonLL"></div>
+
+				<div class="UpTitle" id="NeonRR"></div>
+
+				<img draggable="false" class="UpTitle" id="WNCH" src="index_resources/Slice-5.png" usemap="#WNCHmap">
+
+				<map name="WNCHmap">
+					<area shape="poly" coords="23,0,110,0,245,135,245,223" href="http://corbinhale.us11.list-manage1.com/subscribe?u=eb64874570249b730ee6e15bf&id=7b45bd9997" target="_blank" alt="Subscribe to my mailing list!">
+				</map>
+			
+
+			</div>
+		
+			<div id="LeBackground">
+				<div class="backgroundstuff" id="backgroundtop"></div>
+				<div class="backgroundstuff" id="backgroundcenter"></div>
+				<div class="backgroundstuff" id="backgroundbottom"></div>
+				<div class="backgroundstuff" id="backgroundall"></div>
+			</div>
+
+
+
+			<div id="BillboardContainer">
+				<div id="BillboardFrame"></div>
+				<div id="BillboardContent"></div>
+			</div>
+		
+
+		
+			<div class="LeContent" id="LeContent">
+
+
+
+			</div>
+		
+			<div id="LeArticleContainer">
+				<article id="LeArticle">
+				</article>
+			</div>
+					
+			<!-- Root element of PhotoSwipe. Must have class pswp. -->
+			<div class="pswp" id="PhotoSwipeSS" tabindex="-1" role="dialog" aria-hidden="true">
+
+				<!-- Background of PhotoSwipe. 
+					 It's a separate element as animating opacity is faster than rgba(). -->
+				<div class="pswp__bg"></div>
+
+				<!-- Slides wrapper with overflow:hidden. -->
+				<div class="pswp__scroll-wrap">
+
+					<!-- Container that holds slides. 
+						PhotoSwipe keeps only 3 of them in the DOM to save memory.
+						Don't modify these 3 pswp__item elements, data is added later on. -->
+					<div class="pswp__container">
+						<div class="pswp__item"></div>
+						<div class="pswp__item"></div>
+						<div class="pswp__item"></div>
+					</div>
+
+					<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+					<div class="pswp__ui pswp__ui--hidden">
+
+						<div class="pswp__top-bar">
+
+							<!--  Controls are self-explanatory. Order can be changed. -->
+				
+							<div class="pswp__counter"></div>
+
+							<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+							<button class="pswp__button pswp__button--share" title="Share"></button>
+
+							<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+							<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+							<!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+							<!-- element will get class pswp__preloader--active when preloader is running -->
+							<div class="pswp__preloader">
+								<div class="pswp__preloader__icn">
+								  <div class="pswp__preloader__cut">
+									<div class="pswp__preloader__donut"></div>
+								  </div>
+								</div>
+							</div>
+						</div>
+
+						<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+							<div class="pswp__share-tooltip"></div> 
+						</div>
+
+						<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+						</button>
+			
+						<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+						</button>
+
+						<div class="pswp__caption">
+							<div class="pswp__caption__center"></div>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+			<div id="ModalView">
+				<div id="LoadingSpinner"></div>
+			</div>
+			<!--Deprecated-->
+			<!--<div id="ModalView" onclick="CloseModal()">
+				<span id="closebtn" onclick="CloseModal()"><img src="index_resources/close_button_white.png" style="width: 30px; height: 30px;"></span>
+				<div id="photonav">
+					<img id="GoBack" onclick="event.stopPropagation();ModalPrevious()" src="index_resources/GoBack.png">
+					<div id="photocontainer">
+						<img id="modalpic" onclick="event.stopPropagation()">
+						<div id="LoadingSpinner"></div>
+					</div>
+					<img id="GoFwd" onclick="event.stopPropagation();ModalNext()" src="index_resources/GoFwd.png">
+				</div>
+				<span id="modalcaption"> </span>
+			</div>-->
+
+			<div id="Mobile-Footer">
+			
+			</div>
+		
+			<div id="MusicBar" class="MusicBarHide">
+				<div id="MusicBarFlex">
+					<div style="min-width: 155px">
+						<button id="MBBack"><i class="fa fa-fast-backward" aria-hidden="true"></i></button>
+						<button id="MBPlayPause"><i class="fa fa-play" aria-hidden="true"></i></button>
+						<button id="MBNext"><i class="fa fa-fast-forward" aria-hidden="true"></i></button>
+					</div>
+					<div style="min-width: 229px;">
+						<div id="MBName">Do I wanna know - Corbin Hale Covers</div>
+					</div>
+					<div style="min-width: 423px;">
+						<input id="MBTime" type="range" value="0" min="0" max="1000">
+						<span id="MBClock" class="Element">00:00</span>
+					</div>
+				</div>
+				<div id="MusicBarLoadingMessage" style="display:none">Loading Song...</div>
+				<img id="MusicBarCloseButton" src="index_resources/close_button_white.png" onclick="UnloadMusicBar()">
+			</div>
+		
+			<div id="Whitespace-bottom"></div>
+		
+			<div id="Compatibility-Notice">
+					<div id="Compatibility-Notice-Box">Sorry, your browser doesn't seem to be compatible with this website. You can <a style="cursor: pointer;" onclick="document.getElementById('Compatibility-Notice').style.pointerEvents = 'none';document.getElementById('Compatibility-Notice').style.opacity = '0';">click here to continue</a>, but be aware that it might not work as expected.</div>
+			</div>
+		</div>
+		<footer id="TheFooter">
+			<a class="Footer-Social-Button" href="mailto:contact@corbinhale.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+			<a class="Footer-Social-Button" href="https://soundcloud.com/CorbinHale" target="_blank"><i class="fa fa-soundcloud" aria-hidden="true" style="font-size: 21px;"></i></a>
+			<a class="Footer-Social-Button" href="https://twitter.com/CorbinHale" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+			<a class="Footer-Social-Button" href="https://play.spotify.com/artist/2RO7djUmzilbneD45QWsGS" target="_blank"><i class="fa fa-spotify" aria-hidden="true"></i></a>
+			<a class="Footer-Social-Button" href="https://instagram.com/corbinhale/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+			<a class="Footer-Social-Button" href="https://www.youtube.com/corbinhale" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+			<a class="Footer-Social-Button" href="http://facebook.com/corbinhale/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+		</footer>
+		
+
+		
+	</body>
 </html>

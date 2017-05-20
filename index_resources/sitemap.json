@@ -1,0 +1,132 @@
+[
+	{
+		"name": "home",
+		"title": "Corbin Hale",
+		"address": "home/index.json"
+	},
+	{
+		"name": "",
+		"title": "Corbin Hale",
+		"address": "home/index.json"
+	},
+	{
+		"name": "news",
+		"title": "Corbin Hale News",
+		"address": "news/index.json"
+	},
+	{
+		"name": "about",
+		"title": "About Corbin Hale",
+		"address": "about/index.json"
+	},
+	{
+		"name": "music",
+		"title": "Corbin Hale Music",
+		"address": "music/index.json"
+	},
+	{
+		"name": "photos",
+		"title": "Corbin Hale Photos",
+		"address": "photos/index.json"
+	},
+	{
+		"name": "videos",
+		"title": "Corbin Hale Videos",
+		"address": "videos/index.json"
+	},
+	{
+		"name": "uartist",
+		"title": "Corbin Hale - #UArtist",
+		"address": "uartist/index.json"
+	},
+	{
+		"name": "bonjovistory",
+		"title": "Bon Jovi Story - Corbin Hale",
+		"address": "news/bonjovi/article.json"
+	},
+	{
+		"name": "welcome",
+		"title": "Welcome! - Corbin Hale",
+		"address": "news/articles/welcome/article.json"
+	},
+	{
+		"name": "dreams",
+		"title": "#Dreams - Corbin Hale",
+		"address": "news/articles/dreams/article.json"
+	},
+	{
+		"name": "peace",
+		"title": "#Peace - Corbin Hale",
+		"address": "news/articles/peace/article.json"
+	},
+	{
+		"name": "newjourney",
+		"title": "New Journey - Corbin Hale",
+		"address": "news/articles/newjourney/article.json"
+	},
+	{
+		"name": "originals",
+		"title": "Originals - Corbin Hale",
+		"address": "music/Albums/Originals/album.json"
+	},
+	{
+		"name": "covers",
+		"title": "Covers - Corbin Hale",
+		"address": "music/Albums/Covers/album.json"
+	},
+	{
+		"name": "corbinhalbum",
+		"title": "Corbin H. Album",
+		"address": "photos/CorbinH/index.json"
+	},
+	{
+		"name": "behindthescenes",
+		"title": "Behind the Scenes Photos",
+		"address": "photos/behindthescenes/index.json"
+	},
+	{
+		"name": "TheManIveGottaBelyrics",
+		"title": "The Man I've Gotta Be Lyrics",
+		"address": "music/Albums/Originals/Lyrics/TheManIveGottaBe.json"
+	},
+	{
+		"name": "WhiteFlaglyrics",
+		"title": "White Flag Lyrics",
+		"address": "music/Albums/Originals/Lyrics/WhiteFlag.json"
+	},
+	{
+		"name": "CantHelpFallingInLovelyrics",
+		"title": "Can't Help Falling In Love Lyrics",
+		"address": "music/Albums/Covers/Lyrics/CantHelpFallingInLove.json"
+	},	
+	{
+		"name": "CanYouFeelTheLoveTonightlyrics",
+		"title": "Can You Feel The Love Tonight Lyrics",
+		"address": "music/Albums/Covers/Lyrics/CanYouFeelTheLoveTonight.json"
+	},	
+	{
+		"name": "DoIWannaKnowlyrics",
+		"title": "Do I Wanna Know Lyrics",
+		"address": "music/Albums/Covers/Lyrics/DoIWannaKnow.json"
+	},	
+	{
+		"name": "ItsYoulyrics",
+		"title": "It's You Lyrics",
+		"address": "music/Albums/Covers/Lyrics/ItsYou.json"
+	},	
+	{
+		"name": "Photographlyrics",
+		"title": "Photograph Lyrics",
+		"address": "music/Albums/Covers/Lyrics/Photograph.json"
+	},	
+	{
+		"name": "TheBlowersDaughterlyrics",
+		"title": "The Blower's Daughter Lyrics",
+		"address": "music/Albums/Covers/Lyrics/TheBlowersDaughter.json"
+	},	
+	{
+		"name": "TheScientistlyrics",
+		"title": "The Scientist Lyrics",
+		"address": "music/Albums/Covers/Lyrics/TheScientist.json"
+	}
+]
