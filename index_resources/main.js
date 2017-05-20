@@ -157,7 +157,7 @@ function HeadLine(imgsrc, msg, url, type, appendWhere)
 	}
 
 
-	if(this.type == 1 || this.type == 3 || this.type == 4 || this.type == 5)
+	if(this.type == 1 || this.type == 3 || this.type == 4 || this.type == 5 || this.type == 9)
 	{
 		this.Obj.onclick = function() {
 			GoToURL(that.url);
@@ -440,6 +440,16 @@ function HeadLine(imgsrc, msg, url, type, appendWhere)
 		this.Obj.className = "PieceOfContentPolaroid";
 		this.Label.className = "contentlabelPolaroid";
 		IsSeeingPhotos = true;
+	}
+	else if(this.type == 9)
+	{
+		//VideoLink
+		this.Frame.src = "index_resources/VideoFrame.png";
+		this.Frame.className = "videocontentframe";
+		this.Obj.className = "PieceOfContentVideo";
+		this.Label.className = "contentlabelVideo";
+		this.Pic.className = "videocontentpic";
+		this.LabelMask.className = "ContentLabelMaskVideo";
 	}
 	else
 	{
@@ -819,6 +829,9 @@ function LoadMasterMobilePage() {
 							document.getElementById("BillboardContainer").style.display = "block";
 							TheHeadLines.push(new HeadLine(AllPics, undefined, item.urls, 8, MasterPageMap[MapIndex].SectionDiv));
 							break;
+						case "VideoLink":
+							TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 9, MasterPageMap[MapIndex].SectionDiv));
+							break;
 					}
 				}
 				response.map(function(ThisItem, index) {
@@ -905,6 +918,9 @@ function LoadPage(url) {
 					document.getElementById("LeContent").style.display = "none";
 					document.getElementById("BillboardContainer").style.display = "block";
 					TheHeadLines.push(new HeadLine(AllPics, undefined, item.urls, 8));
+					break;
+				case "VideoLink":
+					TheHeadLines.push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 9, MasterPageMap[MapIndex].SectionDiv));
 					break;
 			}
 		});
