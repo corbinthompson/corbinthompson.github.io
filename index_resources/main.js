@@ -756,7 +756,7 @@ function GetJSON(url) {
 	return new Promise(function(resolve, reject) {
 		var req = new XMLHttpRequest();
 		req.open('GET', url);
-		theurl = url;
+		var theurl = url;
 		req.onload = function() {
 			if(req.status == 200) {
 				console.log(theurl);
