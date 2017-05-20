@@ -1090,7 +1090,14 @@ function UpdateScrollHashValue() {
 			continue;
 		}
 		if(IsInViewport(MasterPageMap[i].TitleObj)) {
-			if(location.hash.substring(1, location.hash.length) != MasterPageMap[i].name) {
+			var OnlyHash = "";
+			if(location.hash.indexOf("&") == -1) {
+				OnlyHash = location.hash.substring(1, location.hash.length);
+			}
+			else {
+				OnlyHash = location.hash.substring(1, location.hash.indexOf("&"));
+			}
+			if(OnlyHash != MasterPageMap[i].name) {
 				BypassALL = true;
 				location.hash = MasterPageMap[i].name;
 			}
