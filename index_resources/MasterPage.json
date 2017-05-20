@@ -23,7 +23,7 @@
 		"address": "photos/index.json"
 	},
 	{
-		"maxelements": 10,
+		"maxelements": 5,
 		"name": "videos",
 		"title": "Videos",
 		"address": "videos/index.json"
