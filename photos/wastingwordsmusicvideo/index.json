@@ -12,13 +12,13 @@
 		"Type": "Picture"
 	},
 	{
-		"Thumbnail": "photos/wastingwordsmusicvideo/polaroid_thumb/3.png",
+		"Thumbnail": "photos/wastingwordsmusicvideo/polaroid_thumb/3.jpg",
 		"Caption":  "",
-		"Picture": "photos/wastingwordsmusicvideo/photos/3.png",
+		"Picture": "photos/wastingwordsmusicvideo/photos/3.jpg",
 		"Type": "Picture"
 	},
 	{
-		"Thumbnail": "photos/bwastingwordsmusicvideo/polaroid_thumb/4.png",
+		"Thumbnail": "photos/wastingwordsmusicvideo/polaroid_thumb/4.png",
 		"Caption":  "",
 		"Picture": "photos/wastingwordsmusicvideo/photos/4.png",
 		"Type": "Picture"
@@ -29,4 +29,10 @@
 		"Picture": "photos/wastingwordsmusicvideo/photos/5.png",
 		"Type": "Picture"
 	}
+	{
+		"Thumbnail": "photos/wastingwordsmusicvideo/polaroid_thumb/6.png",
+		"Caption":  "",
+		"Picture": "photos/wastingwordsmusicvideo/photos/6.png",
+		"Type": "Picture"
+	},
 ]
