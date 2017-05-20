@@ -29,18 +29,6 @@
 		"address": "videos/index.json"
 	},
 	{
-		"maxelements": 5,
-		"name": "originals",
-		"title": "Originals",
-		"address": "music/Albums/Originals/album.json"
-	},
-	{
-		"maxelements": 5,
-		"name": "covers",
-		"title": "Covers",
-		"address": "music/Albums/Covers/album.json"
-	},
-	{
 		"maxelements": 10,
 		"name": "corbinhalbum",
 		"title": "Corbin H. Album",
