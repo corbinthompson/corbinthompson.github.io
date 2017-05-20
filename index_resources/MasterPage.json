@@ -35,9 +35,13 @@
 		"address": "photos/CorbinH/index.json"
 	},
 	{
-		"maxelements": 10,
-		"name": "behindthescenes",
-		"title": "Behind the Scenes Photos",
-		"address": "photos/behindthescenes/index.json"
+		"name": "wastingwordsmusicvideo",
+		"title": "Wasting Words Music Video",
+		"address": "photos/wastingwordsmusicvideo/index.json"
+	},
+	{
+		"name": "wastingwordsacoustic",
+		"title": "Wasting Words Acoustic",
+		"address": "photos/wastingwordsacoustic/index.json"
 	}
 ]
