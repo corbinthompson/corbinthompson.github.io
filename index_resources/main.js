@@ -778,7 +778,8 @@ function LoadMasterMobilePage() {
 					ThisTitle.innerText = item.title;
 					MasterPageMap[MapIndex].TitleObj = ThisTitleDiv;
 					MasterPageMap[MapIndex].SectionDiv = ThisSectionDiv;
-					MasterPageMap[MapIndex].ElementsLoaded = item.maxelements || response.length;	
+					MasterPageMap[MapIndex].ElementsLoaded = 0;
+					MasterPageMap[MapIndex].Elements = response;	
 				}
 				var MaxElements = undefined;
 				if(item.maxelements) {
@@ -830,10 +831,12 @@ function LoadMasterMobilePage() {
 							SeeMoreButton.onclick = function() {
 								MasterPageMap[MapIndex].SectionDiv.removeChild(SeeMoreButton);
 								for(var i=0;i < Math.min(MaxElements, response.length - MasterPageMap[MapIndex].ElementsLoaded);i++) {
-									AddToSection(response[MasterPageMap[MapIndex].ElementsLoaded+i]);
-									MasterPageMap[MapIndex].SectionDiv.appendChild(SeeMoreButton);
+									AddToSection(MasterPageMap[MapIndex].Elements[MasterPageMap[MapIndex].ElementsLoaded+i]);
 								}
 								MasterPageMap[MapIndex].ElementsLoaded += i;
+								if(MasterPageMap[MapIndex].ElementsLoaded < MasterPageMap[MapIndex].Elements.length) {
+									MasterPageMap[MapIndex].SectionDiv.appendChild(SeeMoreButton);
+								}
 							}
 							return;
 						}
