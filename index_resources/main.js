@@ -693,6 +693,7 @@ function OpenCompactMenu()
 	document.body.classList.add("ModalOpen");
 	document.getElementById("CompactMenuDrawer").className = "DrawerOpen";
 	document.getElementById("CompactMenuModal").className = "";
+	document.body.style.overflow = "hidden";
 }
 
 function CloseCompactMenu()
@@ -700,6 +701,7 @@ function CloseCompactMenu()
 	document.body.classList.remove("ModalOpen");
 	document.getElementById("CompactMenuDrawer").className = "DrawerClosed";
 	document.getElementById("CompactMenuModal").className = "pseudo-hidden";
+	document.body.style.overflow = "auto";
 }
 
 function MenuCursorMove(xA, yA, xF, yF) {
