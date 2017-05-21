@@ -1,7 +1,7 @@
 [
 	{
-		"Thumbnail": "music/Albums/Originals/thumb.png",
-		"PlaylistURL": "music/Albums/Originals/albumsongs.json",
+		"Thumbnail": "music/Albums/Blue Jeans/thumb.png",
+		"PlaylistURL": "music/Albums/Blue Jeans/albumsongs.json",
 		"Type": "MusicAlbum"
 	}
 ]

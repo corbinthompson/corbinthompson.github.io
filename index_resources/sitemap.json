@@ -65,6 +65,11 @@
 		"address": "news/articles/newjourney/article.json"
 	},
 	{
+		"name": "Blue Jeans",
+		"title": "Blue Jeans",
+		"address": "music/Albums/Blue Jeans/album.json"
+	},
+	{
 		"name": "Wasting Words",
 		"title": "Wasting Words",
 		"address": "music/Albums/Wasting Words/album.json"

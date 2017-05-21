@@ -1,12 +1,7 @@
 [
 	{
-		"Name": "The Man I've Gotta Be",
-		"URL": "music/songs/The Man I've Gotta Be.mp3",
-		"LyricsURL": "#TheManIveGottaBelyrics"
-	},
-	{
-		"Name": "White Flag Acoustic",
-		"URL": "music/songs/White Flag Acoustic.mp3",
+		"Name": "Blue Jeans",
+		"URL": "music/songs/BlueJeans.wav",
 		"LyricsURL": "#WhiteFlaglyrics"
 	}
 ]
