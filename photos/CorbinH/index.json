@@ -136,5 +136,11 @@
 		"Caption":  "",
 		"Picture": "photos/CorbinH/photos/23.png",
 		"Type": "Picture"
+	},
+	{
+		"Thumbnail": "photos/CorbinH/polaroid_thumb/24.png",
+		"Caption":  "",
+		"Picture": "photos/CorbinH/photos/24.png",
+		"Type": "Picture"
 	}
 ]
