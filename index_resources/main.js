@@ -1008,12 +1008,12 @@ window.onhashchange = GoHash = function(BypassMasterPage) {
 					}
 					else if(MasterMobilePageLoaded == false) {
 						LoadMasterMobilePage().then(function() {
-							MasterPageMap[index].SectionDiv.scrollIntoView();
+							MasterPageMap[index].TitleObj.scrollIntoView();
 							document.title = item.title;						
 						});
 					}
 					else {
-						MasterPageMap[index].SectionDiv.scrollIntoView();
+						MasterPageMap[index].TitleObj.scrollIntoView();
 						document.title = item.title;						
 					}
 					Found = true;
