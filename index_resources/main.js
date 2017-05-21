@@ -799,6 +799,10 @@ function LoadMasterMobilePage() {
 					MasterPageMap[MapIndex].ElementsLoaded = 0;
 					MasterPageMap[MapIndex].Elements = response;	
 				}
+				else {
+					MasterPageMap[MapIndex].SectionDiv = document.getElementById("BillboardContainer");
+					MasterPageMap[MapIndex].TitleObj = document.getElementById("BillboardContainer");
+				}
 				var MaxElements = undefined;
 				if(item.maxelements) {
 					MaxElements = item.maxelements;
