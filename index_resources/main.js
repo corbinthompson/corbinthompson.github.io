@@ -693,6 +693,7 @@ function OpenCompactMenu()
 	document.body.classList.add("ModalOpen");
 	document.getElementById("CompactMenuDrawer").className = "DrawerOpen";
 	document.getElementById("CompactMenuModal").className = "";
+	document.body.addEventListener("touchmove", PreventScrolling, false);
 }
 
 function CloseCompactMenu()
@@ -700,6 +701,12 @@ function CloseCompactMenu()
 	document.body.classList.remove("ModalOpen");
 	document.getElementById("CompactMenuDrawer").className = "DrawerClosed";
 	document.getElementById("CompactMenuModal").className = "pseudo-hidden";
+	document.body.removeEventListener("touchmove", PreventScrolling, false);
+}
+
+function PreventScrolling() {
+	event.preventDefault();
+	event.stopPropagation();
 }
 
 function MenuCursorMove(xA, yA, xF, yF) {
