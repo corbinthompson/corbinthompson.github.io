@@ -1,0 +1,37 @@
+[
+	{
+		"Name": "Can You Feel The Love Tonight",
+		"URL": "music/songs/Can You Feel The Love Tonight.mp3",
+		"LyricsURL": "#CanYouFeelTheLoveTonightlyrics"
+	},
+	{
+		"Name": "Can't Help Falling In Love",
+		"URL": "music/songs/Can't Help Falling In Love.mp3",
+		"LyricsURL": "#CantHelpFallingInLovelyrics"
+	},
+	{
+		"Name": "Do I Wanna Know",
+		"URL": "music/songs/Do I Wanna Know.wav",
+		"LyricsURL": "#DoIWannaKnowlyrics"
+	},
+	{
+		"Name": "Photograph",
+		"URL": "music/songs/Photograph.wav",
+		"LyricsURL": "#Photographlyrics"
+	},
+	{
+		"Name": "The Blower's Daughter",
+		"URL": "music/songs/The Blower's Daughter.mp3",
+		"LyricsURL": "#TheBlowersDaughterlyrics"
+	},
+	{
+		"Name": "The Scientist - Corbin Hale",
+		"URL": "music/songs/The Scientist - Corbin Hale.mp3",
+		"LyricsURL": "#TheScientistlyrics"
+	},
+	{
+		"Name": "iT's YoU",
+		"URL": "music/songs/iT's YoU.m4a",
+		"LyricsURL": "#ItsYoulyrics"
+	}
+]
