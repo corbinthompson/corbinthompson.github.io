@@ -40,29 +40,9 @@
 		"address": "uartist/index.json"
 	},
 	{
-		"name": "bonjovistory",
-		"title": "Bon Jovi Story - Corbin Hale",
-		"address": "news/bonjovi/article.json"
-	},
-	{
-		"name": "welcome",
-		"title": "Welcome! - Corbin Hale",
-		"address": "news/articles/welcome/article.json"
-	},
-	{
-		"name": "dreams",
-		"title": "#Dreams - Corbin Hale",
-		"address": "news/articles/dreams/article.json"
-	},
-	{
-		"name": "peace",
-		"title": "#Peace - Corbin Hale",
-		"address": "news/articles/peace/article.json"
-	},
-	{
-		"name": "newjourney",
-		"title": "New Journey - Corbin Hale",
-		"address": "news/articles/newjourney/article.json"
+		"name": "wasting words",
+		"title": "Wasting Words Review",
+		"address": "news/articles/wastingwords/article.json"
 	},
 	{
 		"name": "Blue Jeans",
