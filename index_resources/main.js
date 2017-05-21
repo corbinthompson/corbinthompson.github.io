@@ -801,7 +801,7 @@ function LoadMasterMobilePage() {
 				}
 				else {
 					MasterPageMap[MapIndex].SectionDiv = document.getElementById("BillboardContainer");
-					MasterPageMap[MapIndex].TitleObj = document.getElementById("BillboardContainer");
+					MasterPageMap[MapIndex].TitleObj = document.getElementById("LeMenu");
 				}
 				var MaxElements = undefined;
 				if(item.maxelements) {
