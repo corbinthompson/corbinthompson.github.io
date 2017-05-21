@@ -65,9 +65,9 @@
 		"address": "news/articles/newjourney/article.json"
 	},
 	{
-		"name": "originals",
-		"title": "Originals - Corbin Hale",
-		"address": "music/Albums/Originals/album.json"
+		"name": "Wasting Words",
+		"title": "Wasting Words",
+		"address": "music/Albums/Wasting Words/album.json"
 	},
 	{
 		"name": "covers",
