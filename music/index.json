@@ -1,5 +1,10 @@
 [
 	{
+		"Thumbnail": "music/Albums/Blue Jeans/thumb.png",
+		"PlaylistURL": "music/Albums/Blue Jeans/albumsongs.json",
+		"Type": "MusicAlbum"
+	},
+	{
 		"Thumbnail": "music/Albums/Wasting Words/thumb.png",
 		"PlaylistURL": "music/Albums/Wasting Words/albumsongs.json",
 		"Type": "MusicAlbum"
