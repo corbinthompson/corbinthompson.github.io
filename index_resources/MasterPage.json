@@ -19,7 +19,7 @@
 	{
 		"maxelements": 10,
 		"name": "photos",
-		"title": "Photos",
+		"title": "Photo Albums",
 		"address": "photos/index.json"
 	},
 	{
