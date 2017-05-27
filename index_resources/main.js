@@ -320,7 +320,7 @@ function HeadLine(imgsrc, msg, url, type, appendWhere, SubHeadLine)
 				ThisTR.className = "MusicAlbumTr";
 				
 				var PlayTD = document.createElement("td");
-				PlayTD.className = "MusicAlbumTd";
+				PlayTD.className = "MusicAlbumPlayTD";
 				ThisTR.appendChild(PlayTD);
 				var PlayPauseLabel = document.createElement("i");
 				PlayPauseLabel.className = "fa fa-play";
@@ -351,26 +351,27 @@ function HeadLine(imgsrc, msg, url, type, appendWhere, SubHeadLine)
 						that.AreWeLoaded = true;
 					}
 				}).bind({Index: i});
-			
-				var LyricsTD = document.createElement("td");
-				LyricsTD.className = "MusicAlbumTd";
-				ThisTR.appendChild(LyricsTD);
-				var LyricsSpan = document.createElement("span");
-				LyricsTD.appendChild(LyricsSpan);
-				LyricsSpan.classList.add("fa");
-				LyricsSpan.classList.add("fa-book");
-				LyricsTD.classList.add("LyricsTD");
-				LyricsTD.onclick = (function() {
-					location.href = this.LyricsURL;
-				}).bind({LyricsURL: that.MusicLibrary[i].LyricsURL});
+				if(that.MusicLibrary[i].LyricsURL && that.MusicLibrary[i].LyricsURL != "") {
+					var LyricsTD = document.createElement("td");
+					LyricsTD.className = "MusicAlbumTd";
+					ThisTR.appendChild(LyricsTD);
+					var LyricsSpan = document.createElement("span");
+					LyricsTD.appendChild(LyricsSpan);
+					LyricsSpan.classList.add("fa");
+					LyricsSpan.classList.add("fa-book");
+					LyricsTD.classList.add("LyricsTD");
+					LyricsTD.onclick = (function() {
+						location.href = this.LyricsURL;
+					}).bind({LyricsURL: that.MusicLibrary[i].LyricsURL});
 				
-				ThisTR.onmouseover = (function() {
-					this.LyricsTD.classList.add("LyricsTDHover");
-				}).bind({LyricsTD: LyricsTD});
+					ThisTR.onmouseover = (function() {
+						this.LyricsTD.classList.add("LyricsTDHover");
+					}).bind({LyricsTD: LyricsTD});
 				
-				ThisTR.onmouseout = (function() {
-					this.LyricsTD.classList.remove("LyricsTDHover");
-				}).bind({LyricsTD: LyricsTD});
+					ThisTR.onmouseout = (function() {
+						this.LyricsTD.classList.remove("LyricsTDHover");
+					}).bind({LyricsTD: LyricsTD});
+				}
 			}
 			
 			that.UnloadHandler = function() {
