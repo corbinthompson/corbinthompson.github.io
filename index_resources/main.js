@@ -25,6 +25,7 @@ didScroll = false;
 ScrollRefPoint = null;
 lastScrollY = 0;
 pageheight = undefined;
+HashNavUnlocked = false;
 
 //For the spotlights
 var IsSeeingPhotos = false;
@@ -776,7 +777,7 @@ function LoadMasterMobilePage() {
 	return new Promise(function(resolve, reject) {
 		ClearPage(true);
 		HideSpotlights();
-		document.title = "Corbin Hale";
+		UpdatePageTitle("Corbin Hale");
 		MasterPageMap.map(function(item, MapIndex) {
 			TheHeadLines[MapIndex] = new Array();
 			GetJSON(item.address).then(function(response) {
@@ -795,6 +796,13 @@ function LoadMasterMobilePage() {
 					ThisTitle.innerText = item.title;
 					MasterPageMap[MapIndex].TitleObj = ThisTitleDiv;
 					MasterPageMap[MapIndex].SectionDiv = ThisSectionDiv;
+					MasterPageMap[MapIndex].ElementsLoaded = 0;
+					MasterPageMap[MapIndex].Elements = response;	
+				}
+				else {
+					//Experimental
+					MasterPageMap[MapIndex].TitleObj = document.getElementById("LeMenu");
+					MasterPageMap[MapIndex].SectionDiv = document.getElementById("BillboardContainer");
 					MasterPageMap[MapIndex].ElementsLoaded = 0;
 					MasterPageMap[MapIndex].Elements = response;	
 				}
@@ -1003,13 +1011,15 @@ window.onhashchange = GoHash = function(BypassMasterPage) {
 					}
 					else if(MasterMobilePageLoaded == false) {
 						LoadMasterMobilePage().then(function() {
-							MasterPageMap[index].SectionDiv.scrollIntoView();
-							document.title = item.title;						
+							MasterPageMap[index].TitleObj.scrollIntoView();
+							UpdatePageTitle(item.title);
+							HashNavUnlocked = true;
 						});
 					}
 					else {
-						MasterPageMap[index].SectionDiv.scrollIntoView();
-						document.title = item.title;						
+						MasterPageMap[index].TitleObj.scrollIntoView();
+						UpdatePageTitle(item.title);
+						HashNavUnlocked = true;
 					}
 					Found = true;
 					return;
@@ -1028,7 +1038,7 @@ window.onhashchange = GoHash = function(BypassMasterPage) {
 		Sitemap.map(function(item, index) {
 			if(item.name == hashvalue) {
 				LoadPage(item.address);
-				document.title = item.title;
+				UpdatePageTitle(item.title);
 			}
 		});
 	}
@@ -1071,6 +1081,13 @@ window.onhashchange = GoHash = function(BypassMasterPage) {
 	//End Code section A
 }
 
+function UpdatePageTitle(TheTitle) {
+	if(!TheTitle || TheTitle == "") {
+		TheTitle = "Corbin Hale";
+	}
+	document.title = TheTitle;
+}
+
 function ResetMobileSocialButtons() {
 }
 
@@ -1097,7 +1114,7 @@ function UpdateScrollHashValue() {
 		if(MasterPageMap[i].TitleObj == undefined) {
 			continue;
 		}
-		if(IsInViewport(MasterPageMap[i].TitleObj)) {
+		if(IsInViewport(MasterPageMap[i].SectionDiv) && HashNavUnlocked) {
 			var OnlyHash = "";
 			if(location.hash.indexOf("&") == -1) {
 				OnlyHash = location.hash.substring(1, location.hash.length);
@@ -1107,6 +1124,7 @@ function UpdateScrollHashValue() {
 			}
 			if(OnlyHash != MasterPageMap[i].name) {
 				BypassALL = true;
+				UpdatePageTitle(MasterPageMap[i].title);
 				location.hash = MasterPageMap[i].name;
 			}
 			break;
@@ -1115,13 +1133,19 @@ function UpdateScrollHashValue() {
 }
 
 function IsInViewport(el) {
+	var WindowHeight = (window.innerHeight || document.documentElement.clientHeight);
+	var WindowWidth = (window.innerWidth || document.documentElement.clientWidth);
 	var rect = el.getBoundingClientRect();
-	return (
-		rect.top >= 0 &&
-		rect.left >= 0 &&
-		rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-		rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-	);
+	var WOverlap = Math.min(rect.right, WindowWidth) - Math.max(rect.left, 0);
+	var HOverlap = Math.min(rect.bottom, WindowHeight) - Math.max(rect.top, 0);
+	var OverlapArea = WOverlap*HOverlap;
+	var TotalArea = Math.min(WindowWidth*WindowHeight, (rect.right - rect.left)*(rect.bottom - rect.top));
+	if(OverlapArea/TotalArea >= 0.5) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 
