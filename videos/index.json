@@ -48,13 +48,13 @@
 		"Type": "VideoLink"
 	},
 	{
-		"Thumbnail": "videos/polaroid_thumb/LoveYourself.png",
+		"Thumbnail": "videos/polaroid_thumb/18Thumb.png",
 		"Caption": "18 (One Direction Cover)",
 		"URL": "https://www.youtube.com/watch?v=QRUdmRsyTpA&index=4&list=PLbVgatLHBk2C-ZOY8ZTJUeM4c7SMiH_B6",
 		"Type": "VideoLink"
 	},
 	{
-		"Thumbnail": "videos/polaroid_thumb/WhiteFlagAcoustic.png",
+		"Thumbnail": "videos/polaroid_thumb/ItsYouThumb.png",
 		"Caption": "iT's YoU (ZAYN Cover)",
 		"URL": "https://www.youtube.com/watch?v=Tmhzp21sz9E&list=PLbVgatLHBk2C-ZOY8ZTJUeM4c7SMiH_B6&index=5",
 		"Type": "VideoLink"
@@ -66,31 +66,31 @@
 		"Type": "VideoLink"
 	},
 	{
-		"Thumbnail": "videos/polaroid_thumb/TheScientist.png",
+		"Thumbnail": "videos/polaroid_thumb/TheBlowersDaughterThumb.png",
 		"Caption": "The Blower's Daughter (Damien Rice Cover)",
 		"URL": "https://www.youtube.com/watch?v=Ihe13MFIs7Q&index=6&list=PLbVgatLHBk2C-ZOY8ZTJUeM4c7SMiH_B6",
 		"Type": "VideoLink"
 	},
 	{
-		"Thumbnail": "videos/polaroid_thumb/WhiteFlag.png",
+		"Thumbnail": "videos/polaroid_thumb/CantHelpFallingInLoveThumb.png",
 		"Caption": "Can't Help Falling In Love (Elvis Cover)",
 		"URL": "https://www.youtube.com/watch?v=BL6QR8MTQ7M&list=PLbVgatLHBk2C-ZOY8ZTJUeM4c7SMiH_B6&index=9",
 		"Type": "VideoLink"
 	},
 	{
-		"Thumbnail": "videos/polaroid_thumb/DoIWannaKnow.png",
+		"Thumbnail": "videos/polaroid_thumb/SeeYouAgainThumb.png",
 		"Caption": "See You Again (Wiz Khalifa Cover)",
 		"URL": "https://www.youtube.com/watch?v=4fgLyWh-uiM&index=7&list=PLbVgatLHBk2C-ZOY8ZTJUeM4c7SMiH_B6",
 		"Type": "VideoLink"
 	},
 	{
-		"Thumbnail": "videos/polaroid_thumb/SeeYouAgain.png",
+		"Thumbnail": "videos/polaroid_thumb/SaySomethingThumb.png",
 		"Caption": "Say Something (A Great Big World Cover)",
 		"URL": "https://www.youtube.com/watch?v=aez4SuBXbsk&list=PLbVgatLHBk2C-ZOY8ZTJUeM4c7SMiH_B6&index=3",
 		"Type": "VideoLink"
 	},
 	{
-		"Thumbnail": "videos/polaroid_thumb/18.png",
+		"Thumbnail": "videos/polaroid_thumb/TheManAcousticThumb.png",
 		"Caption": "The Man I've Gotta Be (Acoustic)",
 		"URL": "https://www.youtube.com/watch?v=YKcGs79eZZQ",
 		"Type": "VideoLink"
