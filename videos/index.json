@@ -1,48 +1,48 @@
 [
 	{
-		"Thumbnail": "videos/polaroid_thumb/SaySomethingImGivingOnYou.png",
+		"Thumbnail": "videos/polaroid_thumb/BlueJeansThumb.png",
 		"Caption": "Blue Jeans (Lyric Video)",
 		"URL": "https://www.youtube.com/watch?v=oBtXagLDKlk",
 		"Type": "VideoLink"
 	},
 	{
-		"Thumbnail": "videos/polaroid_thumb/SaySomethingImGivingOnYou.png",
+		"Thumbnail": "videos/polaroid_thumb/WastingWordsAcousticThumb.png",
 		"Caption": "Wasting Words (Acoustic)",
 		"URL": "https://www.youtube.com/watch?v=PNWfTOkVR0M",
 		"Type": "VideoLink"
 	},
 	{
-		"Thumbnail": "videos/polaroid_thumb/CanYouFeelTheLoveTonight.png",
+		"Thumbnail": "videos/polaroid_thumb/WastingWordsThumb.png",
 		"Caption": "Wasting Words (Music Video)",
 		"URL": "https://www.youtube.com/watch?v=K7pKMrc4tRA",
 		"Type": "VideoLink"
 	},
 	{
-		"Thumbnail": "videos/polaroid_thumb/Stitches.png",
+		"Thumbnail": "videos/polaroid_thumb/WastingWordsLyricThumb.png",
 		"Caption": "Wasting Words (Lyric Video)",
 		"URL": "https://www.youtube.com/watch?v=sRedFPwgnfE",
 		"Type": "VideoLink"
 	},
 	{
-		"Thumbnail": "videos/polaroid_thumb/TheBlowersDaughter.png",
+		"Thumbnail": "videos/polaroid_thumb/WhiteFlagThumb.png",
 		"Caption": "White Flag (Music Video)",
 		"URL": "https://www.youtube.com/watch?v=dn7mPfKEOTQ",
 		"Type": "VideoLink"
 	},
 	{
-		"Thumbnail": "videos/polaroid_thumb/CantHelpFallingInLove.png",
+		"Thumbnail": "videos/polaroid_thumb/DoIWannaKnowThumb.png",
 		"Caption": "Do I Wanna Know (Arctic Monkeys Cover)",
 		"URL": "https://www.youtube.com/watch?v=uryCvz_7uUc&index=1&list=PLbVgatLHBk2C-ZOY8ZTJUeM4c7SMiH_B6",
 		"Type": "VideoLink"
 	},
 	{
-		"Thumbnail": "videos/polaroid_thumb/ItsYou.png",
+		"Thumbnail": "videos/polaroid_thumb/TheManThumb.png",
 		"Caption": "The Man I've Gotta Be (Music Video)",
 		"URL": "https://www.youtube.com/watch?v=3Z1aoEyf7oo",
 		"Type": "VideoLink"
 	},
 	{
-		"Thumbnail": "videos/polaroid_thumb/TheManIveGottaBeAcoustic.png",
+		"Thumbnail": "videos/polaroid_thumb/PhotographThumb.png",
 		"Caption": "Photograph (Ed Sheeran Cover)",
 		"URL": "https://www.youtube.com/watch?v=fVvvRj_2pps&list=PLbVgatLHBk2C-ZOY8ZTJUeM4c7SMiH_B6&index=2",
 		"Type": "VideoLink"
@@ -60,7 +60,7 @@
 		"Type": "VideoLink"
 	},
 	{
-		"Thumbnail": "videos/polaroid_thumb/TheManIveGottaBe.png",
+		"Thumbnail": "videos/polaroid_thumb/ScientistThumb.png",
 		"Caption": "The Scientist (Coldplay Cover)",
 		"URL": "https://www.youtube.com/watch?v=R7LrqKwjud0&list=PLbVgatLHBk2C-ZOY8ZTJUeM4c7SMiH_B6&index=8",
 		"Type": "VideoLink"
