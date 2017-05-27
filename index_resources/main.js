@@ -299,7 +299,6 @@ function HeadLine(imgsrc, msg, url, type, appendWhere, SubHeadLine)
 		}
 		this.Thumbnail = document.createElement("div");
 		this.Thumbnail.className = "MusicAlbumThumbnail";
-		debugger;
 		this.Thumbnail.style.background = "url('" + imgsrc + "')";
 		this.Thumbnail.style.backgroundSize = "cover";
 		this.Thumbnail.style.backgroundRepeat = "no-repeat";
