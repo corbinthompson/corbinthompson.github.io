@@ -77,7 +77,7 @@ function CheckCompatibility() {
 	}
 }
 
-function HeadLine(imgsrc, msg, url, type, appendWhere, SubHeadLine)
+function HeadLine(imgsrc, msg, url, type, appendWhere, SubHeadLine, ContentList)
 {
 	if(appendWhere == undefined) {
 		appendWhere = document.getElementById(LeContentObjectID);
@@ -85,12 +85,16 @@ function HeadLine(imgsrc, msg, url, type, appendWhere, SubHeadLine)
 	if(SubHeadLine == undefined) {
 		SubHeadLine = TheHeadLines[0];
 	}
+	if(ContentList == undefined) {
+		ContentList = SubHeadLine;
+	}
 	var that = this;
 	this.imgsrc = imgsrc;
 	this.msg = msg;
 	this.url = url;
 	this.type = type;
 	this.Position = SubHeadLine.length;
+	this.ContentList = ContentList;
 
 	this.Obj = document.createElement("div");
 
@@ -108,12 +112,13 @@ function HeadLine(imgsrc, msg, url, type, appendWhere, SubHeadLine)
 				var items = new Array();
 				var imagesloaded = 0;
 				var totalimages = 0;
-				for(var i=0;i < SubHeadLine.length; i++) {
-					if(SubHeadLine[i].type == 0) {
+				for(var i=0;i < that.ContentList.length; i++) {
+					var TheType = that.ContentList[i].type || that.ContentList[i].Type;
+					if(TheType == 0 || TheType == "Picture") {
 						totalimages++;
 						(new Promise(function(resolve, reject) {
 							var TheImage = new Image();
-							TheImage.src = SubHeadLine[i].url;
+							TheImage.src = that.ContentList[i].url || that.ContentList[i].Picture;
 							//Poll many times for size until we have it. Once we do, delete image.
 							var poll = setInterval(function() {
 								if(TheImage.naturalWidth) {
@@ -814,7 +819,7 @@ function LoadMasterMobilePage() {
 					switch(item.Type)
 					{
 						case "Picture":
-							TheHeadLines[MapIndex].push(new HeadLine(item.Thumbnail, item.Caption, item.Picture, 0, MasterPageMap[MapIndex].SectionDiv, TheHeadLines[MapIndex]));
+							TheHeadLines[MapIndex].push(new HeadLine(item.Thumbnail, item.Caption, item.Picture, 0, MasterPageMap[MapIndex].SectionDiv, TheHeadLines[MapIndex], MasterPageMap[MapIndex].Elements));
 							break;
 						case "PolaroidLink":
 							TheHeadLines[MapIndex].push(new HeadLine(item.Thumbnail, item.Caption, item.URL, 1, MasterPageMap[MapIndex].SectionDiv, TheHeadLines[MapIndex]));
