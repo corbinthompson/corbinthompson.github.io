@@ -6,9 +6,15 @@
 		"Type": "PolaroidAlbum"
 	},
 	{
-		"Thumbnail": "photos/polaroid_thumb/behindthescenes_thumb.png",
-		"Caption": "Behind the Scenes",
-		"URL": "#behindthescenes",
+		"Thumbnail": "photos/polaroid_thumb/musicvideothumb.png",
+		"Caption": "Wasting Words Music Video",
+		"URL": "#wastingwordsmusicvideo",
+		"Type": "PolaroidAlbum"
+	},
+	{
+		"Thumbnail": "photos/polaroid_thumb/acousticthumb.png",
+		"Caption": "Wasting Words Acoustic",
+		"URL": "#wastingwordsacoustic",
 		"Type": "PolaroidAlbum"
 	}
 ]

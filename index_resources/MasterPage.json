@@ -19,7 +19,7 @@
 	{
 		"maxelements": 10,
 		"name": "photos",
-		"title": "Photos",
+		"title": "Photo Albums",
 		"address": "photos/index.json"
 	},
 	{
@@ -31,13 +31,17 @@
 	{
 		"maxelements": 10,
 		"name": "corbinhalbum",
-		"title": "Corbin H. Album",
+		"title": "Corbin H.",
 		"address": "photos/CorbinH/index.json"
 	},
 	{
-		"maxelements": 10,
-		"name": "behindthescenes",
-		"title": "Behind the Scenes Photos",
-		"address": "photos/behindthescenes/index.json"
+		"name": "wastingwordsmusicvideo",
+		"title": "Wasting Words Music Video",
+		"address": "photos/wastingwordsmusicvideo/index.json"
+	},
+	{
+		"name": "wastingwordsacoustic",
+		"title": "Wasting Words Acoustic",
+		"address": "photos/wastingwordsacoustic/index.json"
 	}
 ]

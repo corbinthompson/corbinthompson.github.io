@@ -693,6 +693,7 @@ function OpenCompactMenu()
 	document.body.classList.add("ModalOpen");
 	document.getElementById("CompactMenuDrawer").className = "DrawerOpen";
 	document.getElementById("CompactMenuModal").className = "";
+	document.getElementById("LeContent").addEventListener("touchmove", PreventScrolling, false);
 }
 
 function CloseCompactMenu()
@@ -700,6 +701,12 @@ function CloseCompactMenu()
 	document.body.classList.remove("ModalOpen");
 	document.getElementById("CompactMenuDrawer").className = "DrawerClosed";
 	document.getElementById("CompactMenuModal").className = "pseudo-hidden";
+	document.getElementById("LeContent").removeEventListener("touchmove", PreventScrolling, false);
+}
+
+function PreventScrolling() {
+	event.preventDefault();
+	event.stopPropagation();
 }
 
 function MenuCursorMove(xA, yA, xF, yF) {
@@ -756,8 +763,10 @@ function GetJSON(url) {
 	return new Promise(function(resolve, reject) {
 		var req = new XMLHttpRequest();
 		req.open('GET', url);
+		var theurl = url;
 		req.onload = function() {
 			if(req.status == 200) {
+				console.log(theurl);
 				resolve(JSON.parse(req.response));
 			}
 			else {
@@ -796,6 +805,10 @@ function LoadMasterMobilePage() {
 					MasterPageMap[MapIndex].SectionDiv = ThisSectionDiv;
 					MasterPageMap[MapIndex].ElementsLoaded = 0;
 					MasterPageMap[MapIndex].Elements = response;	
+				}
+				else {
+					MasterPageMap[MapIndex].SectionDiv = document.getElementById("BillboardContainer");
+					MasterPageMap[MapIndex].TitleObj = document.getElementById("LeMenu");
 				}
 				var MaxElements = undefined;
 				if(item.maxelements) {
@@ -1002,12 +1015,12 @@ window.onhashchange = GoHash = function(BypassMasterPage) {
 					}
 					else if(MasterMobilePageLoaded == false) {
 						LoadMasterMobilePage().then(function() {
-							MasterPageMap[index].SectionDiv.scrollIntoView();
+							MasterPageMap[index].TitleObj.scrollIntoView();
 							document.title = item.title;						
 						});
 					}
 					else {
-						MasterPageMap[index].SectionDiv.scrollIntoView();
+						MasterPageMap[index].TitleObj.scrollIntoView();
 						document.title = item.title;						
 					}
 					Found = true;

@@ -26,7 +26,7 @@
 	},
 	{
 		"name": "photos",
-		"title": "Corbin Hale Photos",
+		"title": "Photo Albums",
 		"address": "photos/index.json"
 	},
 	{
@@ -40,34 +40,19 @@
 		"address": "uartist/index.json"
 	},
 	{
-		"name": "bonjovistory",
-		"title": "Bon Jovi Story - Corbin Hale",
-		"address": "news/bonjovi/article.json"
+		"name": "wasting words",
+		"title": "Wasting Words Review",
+		"address": "news/articles/wastingwords/article.json"
 	},
 	{
-		"name": "welcome",
-		"title": "Welcome! - Corbin Hale",
-		"address": "news/articles/welcome/article.json"
+		"name": "Blue Jeans",
+		"title": "Blue Jeans",
+		"address": "music/Albums/Blue Jeans/album.json"
 	},
 	{
-		"name": "dreams",
-		"title": "#Dreams - Corbin Hale",
-		"address": "news/articles/dreams/article.json"
-	},
-	{
-		"name": "peace",
-		"title": "#Peace - Corbin Hale",
-		"address": "news/articles/peace/article.json"
-	},
-	{
-		"name": "newjourney",
-		"title": "New Journey - Corbin Hale",
-		"address": "news/articles/newjourney/article.json"
-	},
-	{
-		"name": "originals",
-		"title": "Originals - Corbin Hale",
-		"address": "music/Albums/Originals/album.json"
+		"name": "Wasting Words",
+		"title": "Wasting Words",
+		"address": "music/Albums/Wasting Words/album.json"
 	},
 	{
 		"name": "covers",
@@ -76,13 +61,18 @@
 	},
 	{
 		"name": "corbinhalbum",
-		"title": "Corbin H. Album",
+		"title": "Corbin H.",
 		"address": "photos/CorbinH/index.json"
 	},
 	{
-		"name": "behindthescenes",
-		"title": "Behind the Scenes Photos",
-		"address": "photos/behindthescenes/index.json"
+		"name": "wastingwordsmusicvideo",
+		"title": "Wasting Words Music Video",
+		"address": "photos/wastingwordsmusicvideo/index.json"
+	},
+	{
+		"name": "wastingwordsacoustic",
+		"title": "Wasting Words Acoustic",
+		"address": "photos/wastingwordsacoustic/index.json"
 	},
 	{
 		"name": "TheManIveGottaBelyrics",
