@@ -565,6 +565,13 @@ function OnScroll()
 	didScroll = true;
 }
 
+//Prevent iOS Safari 10 from ignoring the user-scalable=no.
+window.addEventListener("touchmove", function(e) {
+	if(e.changedTouches.length == 2) {
+		e.preventDefault();
+	}
+},false);
+
 setInterval(function() {
 	UpdateScrollHashValue();
 	if(didScroll && ScrollRefPoint == null) {
@@ -572,6 +579,8 @@ setInterval(function() {
 	}
 	else if(didScroll) {
 		lastScrollY = window.scrollY;
+		//Force page not to scroll sideways
+		window.scroll(0, lastScrollY);
 		var ScrollDelta = window.scrollY - ScrollRefPoint;
 		if(window.scrollY >= 250) {
 			if(ScrollDelta >= 50) {
