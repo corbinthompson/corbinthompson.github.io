@@ -185,6 +185,7 @@ function HeadLine(imgsrc, msg, url, type, appendWhere, SubHeadLine, ContentList)
 	//Billboard
 	if(this.type == 8) {
 		this.Pics = new Array();
+		this.PicsMobile = new Array();
 		
 		for(var i = 0;i < imgsrc.Pictures.length;i++) {
 			this.Pics[i] = document.createElement("img");
@@ -192,11 +193,19 @@ function HeadLine(imgsrc, msg, url, type, appendWhere, SubHeadLine, ContentList)
 			this.Pics[i].className = "billboardpic";
 			document.getElementById("BillboardContent").appendChild(this.Pics[i]);
 			
+			this.PicsMobile[i] = document.createElement("img");
+			this.PicsMobile[i].src = imgsrc.PicturesSmall[i];
+			this.PicsMobile[i].className = "billboardpic";
+			document.getElementById("BillboardContentMobile").appendChild(this.PicsMobile[i]);
 		}
 		
-		this.Slider = new IdealImageSlider.Slider('#BillboardContent');
+		this.Slider = new IdealImageSlider.Slider('#BillboardContent', "BillboardContent");
 		this.Slider.addBulletNav();
 		this.Slider.start();
+		
+		this.SliderMobile = new IdealImageSlider.Slider('#BillboardContentMobile', "BillboardContentMobile");
+		this.SliderMobile.addBulletNav();
+		this.SliderMobile.start();
 				
 		/*this.Pictures = this.imgsrc.Pictures;
 		this.urls = this.url;

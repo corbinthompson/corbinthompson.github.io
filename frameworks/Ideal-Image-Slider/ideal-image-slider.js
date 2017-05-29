@@ -112,11 +112,10 @@ var IdealImageSlider = (function() {
 	};
 
 	var _addEvent = function(object, type, callback) {
-		//debugger;
 		if (object === null || typeof(object) === 'undefined') return;
 
 		if (object.addEventListener) {
-			object.addEventListener(type, callback, {passive: true});
+			object.addEventListener(type, callback, false);
 		} else if (object.attachEvent) {
 			object.attachEvent("on" + type, callback);
 		} else {
@@ -237,7 +236,7 @@ var IdealImageSlider = (function() {
 		}
 	};
 
-	var _touch = {
+	this._touch = {
 
 		vars: {
 			start: {},
@@ -395,11 +394,13 @@ var IdealImageSlider = (function() {
 		}
 
 	};
+	var _touch = this._touch;
+	
 
 	/*
 	 * Slider class
 	 */
-	var Slider = function(args) {
+	var Slider = function(args, ObjID) {
 		// Defaults
 		this.settings = {
 			selector: '',
@@ -444,7 +445,7 @@ var IdealImageSlider = (function() {
 
 		// Slider (container) element
 		var sliderEl = document.querySelector(this.settings.selector);
-		var sliderEl2 = document.getElementById("BillboardContainer");
+		var sliderEl2 = document.getElementById(ObjID);
 		if (!sliderEl) return null;
 
 		// Slides
@@ -550,7 +551,7 @@ var IdealImageSlider = (function() {
 				this.settings.effect = 'slide';
 				previousNav.style.display = 'none';
 				nextNav.style.display = 'none';
-				_addClass(sliderEl, this.settings.classes.touchEnabled);
+				_addClass(sliderEl2, this.settings.classes.touchEnabled);
 
 				_addEvent(sliderEl2, 'touchstart', _touch.start.bind(this), false);
 				_addEvent(sliderEl2, 'touchmove', _touch.move.bind(this), false);
@@ -578,6 +579,7 @@ var IdealImageSlider = (function() {
 		// Create internal attributes
 		this._attributes = {
 			container: sliderEl,
+			container2: sliderEl2,
 			slides: slides,
 			previousSlide: typeof slides[slides.length - 1] !== 'undefined' ? slides[slides.length - 1] : slides[0],
 			currentSlide: slides[0],
