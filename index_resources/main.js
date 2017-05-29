@@ -567,7 +567,7 @@ function OnScroll()
 
 //Prevent iOS Safari 10 from ignoring the user-scalable=no.
 window.addEventListener("touchmove", function(e) {
-	if(e.changedTouches.length == 2) {
+	if(e.originalEvent.touches.length >= 2) {
 		e.preventDefault();
 	}
 },false);
