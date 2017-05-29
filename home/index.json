@@ -1,8 +1,8 @@
 [
 	{
 		"Type": "Billboard",
-		"Pictures": ["/home/1.jpg", "/home/2.jpg", "/home/3.jpg", ""],
-		"PicturesSmall": ["/index_resources/sample3.png", "/index_resources/sample2.png", "/index_resources/sample1.png", "/index_resources/sample2.png"],
+		"Pictures": ["/home/1.jpg", "/home/2.jpg", "/home/3.jpg"],
+		"PicturesSmall": ["/home/small1.jpg", "/home/small2.jpg", "/home/small3.jpg"],
 		"urls": ["https://danielwalnut.com", "https://orbit.bitballoon.com", "https://orbit.bitballoon.com", "https://orbit.bitballoon.com"]
 	}
 ]
