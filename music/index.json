@@ -10,6 +10,11 @@
 		"Type": "MusicAlbum"
 	},
 	{
+		"Thumbnail": "music/Albums/White Flag/thumb.png",
+		"PlaylistURL": "music/Albums/White Flag/albumsongs.json",
+		"Type": "MusicAlbum"
+	},
+	{
 		"Thumbnail": "music/Albums/Covers/thumb.png",
 		"PlaylistURL": "music/Albums/Covers/albumsongs.json",
 		"Type": "MusicAlbum"
