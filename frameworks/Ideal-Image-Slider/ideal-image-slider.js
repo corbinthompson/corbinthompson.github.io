@@ -399,7 +399,7 @@ var IdealImageSlider = (function() {
 	/*
 	 * Slider class
 	 */
-	var Slider = function(args) {
+	var Slider = function(args, TheObj) {
 		// Defaults
 		this.settings = {
 			selector: '',
@@ -444,7 +444,8 @@ var IdealImageSlider = (function() {
 
 		// Slider (container) element
 		var sliderEl = document.querySelector(this.settings.selector);
-		var sliderEl2 = document.getElementById("BillboardContainer");
+		//var sliderEl2 = document.getElementById("BillboardContainer");
+		var sliderEl2 = document.getElementById(TheObj);
 		if (!sliderEl) return null;
 
 		// Slides
