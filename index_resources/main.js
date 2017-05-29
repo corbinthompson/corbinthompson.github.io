@@ -61,9 +61,9 @@ function OnLoad()
 	//Prevent iOS Safari 10 from ignoring the user-scalable=no.
 	document.body.addEventListener("touchmove", function(event) {
 		//window.scroll(0, window.scrollY);
-		if(event.scale != 1) {
-			event.preventDefault();
-		}
+		//if(event.scale != 1) {
+		//	event.preventDefault();
+		//}
 	},false);
 	//Check if it's mobile!!
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
