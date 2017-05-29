@@ -60,7 +60,7 @@ function OnLoad()
 	//LoadPage(NavLocation);
 	//Prevent iOS Safari 10 from ignoring the user-scalable=no.
 	document.body.addEventListener("touchmove", function(event) {
-		window.scroll(0, window.scrollY);
+		//window.scroll(0, window.scrollY);
 		if(event.scale !== 1) {
 			event.preventDefault();
 		}
