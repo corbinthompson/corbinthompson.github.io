@@ -116,7 +116,7 @@ var IdealImageSlider = (function() {
 		if (object === null || typeof(object) === 'undefined') return;
 
 		if (object.addEventListener) {
-			object.addEventListener(type, callback, false);
+			object.addEventListener(type, callback, {passive: true});
 		} else if (object.attachEvent) {
 			object.attachEvent("on" + type, callback);
 		} else {

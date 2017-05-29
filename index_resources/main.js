@@ -58,7 +58,7 @@ function OnLoad()
 	
 	//Let's do just that
 	//LoadPage(NavLocation);
-	//Prevent iOS Safari 10 from ignoring the user-scalable=no.
+	//iOS Safari 10 from ignoring the user-scalable=no.
 	/*document.body.addEventListener("touchmove", function(event) {
 		//window.scroll(0, window.scrollY);
 		//if(event.scale != 1) {
@@ -622,7 +622,7 @@ setInterval(function() {
 			document.getElementById("ScrollDownMenu").style.top = -100;			
 		}
 	}
-}, 250);
+}, 500);
 
 var SpotlightLock = false;
 
