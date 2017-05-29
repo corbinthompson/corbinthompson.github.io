@@ -579,8 +579,6 @@ setInterval(function() {
 	}
 	else if(didScroll) {
 		lastScrollY = window.scrollY;
-		//Force page not to scroll sideways
-		window.scroll(0, lastScrollY);
 		var ScrollDelta = window.scrollY - ScrollRefPoint;
 		if(window.scrollY >= 250) {
 			if(ScrollDelta >= 50) {
