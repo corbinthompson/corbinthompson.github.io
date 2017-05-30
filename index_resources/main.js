@@ -776,6 +776,7 @@ function LoadArticle(ArticleHTML) {
 function GetJSON(url) {
 	return new Promise(function(resolve, reject) {
 		var req = new XMLHttpRequest();
+		url = url + "?rand=" + Math.random();
 		req.open('GET', url);
 		req.onload = function() {
 			if(req.status == 200) {
