@@ -767,11 +767,9 @@ function GoToURL(towhere)
 }
 
 function LoadArticle(ArticleHTML) {
-	document.getElementById(LeContentObjectID).innerHTML = "";
+	ClearPage();
 	document.getElementById(LeArticleObjectID).innerHTML = ArticleHTML;
 	document.getElementById(LeArticleContainerObjectID).style.display = "block";
-	document.getElementById("LeContent").style.display = "none";
-	document.getElementById("LeMenu").className = "UpTitleAbsolute";
 	OnResize();
 }
 
