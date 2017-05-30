@@ -767,17 +767,16 @@ function GoToURL(towhere)
 }
 
 function LoadArticle(ArticleHTML) {
-	document.getElementById(LeContentObjectID).innerHTML = "";
+	ClearPage();
 	document.getElementById(LeArticleObjectID).innerHTML = ArticleHTML;
 	document.getElementById(LeArticleContainerObjectID).style.display = "block";
-	document.getElementById("LeContent").style.display = "none";
-	document.getElementById("LeMenu").className = "UpTitleAbsolute";
 	OnResize();
 }
 
 function GetJSON(url) {
 	return new Promise(function(resolve, reject) {
 		var req = new XMLHttpRequest();
+		url = url + "?rand=" + Math.random();
 		req.open('GET', url);
 		req.onload = function() {
 			if(req.status == 200) {
