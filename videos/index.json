@@ -1,5 +1,11 @@
 [
 	{
+		"Thumbnail": "videos/polaroid_thumb/BlueJeansVideoThumb.png",
+		"Caption": "Blue Jeans (Music Video)",
+		"URL": "https://www.youtube.com/watch?v=TiFdRnzdqK8",
+		"Type": "VideoLink"
+	},
+	{
 		"Thumbnail": "videos/polaroid_thumb/BlueJeansThumb.png",
 		"Caption": "Blue Jeans (Lyric Video)",
 		"URL": "https://www.youtube.com/watch?v=oBtXagLDKlk",
