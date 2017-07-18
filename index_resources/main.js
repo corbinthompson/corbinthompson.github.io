@@ -119,32 +119,50 @@ function HeadLine(imgsrc, msg, url, type, appendWhere, SubHeadLine, ContentList)
 				var items = new Array();
 				var imagesloaded = 0;
 				var totalimages = 0;
-				for(var i=0;i < that.ContentList.length; i++) {
-					var TheType = that.ContentList[i].type || that.ContentList[i].Type;
-					if(TheType == 0 || TheType == "Picture") {
-						totalimages++;
-						(new Promise(function(resolve, reject) {
-							var TheImage = new Image();
-							TheImage.src = that.ContentList[i].url || that.ContentList[i].Picture;
-							//Poll many times for size until we have it. Once we do, delete image.
-							var poll = setInterval(function() {
-								if(TheImage.naturalWidth) {
-									clearInterval(poll);
-									items[imagesloaded] = {
-										src: TheImage.src,
-										w: TheImage.naturalWidth,
-										h: TheImage.naturalHeight
-									};
-									TheImage = null;
-									imagesloaded++;
-									if(imagesloaded >= totalimages) {
-										resolve(items);
-									}										
-								}
-							}, 10);
-						})).then(resolve).catch(reject);
-					}
+				
+				var items = new Array();
+				
+				var GetSlideShowImgs = function(lastimage) {
+					return new Promise(function(LocalResolve, LocalReject) {
+						if(lastimage >= 0) {
+							var TheType = that.ContentList[lastimage].type || that.ContentList[lastimage].Type;
+							if(TheType == 0 || TheType == "Picture") {
+								totalimages++;
+								GetSlideShowImgs(lastimage - 1).then(function(response) {
+									var TheImage = new Image();
+									TheImage.src = that.ContentList[lastimage].url || that.ContentList[lastimage].Picture;
+									//Poll many times for size until we have it. Once we do, delete image.
+									var poll = setInterval(function() {
+										if(TheImage.naturalWidth) {
+											clearInterval(poll);
+											items.push({
+												src: TheImage.src,
+												w: TheImage.naturalWidth,
+												h: TheImage.naturalHeight
+											});
+											TheImage = null;
+											imagesloaded++;
+											LocalResolve(0);
+										}
+									}, 10);
+								}).catch(LocalReject);
+							}
+							else {
+								GetSlideShowImgs(lastimage - 1).then(function(response) {
+									LocalResolve(response);
+								}).catch(LocalReject);
+							}
+						}
+						else {
+							LocalResolve(0);
+						}
+						
+					});
 				}
+				
+				GetSlideShowImgs(that.ContentList.length - 1).then(function(response) {
+					resolve(items);
+				});
 			});
 			TriggerSlideShow.then(function(result) {
 				console.log(that.Position);
