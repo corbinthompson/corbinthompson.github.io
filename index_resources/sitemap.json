@@ -45,6 +45,11 @@
 		"address": "news/articles/wastingwords/article.json"
 	},
 	{
+		"name": "She'll Never Come Home",
+		"title": "She'll Never Come Home",
+		"address": "music/Albums/She'll Never Come Home/album.json"
+	},
+	{
 		"name": "Blue Jeans",
 		"title": "Blue Jeans",
 		"address": "music/Albums/Blue Jeans/album.json"
