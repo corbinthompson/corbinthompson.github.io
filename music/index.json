@@ -1,5 +1,10 @@
 [
 	{
+		"Thumbnail": "music/Albums/ShellNeverComeHome/thumbshellnever.jpg",
+		"PlaylistURL": "music/Albums/ShellNeverComeHome/albumsongs.json",
+		"Type": "MusicAlbum"
+	},
+	{
 		"Thumbnail": "music/Albums/Blue Jeans/thumbjeans.png",
 		"PlaylistURL": "music/Albums/Blue Jeans/albumsongs.json",
 		"Type": "MusicAlbum"

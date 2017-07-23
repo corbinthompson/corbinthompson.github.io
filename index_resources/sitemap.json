@@ -123,5 +123,10 @@
 		"name": "TheScientistlyrics",
 		"title": "The Scientist Lyrics",
 		"address": "music/Albums/Covers/Lyrics/TheScientist.json"
+	},
+	{
+		"name": "ShellNeverComeHomeLyrics",
+		"title": "She'll Never Come Home Lyrics",
+		"address": "music/Albums/ShellNeverComeHome/Lyrics/ShellNeverComeHome.json"
 	}
 ]
