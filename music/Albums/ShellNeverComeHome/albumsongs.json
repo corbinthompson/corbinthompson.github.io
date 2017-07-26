@@ -1,12 +1,7 @@
 [
 	{
 		"Name": "She'll Never Come Home",
-<<<<<<< HEAD:music/Albums/She'll Never Come Home/albumsongs.json
-		"URL": "music/songs/Shellnever.mp3",
-		"LyricsURL": "#WhiteFlaglyrics"
-=======
 		"URL": "music/songs/Shellnever.mp3",
 		"LyricsURL": "#ShellNeverComeHomeLyrics"
->>>>>>> origin/master:music/Albums/ShellNeverComeHome/albumsongs.json
 	}
 ]
