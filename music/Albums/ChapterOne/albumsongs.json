@@ -1,21 +1,21 @@
 [
 	{
-		"Name": "1 - Sex on the Beach",
+		"Name": "Sex On The Beach",
 		"URL": "music/songs/Sex.mp3",
 		"LyricsURL": ""
 	},
 	{
-		"Name": "2 - Blue Jeans",
+		"Name": "Blue Jeans",
 		"URL": "music/songs/BlueJeans.wav",
 		"LyricsURL": ""
 	},
 	{
-		"Name": "3 - Wasting Words",
+		"Name": "Wasting Words",
 		"URL": "music/songs/WastingWords.wav",
 		"LyricsURL": ""
 	},
 	{
-		"Name": "4 - White Flag",
+		"Name": "White Flag",
 		"URL": "music/songs/WhiteFlag.wav",
 		"LyricsURL": ""
 	},
@@ -25,7 +25,7 @@
 		"LyricsURL": ""
 	},
 	{
-		"Name": "6 - She'll Never Come Home",
+		"Name": "She'll Never Come Home",
 		"URL": "music/songs/Shellnever.mp3",
 		"LyricsURL": ""
 	}
