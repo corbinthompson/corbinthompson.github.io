@@ -5,6 +5,11 @@
 		"Type": "MusicAlbum"
 	},
 	{
+		"Thumbnail": "music/Albums/Wasting Words/thumb.png",
+		"PlaylistURL": "music/Albums/Wasting Words/albumsongs.json",
+		"Type": "MusicAlbum"
+	},
+	{
 		"Thumbnail": "music/Albums/Covers/thumb.png",
 		"PlaylistURL": "music/Albums/Covers/albumsongs.json",
 		"Type": "MusicAlbum"
