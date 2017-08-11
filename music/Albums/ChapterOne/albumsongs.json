@@ -1,7 +1,33 @@
 [
 	{
-		"Name": "Chapter One (EP)",
+		"Name": "1 - Sex on the Beach",
+		"URL": "music/songs/Sex.mp3",
+		"LyricsURL": ""
+	},
+	{
+		"Name": "2 - Blue Jeans",
+		"URL": "music/songs/BlueJeans.wav",
+		"LyricsURL": ""
+	},
+	{
+		"Name": "3 - Wasting Words",
+		"URL": "music/songs/WastingWords.wav",
+		"LyricsURL": ""
+	},
+	{
+		"Name": "4 - White Flag",
+		"URL": "music/songs/WhiteFlag.wav",
+		"LyricsURL": ""
+	},
+	{
+		"Name": "The Man I've Gotta Be",
+		"URL": "music/songs/TheMan.mp3",
+		"LyricsURL": ""
+	},
+	{
+		"Name": "6 - She'll Never Come Home",
 		"URL": "music/songs/Shellnever.mp3",
-		"LyricsURL": "#ShellNeverComeHomeLyrics"
+		"LyricsURL": ""
 	}
+	
 ]
