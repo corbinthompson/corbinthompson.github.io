@@ -1,0 +1,33 @@
+[
+	{
+		"Name": "Sex On The Beach",
+		"URL": "music/songs/Sex.mp3",
+		"LyricsURL": ""
+	},
+	{
+		"Name": "Blue Jeans",
+		"URL": "music/songs/BlueJeans.wav",
+		"LyricsURL": ""
+	},
+	{
+		"Name": "Wasting Words",
+		"URL": "music/songs/WastingWords.wav",
+		"LyricsURL": ""
+	},
+	{
+		"Name": "White Flag",
+		"URL": "music/songs/WhiteFlag.wav",
+		"LyricsURL": ""
+	},
+	{
+		"Name": "The Man I've Gotta Be",
+		"URL": "music/songs/TheMan.mp3",
+		"LyricsURL": ""
+	},
+	{
+		"Name": "She'll Never Come Home",
+		"URL": "music/songs/Shellnever.mp3",
+		"LyricsURL": ""
+	}
+	
+]

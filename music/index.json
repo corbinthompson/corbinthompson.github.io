@@ -1,22 +1,17 @@
 [
 	{
-		"Thumbnail": "music/Albums/ShellNeverComeHome/thumbshellnever.jpg",
-		"PlaylistURL": "music/Albums/ShellNeverComeHome/albumsongs.json",
+		"Thumbnail": "music/Albums/ChapterOne/thumbchapter.png",
+		"PlaylistURL": "music/Albums/ChapterOne/albumsongs.json",
 		"Type": "MusicAlbum"
 	},
 	{
-		"Thumbnail": "music/Albums/Blue Jeans/thumbjeans.png",
-		"PlaylistURL": "music/Albums/Blue Jeans/albumsongs.json",
+		"Thumbnail": "music/Albums/She'll Never Come Home Acoustic/thumb.jpg",
+		"PlaylistURL": "music/Albums/She'll Never Come Home Acoustic/albumsongs.json",
 		"Type": "MusicAlbum"
 	},
 	{
 		"Thumbnail": "music/Albums/Wasting Words/thumb.png",
 		"PlaylistURL": "music/Albums/Wasting Words/albumsongs.json",
-		"Type": "MusicAlbum"
-	},
-	{
-		"Thumbnail": "music/Albums/White Flag/thumb.png",
-		"PlaylistURL": "music/Albums/White Flag/albumsongs.json",
 		"Type": "MusicAlbum"
 	},
 	{

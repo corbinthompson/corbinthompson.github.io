@@ -1,5 +1,35 @@
 [
 	{
+		"Thumbnail": "videos/polaroid_thumb/ShellNeverAcoustic.png",
+		"Caption": "She'll Never Come Home (Acoustic)",
+		"URL": "https://www.youtube.com/watch?v=IL5y5jsofLo",
+		"Type": "VideoLink"
+	},
+	{
+		"Thumbnail": "videos/polaroid_thumb/SexThumb.png",
+		"Caption": "Sex On The Beach (Lyric Video)",
+		"URL": "https://www.youtube.com/watch?v=M7bvhDj2a7E",
+		"Type": "VideoLink"
+	},
+	{
+		"Thumbnail": "videos/polaroid_thumb/WhiteFlagThumb.png",
+		"Caption": "White Flag (Lyric Video)",
+		"URL": "https://www.youtube.com/watch?v=hz2W66RAx1E",
+		"Type": "VideoLink"
+	},
+	{
+		"Thumbnail": "videos/polaroid_thumb/TheManLyric.png",
+		"Caption": "The Man I've Gotta Be (Lyric Video)",
+		"URL": "https://www.youtube.com/watch?v=siaHFWp0Jow",
+		"Type": "VideoLink"
+	},
+	{
+		"Thumbnail": "videos/polaroid_thumb/Shellneverlyric.png",
+		"Caption": "She'll Never Come Home (Lyric Video)",
+		"URL": "https://www.youtube.com/watch?v=EKSIg9Ldkgg",
+		"Type": "VideoLink"
+	},
+	{
 		"Thumbnail": "videos/polaroid_thumb/Shellnever.png",
 		"Caption": "She'll Never Come Home (Music Video)",
 		"URL": "https://www.youtube.com/watch?v=-xe8jlWLOdw",
@@ -75,42 +105,6 @@
 		"Thumbnail": "videos/polaroid_thumb/ScientistThumb.png",
 		"Caption": "The Scientist (Coldplay Cover)",
 		"URL": "https://www.youtube.com/watch?v=R7LrqKwjud0&list=PLbVgatLHBk2C-ZOY8ZTJUeM4c7SMiH_B6&index=8",
-		"Type": "VideoLink"
-	},
-	{
-		"Thumbnail": "videos/polaroid_thumb/TheBlowersDaughterThumb.png",
-		"Caption": "The Blower's Daughter (Damien Rice Cover)",
-		"URL": "https://www.youtube.com/watch?v=Ihe13MFIs7Q&index=6&list=PLbVgatLHBk2C-ZOY8ZTJUeM4c7SMiH_B6",
-		"Type": "VideoLink"
-	},
-	{
-		"Thumbnail": "videos/polaroid_thumb/CantHelpFallingInLoveThumb.png",
-		"Caption": "Can't Help Falling In Love (Elvis Cover)",
-		"URL": "https://www.youtube.com/watch?v=BL6QR8MTQ7M&list=PLbVgatLHBk2C-ZOY8ZTJUeM4c7SMiH_B6&index=9",
-		"Type": "VideoLink"
-	},
-	{
-		"Thumbnail": "videos/polaroid_thumb/SeeYouAgainThumb.png",
-		"Caption": "See You Again (Wiz Khalifa Cover)",
-		"URL": "https://www.youtube.com/watch?v=4fgLyWh-uiM&index=7&list=PLbVgatLHBk2C-ZOY8ZTJUeM4c7SMiH_B6",
-		"Type": "VideoLink"
-	},
-	{
-		"Thumbnail": "videos/polaroid_thumb/SaySomethingThumb.png",
-		"Caption": "Say Something (A Great Big World Cover)",
-		"URL": "https://www.youtube.com/watch?v=aez4SuBXbsk&list=PLbVgatLHBk2C-ZOY8ZTJUeM4c7SMiH_B6&index=3",
-		"Type": "VideoLink"
-	},
-	{
-		"Thumbnail": "videos/polaroid_thumb/TheManAcousticThumb.png",
-		"Caption": "The Man I've Gotta Be (Acoustic)",
-		"URL": "https://www.youtube.com/watch?v=YKcGs79eZZQ",
-		"Type": "VideoLink"
-	},
-	{
-		"Thumbnail": "videos/polaroid_thumb/WhiteFlagAcousticThumb.png",
-		"Caption": "White Flag (Acoustic)",
-		"URL": "https://www.youtube.com/watch?v=oHfDMdkhgSc",
 		"Type": "VideoLink"
 	}
 ]
