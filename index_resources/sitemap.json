@@ -45,9 +45,9 @@
 		"address": "news/articles/wastingwords/article.json"
 	},
 	{
-		"name": "She'll Never Come Home",
+		"name": "ShellNeverComeHome",
 		"title": "She'll Never Come Home",
-		"address": "music/Albums/She'll Never Come Home/album.json"
+		"address": "music/Albums/ShellNeverComeHomeAcoustic/album.json"
 	},
 	{
 		"name": "Blue Jeans",
@@ -127,6 +127,6 @@
 	{
 		"name": "ShellNeverComeHomeLyrics",
 		"title": "She'll Never Come Home Lyrics",
-		"address": "music/Albums/ShellNeverComeHome/Lyrics/ShellNeverComeHome.json"
+		"address": "music/Albums/ShellNeverComeHomeAcoustic/Lyrics/ShellNeverComeHome.json"
 	}
 ]
