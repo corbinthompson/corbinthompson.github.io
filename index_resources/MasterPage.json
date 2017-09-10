@@ -40,13 +40,13 @@
 		"address": "photos/shellnevercomehome/index.json"
 	},
 	{
-		"name": "wastingwordsmusicvideo",
-		"title": "Wasting Words Music Video",
-		"address": "photos/wastingwordsmusicvideo/index.json"
-	},
-	{
 		"name": "wastingwordsacoustic",
 		"title": "Wasting Words Acoustic",
 		"address": "photos/wastingwordsacoustic/index.json"
+	},
+	{
+		"name": "wastingwordsmusicvideo",
+		"title": "Wasting Words Music Video",
+		"address": "photos/wastingwordsmusicvideo/index.json"
 	}
 ]
