@@ -6,6 +6,12 @@
 		"Type": "PolaroidAlbum"
 	},
 	{
+		"Thumbnail": "photos/polaroid_thumb/shellnever.png",
+		"Caption": "She'll Never Come Home Acoustic",
+		"URL": "#shellnevercomehome",
+		"Type": "PolaroidAlbum"
+	},
+	{
 		"Thumbnail": "photos/polaroid_thumb/musicvideothumb.png",
 		"Caption": "Wasting Words Music Video",
 		"URL": "#wastingwordsmusicvideo",

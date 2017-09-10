@@ -70,6 +70,19 @@
 					<key>promptMessage</key>
 					<string>Choose a Finder Item:</string>
 				</dict>
+				<key>ActionRuntimeParameters</key>
+				<dict>
+					<key>defaultLocation</key>
+					<string>/Users/CorbinianWalnut/Documents/Website</string>
+					<key>granularity</key>
+					<integer>0</integer>
+					<key>multipleSelection</key>
+					<true/>
+					<key>promptMessage</key>
+					<string>Choose a Finder Item:</string>
+					<key>temporary items path</key>
+					<string>/var/folders/9x/v6jfjgz15jl0m9s06mf6sr_m0000gn/T/50F63C14-285F-4DB6-B741-F8215214994F/1/com.apple.Automator.AskForFinderItems</string>
+				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.AskForFinderItems</string>
 				<key>CFBundleVersion</key>
@@ -443,19 +456,19 @@
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>6530CE8B-6CA5-4360-BA11-FDD5EC2AF4F6</key>
-		<dict>
-			<key>from</key>
-			<string>D6753F18-F8F9-435A-BFF1-B4C529C70947 - D6753F18-F8F9-435A-BFF1-B4C529C70947</string>
-			<key>to</key>
-			<string>2870B0A5-6275-4228-B6B0-DFD092892B10 - 2870B0A5-6275-4228-B6B0-DFD092892B10</string>
-		</dict>
-		<key>B51E229F-971D-48C6-8812-4C3E15AA3AD5</key>
+		<key>3E03CFEC-DF55-4E91-BEC9-D69CDA14B4E2</key>
 		<dict>
 			<key>from</key>
 			<string>DCDDA5BD-B52F-471D-A729-D34E7484FB1A - DCDDA5BD-B52F-471D-A729-D34E7484FB1A</string>
 			<key>to</key>
 			<string>D6753F18-F8F9-435A-BFF1-B4C529C70947 - D6753F18-F8F9-435A-BFF1-B4C529C70947</string>
+		</dict>
+		<key>6E467B9A-D2C5-4E33-BEEE-631EC5A17E57</key>
+		<dict>
+			<key>from</key>
+			<string>D6753F18-F8F9-435A-BFF1-B4C529C70947 - D6753F18-F8F9-435A-BFF1-B4C529C70947</string>
+			<key>to</key>
+			<string>2870B0A5-6275-4228-B6B0-DFD092892B10 - 2870B0A5-6275-4228-B6B0-DFD092892B10</string>
 		</dict>
 	</dict>
 	<key>variables</key>
