@@ -1,5 +1,11 @@
 [
 	{
+		"Thumbnail": "videos/polaroid_thumb/TheManAcoustic.png",
+		"Caption": "The Man I've Gotta Be (Acoustic)",
+		"URL": "https://www.youtube.com/watch?v=uuLWSryjOGI",
+		"Type": "VideoLink"
+	},
+	{
 		"Thumbnail": "videos/polaroid_thumb/ShellNeverAcoustic.png",
 		"Caption": "She'll Never Come Home (Acoustic)",
 		"URL": "https://www.youtube.com/watch?v=IL5y5jsofLo",
