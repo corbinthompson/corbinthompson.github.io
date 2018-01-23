@@ -30,9 +30,15 @@
 		"Type": "Picture"
 	},
 	{
+		"Thumbnail": "photos/chapteronephotoshoot/polaroid_thumb/5.png",
+		"Caption":  "",
+		"Picture": "photos/chapteronephotoshoot/photos/5.png",
+		"Type": "Picture"
+	},
+	{
 		"Thumbnail": "photos/chapteronephotoshoot/polaroid_thumb/6.jpg",
 		"Caption":  "",
-		"Picture": "photos/chapteronephotoshoot/photos/6.png",
+		"Picture": "photos/chapteronephotoshoot/photos/6.jpg",
 		"Type": "Picture"
 	},
 	{
@@ -60,7 +66,7 @@
 		"Type": "Picture"
 	},
 	{
-		"Thumbnail": "photos/chapteronephotoshoot/polaroid_thumb/11.jpg",
+		"Thumbnail": "photos/chapteronephotoshoot/polaroid_thumb/11.png",
 		"Caption":  "",
 		"Picture": "photos/chapteronephotoshoot/photos/11.jpg",
 		"Type": "Picture"
