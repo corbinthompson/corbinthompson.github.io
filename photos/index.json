@@ -1,26 +1,26 @@
 [
 	{
 		"Thumbnail": "photos/polaroid_thumb/CorbinH_thumb.png",
-		"Caption": "Corbin H.",
+		"Caption": "Corbin Hale Shots - 2018",
 		"URL": "#corbinhalbum",
 		"Type": "PolaroidAlbum"
 	},
 	{
 		"Thumbnail": "photos/polaroid_thumb/shellnever.png",
-		"Caption": "She'll Never Come Home Acoustic",
-		"URL": "#shellnevercomehome",
+		"Caption": "Music Video Shots - 2017",
+		"URL": "#behindthescenesphotos",
 		"Type": "PolaroidAlbum"
 	},
 	{
 		"Thumbnail": "photos/polaroid_thumb/acousticthumb.png",
-		"Caption": "Wasting Words Acoustic",
-		"URL": "#wastingwordsacoustic",
+		"Caption": "Chapter One Photoshoot - 2017",
+		"URL": "#chapteronephotoshoot",
 		"Type": "PolaroidAlbum"
 	},
 	{
 		"Thumbnail": "photos/polaroid_thumb/musicvideothumb.png",
-		"Caption": "Wasting Words Music Video",
-		"URL": "#wastingwordsmusicvideo",
+		"Caption": "Photoshoots - 2016/17",
+		"URL": "#photos2016",
 		"Type": "PolaroidAlbum"
 	}
 ]
