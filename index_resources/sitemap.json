@@ -5,11 +5,6 @@
 		"address": "home/index.json"
 	},
 	{
-		"name": "",
-		"title": "Corbin Hale - Official Website",
-		"address": "home/index.json"
-	},
-	{
 		"name": "news",
 		"title": "Corbin Hale News",
 		"address": "news/index.json"
