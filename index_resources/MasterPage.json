@@ -7,25 +7,25 @@
 	{
 		"maxelements": 3,
 		"name": "news",
-		"title": "Corbin Hale - News",
+		"title": "News",
 		"address": "news/index.json"
 	},
 	{
 		"maxelements": 5,
 		"name": "music",
-		"title": "Corbin Hale - Music",
+		"title": "Music",
 		"address": "music/index.json"
 	},
 	{
 		"maxelements": 10,
 		"name": "photos",
-		"title": "Corbin Hale - Photo Albums",
+		"title": "Photo Albums",
 		"address": "photos/index.json"
 	},
 	{
 		"maxelements": 5,
 		"name": "videos",
-		"title": "Corbin Hale - Videos",
+		"title": "Videos",
 		"address": "videos/index.json"
 	},
 	{
