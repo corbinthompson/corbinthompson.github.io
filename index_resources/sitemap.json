@@ -70,14 +70,19 @@
 		"address": "photos/CorbinH/index.json"
 	},
 	{
-		"name": "wastingwordsmusicvideo",
-		"title": "Wasting Words Music Video",
-		"address": "photos/wastingwordsmusicvideo/index.json"
+		"name": "behindthescenesphotos",
+		"title": "Music Video Shots - 2017",
+		"address": "photos/behindthescenesphotos/index.json"
 	},
 	{
-		"name": "wastingwordsacoustic",
-		"title": "Wasting Words Acoustic",
-		"address": "photos/wastingwordsacoustic/index.json"
+		"name": "chapteronephotoshoot",
+		"title": "Chapter One Photoshoot - 2017",
+		"address": "photos/chapteronephotoshoot/index.json"
+	},
+	{
+		"name": "photos2016",
+		"title": "Photoshoots - 2016/17",
+		"address": "photos/photos2016/index.json"
 	},
 	{
 		"name": "TheManIveGottaBelyrics",

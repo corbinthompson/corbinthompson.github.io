@@ -1,37 +1,37 @@
 [
 	{
 		"name": "home",
-		"title": "",
+		"title": "Corbin Hale - Official Website",
 		"address": "home/index.json"
 	},
 	{
 		"maxelements": 3,
 		"name": "news",
-		"title": " News",
+		"title": "Corbin Hale - News",
 		"address": "news/index.json"
 	},
 	{
 		"maxelements": 5,
 		"name": "music",
-		"title": "Music",
+		"title": "Corbin Hale - Music",
 		"address": "music/index.json"
 	},
 	{
 		"maxelements": 10,
 		"name": "photos",
-		"title": "Photo Albums",
+		"title": "Corbin Hale - Photo Albums",
 		"address": "photos/index.json"
 	},
 	{
 		"maxelements": 5,
 		"name": "videos",
-		"title": "Videos",
+		"title": "Corbin Hale - Videos",
 		"address": "videos/index.json"
 	},
 	{
 		"maxelements": 10,
 		"name": "corbinhalbum",
-		"title": "Corbin H.",
+		"title": "Corbin Hale Shots - 2018",
 		"address": "photos/CorbinH/index.json"
 	},
 	{
