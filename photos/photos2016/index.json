@@ -2,7 +2,7 @@
 	{
 		"Thumbnail": "photos/photos2016/polaroid_thumb/1.png",
 		"Caption":  "",
-		"Picture": "photos/photos2016/photos/1.jpg",
+		"Picture": "photos/photos2016/photos/1.png",
 		"Type": "Picture"
 	},
 	{
@@ -14,19 +14,19 @@
 	{
 		"Thumbnail": "photos/photos2016/polaroid_thumb/3.png",
 		"Caption":  "",
-		"Picture": "photos/photos2016/photos/3.jpg",
+		"Picture": "photos/photos2016/photos/3.png",
 		"Type": "Picture"
 	},
 	{
 		"Thumbnail": "photos/photos2016/polaroid_thumb/4.png",
 		"Caption":  "",
-		"Picture": "photos/photos2016/photos/4.jpg",
+		"Picture": "photos/photos2016/photos/4.png",
 		"Type": "Picture"
 	},
 	{
 		"Thumbnail": "photos/photos2016/polaroid_thumb/5.png",
 		"Caption":  "",
-		"Picture": "photos/photos2016/photos/5.jpg",
+		"Picture": "photos/photos2016/photos/5.png",
 		"Type": "Picture"
 	},
 	{
@@ -38,7 +38,7 @@
 	{
 		"Thumbnail": "photos/photos2016/polaroid_thumb/7.png",
 		"Caption":  "",
-		"Picture": "photos/photos2016/photos/7.jpg",
+		"Picture": "photos/photos2016/photos/7.png",
 		"Type": "Picture"
 	}
 ]
