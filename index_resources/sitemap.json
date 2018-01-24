@@ -128,5 +128,25 @@
 		"name": "ShellNeverComeHomeLyrics",
 		"title": "She'll Never Come Home Lyrics",
 		"address": "music/Albums/ShellNeverComeHomeAcoustic/Lyrics/ShellNeverComeHome.json"
+	},
+	{
+		"name": "corbinhalbum",
+		"title": "Corbin Hale Shots - 2018",
+		"address": "photos/CorbinH/index.json"
+	},
+	{
+		"name": "musicvideoshots2017",
+		"title": "Music Video Shots - 2017",
+		"address": "photos/musicvideoshots2017/index.json"
+	},
+	{
+		"name": "chapteronephotoshoot",
+		"title": "Chapter One Shots - 2017",
+		"address": "photos/chapteronephotoshoot/index.json"
+	},
+	{
+		"name": "photos2016",
+		"title": "Corbin Hale Shots - 2016/17",
+		"address": "photos/photos2016/index.json"
 	}
 ]
