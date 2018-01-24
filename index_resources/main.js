@@ -815,7 +815,7 @@ function LoadMasterMobilePage() {
 	return new Promise(function(resolve, reject) {
 		ClearPage(true);
 		HideSpotlights();
-		UpdatePageTitle("Corbin Hale");
+		UpdatePageTitle("Corbin Hale – Official Website");
 		MasterPageMap.map(function(item, MapIndex) {
 			TheHeadLines[MapIndex] = new Array();
 			GetJSON(item.address).then(function(response) {
@@ -1121,7 +1121,7 @@ window.onhashchange = GoHash = function(BypassMasterPage) {
 
 function UpdatePageTitle(TheTitle) {
 	if(!TheTitle || TheTitle == "") {
-		TheTitle = "Corbin Hale";
+		TheTitle = "Corbin Hale — Official Website";
 	}
 	document.title = TheTitle;
 }
