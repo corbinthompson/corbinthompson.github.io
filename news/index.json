@@ -1,5 +1,12 @@
 [
 	{
+		"Thumbnail": "news/polaroid_thumb/shellnever.png",
+		"CaptionTitle": "Last single from <i>Chapter One</i> is released today",
+		"Caption": "“She’ll Never Come Home is the closest you’ll get to...", 
+		"URL": "#shellnevernews",
+		"Type": "PolaroidText"
+	},
+	{
 		"Thumbnail": "news/polaroid_thumb/wastingwords.png",
 		"CaptionTitle": "Wasting Words (Review By TunedLoud)",
 		"Caption": "You will notice a trend in modern pop artists...", 
