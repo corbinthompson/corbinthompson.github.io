@@ -35,6 +35,11 @@
 		"address": "uartist/index.json"
 	},
 	{
+		"name": "chapteronenews",
+		"title": "Chapter One is out now",
+		"address": "news/articles/chapterone/article.json"
+	}
+	{
 		"name": "shellnevernews",
 		"title": "She'll Never Come Home News",
 		"address": "news/articles/shellnever/article.json"
