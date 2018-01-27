@@ -35,6 +35,11 @@
 		"address": "uartist/index.json"
 	},
 	{
+		"name": "interviewchapterone",
+		"title": "Interview Chapter One",
+		"address": "news/articles/interviewchapterone/article.json"
+	}
+	{
 		"name": "chapteronenews",
 		"title": "Chapter One is out now",
 		"address": "news/articles/chapterone/article.json"
