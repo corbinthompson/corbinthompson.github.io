@@ -1,29 +1,29 @@
 [
 	{
 		"Thumbnail": "news/polaroid_thumb/interviewchapterone.png",
-		"CaptionTitle": "Interview with <i>Twist Online</i>",
-		"Caption": "“We recently interviewed Singer-songwriter, Corbin Hale, who was born... (August 22nd, 2017)", 
+		"CaptionTitle": "<i>Interview with Twist Online</i>",
+		"Caption": "“We recently interviewed Singer-songwriter, Corbin Hale, who was born...</i> (August 22nd, 2017)", 
 		"URL": "#interviewchapterone",
 		"Type": "PolaroidText"
 	},
 	{
 		"Thumbnail": "news/polaroid_thumb/chapterone.png",
 		"CaptionTitle": "<i>Chapter One</i> (EP) is out now!",
-		"Caption": "Filled with heartfelt and finely-crafted hooks, raspy vocals... (August 11th, 2017)", 
+		"Caption": "<i>Filled with heartfelt and finely-crafted hooks, raspy vocals...</i> (August 11th, 2017)", 
 		"URL": "#chapteronenews",
 		"Type": "PolaroidText"
 	},
 	{
 		"Thumbnail": "news/polaroid_thumb/shellnever.png",
 		"CaptionTitle": "Last single from <i>Chapter One</i> is released today!",
-		"Caption": "“She’ll Never Come Home is the closest you’ll get to... (July 20th, 2017)", 
+		"Caption": "<i>“She’ll Never Come Home is the closest you’ll get to...</i> (July 20th, 2017)", 
 		"URL": "#shellnevernews",
 		"Type": "PolaroidText"
 	},
 	{
 		"Thumbnail": "news/polaroid_thumb/wastingwords.png",
 		"CaptionTitle": "Wasting Words (Review By TunedLoud)",
-		"Caption": "You will notice a trend in modern pop artists... (May 3rd, 2017)", 
+		"Caption": "<i>You will notice a trend in modern pop artists...</i> (May 3rd, 2017)", 
 		"URL": "#wastingwords",
 		"Type": "PolaroidText"
 	}
