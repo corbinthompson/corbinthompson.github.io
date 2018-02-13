@@ -35,6 +35,11 @@
 		"address": "uartist/index.json"
 	},
 	{
+		"name": "writing",
+		"title": "New Project",
+		"address": "news/articles/writing/article.json"
+	},
+	{
 		"name": "interviewchapterone",
 		"title": "Interview Chapter One",
 		"address": "news/articles/interviewchapterone/article.json"
