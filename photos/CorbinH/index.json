@@ -12,15 +12,15 @@
 		"Type": "Picture"
 	},
 	{
-		"Thumbnail": "photos/CorbinH/polaroid_thumb/3.jpg",
-		"Caption":  "",
-		"Picture": "photos/CorbinH/photos/3.jpg",
-		"Type": "Picture"
-	},
-	{
 		"Thumbnail": "photos/CorbinH/polaroid_thumb/9.jpg",
 		"Caption":  "",
 		"Picture": "photos/CorbinH/photos/9.jpg",
+		"Type": "Picture"
+	},
+	{
+		"Thumbnail": "photos/CorbinH/polaroid_thumb/3.jpg",
+		"Caption":  "",
+		"Picture": "photos/CorbinH/photos/3.jpg",
 		"Type": "Picture"
 	},
 	{
