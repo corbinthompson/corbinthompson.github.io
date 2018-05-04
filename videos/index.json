@@ -1,5 +1,11 @@
 [
 	{
+		"Thumbnail": "videos/polaroid_thumb/kaleidoscope.png",
+		"Caption": "Kaleidoscope (Music Video)",
+		"URL": "https://www.youtube.com/watch?v=RF_IwJ_t7cI",
+		"Type": "VideoLink"
+	},
+	{
 		"Thumbnail": "videos/polaroid_thumb/athousandyears.png",
 		"Caption": "A Thousand Years (Cover)",
 		"URL": "https://www.youtube.com/watch?v=efy6yAWqFkE",
