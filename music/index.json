@@ -1,5 +1,10 @@
 [
 	{
+		"Thumbnail": "music/Albums/Kaleidoscope/thumbkaleidoscope.jpg",
+		"PlaylistURL": "music/Albums/Kaleidoscope/albumsongs.json",
+		"Type": "MusicAlbum"
+	},
+	{
 		"Thumbnail": "music/Albums/ChapterOne/thumbchapter.png",
 		"PlaylistURL": "music/Albums/ChapterOne/albumsongs.json",
 		"Type": "MusicAlbum"
