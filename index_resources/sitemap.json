@@ -35,6 +35,11 @@
 		"address": "uartist/index.json"
 	},
 	{
+		"name": "kaleidoscope",
+		"title": "KALEIDOSCOPE IS OUT NOW",
+		"address": "news/articles/kaleidoscope/article.json"
+	},
+	{
 		"name": "writing",
 		"title": "New Project",
 		"address": "news/articles/writing/article.json"
