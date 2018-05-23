@@ -43,18 +43,6 @@
 		"Type": "VideoLink"
 	},
 	{
-		"Thumbnail": "videos/polaroid_thumb/athousandyears.png",
-		"Caption": "A Thousand Years (Cover)",
-		"URL": "https://www.youtube.com/watch?v=efy6yAWqFkE",
-		"Type": "VideoLink"
-	},
-	{
-		"Thumbnail": "videos/polaroid_thumb/TheManAcousticThumb1.png",
-		"Caption": "The Man I've Gotta Be (Acoustic)",
-		"URL": "https://www.youtube.com/watch?v=uuLWSryjOGI",
-		"Type": "VideoLink"
-	},
-	{
 		"Thumbnail": "videos/polaroid_thumb/SexThumb.png",
 		"Caption": "Sex On The Beach (Lyric Video)",
 		"URL": "https://www.youtube.com/watch?v=M7bvhDj2a7E",
