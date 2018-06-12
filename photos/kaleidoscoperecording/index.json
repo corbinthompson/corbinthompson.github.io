@@ -1,104 +1,38 @@
 [
 	{
-		"Thumbnail": "photos/Kaleidoscope/polaroid_thumb/1.jpg",
+		"Thumbnail": "photos/kaleidoscoperecording/polaroid_thumb/1.jpg",
 		"Caption":  "",
-		"Picture": "photos/Kaleidoscope/photos/1.jpg",
+		"Picture": "photos/kaleidoscoperecording/photos/1.jpg",
 		"Type": "Picture"
 	},
 	{
-		"Thumbnail": "photos/Kaleidoscope/polaroid_thumb/2.jpg",
+		"Thumbnail": "photos/kaleidoscoperecording/polaroid_thumb/2.jpg",
 		"Caption":  "",
-		"Picture": "photos/Kaleidoscope/photos/2.jpg",
+		"Picture": "photos/kaleidoscoperecording/photos/2.jpg",
 		"Type": "Picture"
 	},
 	{
-		"Thumbnail": "photos/Kaleidoscope/polaroid_thumb/3.jpg",
+		"Thumbnail": "photos/kaleidoscoperecording/polaroid_thumb/3.jpg",
 		"Caption":  "",
-		"Picture": "photos/Kaleidoscope/photos/3.jpg",
+		"Picture": "photos/kaleidoscoperecording/photos/3.jpg",
 		"Type": "Picture"
 	},
 	{
-		"Thumbnail": "photos/Kaleidoscope/polaroid_thumb/4.jpg",
+		"Thumbnail": "photos/kaleidoscoperecording/polaroid_thumb/4.jpg",
 		"Caption":  "",
-		"Picture": "photos/Kaleidoscope/photos/4.jpg",
+		"Picture": "photos/kaleidoscoperecording/photos/4.jpg",
 		"Type": "Picture"
 	},
 	{
-		"Thumbnail": "photos/Kaleidoscope/polaroid_thumb/5.jpg",
+		"Thumbnail": "photos/kaleidoscoperecording/polaroid_thumb/5.jpg",
 		"Caption":  "",
-		"Picture": "photos/Kaleidoscope/photos/5.jpg",
+		"Picture": "photos/kaleidoscoperecording/photos/5.jpg",
 		"Type": "Picture"
 	},
 	{
-		"Thumbnail": "photos/Kaleidoscope/polaroid_thumb/6.jpg",
+		"Thumbnail": "photos/kaleidoscoperecording/polaroid_thumb/6.jpg",
 		"Caption":  "",
-		"Picture": "photos/Kaleidoscope/photos/6.jpg",
-		"Type": "Picture"
-	},
-	{
-		"Thumbnail": "photos/Kaleidoscope/polaroid_thumb/7.jpg",
-		"Caption":  "",
-		"Picture": "photos/Kaleidoscope/photos/7.jpg",
-		"Type": "Picture"
-	},
-	{
-		"Thumbnail": "photos/Kaleidoscope/polaroid_thumb/8.jpg",
-		"Caption":  "",
-		"Picture": "photos/Kaleidoscope/photos/9.jpg",
-		"Type": "Picture"
-	},
-	{
-		"Thumbnail": "photos/Kaleidoscope/polaroid_thumb/10.jpg",
-		"Caption":  "",
-		"Picture": "photos/Kaleidoscope/photos/10.jpg",
-		"Type": "Picture"
-	},
-	{
-		"Thumbnail": "photos/Kaleidoscope/polaroid_thumb/11.jpg",
-		"Caption":  "",
-		"Picture": "photos/Kaleidoscope/photos/11.jpg",
-		"Type": "Picture"
-	},
-	{
-		"Thumbnail": "photos/Kaleidoscope/polaroid_thumb/12.jpg",
-		"Caption":  "",
-		"Picture": "photos/Kaleidoscope/photos/12.jpg",
-		"Type": "Picture"
-	},
-	{
-		"Thumbnail": "photos/Kaleidoscope/polaroid_thumb/14.jpg",
-		"Caption":  "",
-		"Picture": "photos/Kaleidoscope/photos/14.jpg",
-		"Type": "Picture"
-	},
-	{
-		"Thumbnail": "photos/Kaleidoscope/polaroid_thumb/15.jpg",
-		"Caption":  "",
-		"Picture": "photos/Kaleidoscope/photos/15.jpg",
-		"Type": "Picture"
-	},
-	{
-		"Thumbnail": "photos/Kaleidoscope/polaroid_thumb/16.jpg",
-		"Caption":  "",
-		"Picture": "photos/Kaleidoscope/photos/16.jpg",
-		"Type": "Picture"
-	},
-	{
-		"Thumbnail": "photos/Kaleidoscope/polaroid_thumb/17.jpg",
-		"Caption":  "",
-		"Picture": "photos/Kaleidoscope/photos/17.jpg",
-		"Type": "Picture"
-	},
-	{
-		"Thumbnail": "photos/Kaleidoscope/polaroid_thumb/18.jpg",
-		"Caption":  "",
-		"Picture": "photos/Kaleidoscope/photos/19.jpg",
-		"Type": "Picture"
-	},
-	{
-		"Thumbnail": "photos/Kaleidoscope/polaroid_thumb/20.jpg",
-		"Caption":  "",
-		"Picture": "photos/Kaleidoscope/photos/20.jpg",
+		"Picture": "photos/kaleidoscoperecording/photos/6.jpg",
 		"Type": "Picture"
 	}
 ]
