@@ -90,6 +90,16 @@
 		"address": "photos/CorbinH/index.json"
 	},
 	{
+		"name": "kaleidoscopemusicvideo",
+		"title": "Kaleidoscope Music Video",
+		"address": "photos/Kaleidoscope/index.json"
+	},
+	{
+		"name": "kaleidoscoperecording",
+		"title": "Kaleidoscope Recording",
+		"address": "photos/kaleidoscoperecording/index.json"
+	},
+	{
 		"name": "musicvideoshots2017",
 		"title": "Music Video Shots - 2017",
 		"address": "photos/musicvideoshots2017/index.json"
