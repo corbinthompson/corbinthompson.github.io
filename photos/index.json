@@ -6,6 +6,18 @@
 		"Type": "PolaroidAlbum"
 	},
 	{
+		"Thumbnail": "photos/polaroid_thumb/kaleidoscopemusicvideo.png",
+		"Caption": "Kaleidoscope Music Video - 2018",
+		"URL": "#kaleidoscopemusicvideo",
+		"Type": "PolaroidAlbum"
+	},
+	{
+		"Thumbnail": "photos/polaroid_thumb/kaleidoscoperecording.png",
+		"Caption": "Kaleidoscope Recording - 2018",
+		"URL": "#kaleidoscopemrecording",
+		"Type": "PolaroidAlbum"
+	},
+	{
 		"Thumbnail": "photos/polaroid_thumb/behindthescenes.png",
 		"Caption": "Music Video Shots - 2017",
 		"URL": "#musicvideoshots2017",
