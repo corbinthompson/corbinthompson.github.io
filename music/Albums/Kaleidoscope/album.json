@@ -3,5 +3,10 @@
 		"Name": "KALEIDOSCOPE",
 		"URL": "music/songs/kaleidoscope.mp3",
 		"LyricsURL": ""
+	},
+	{
+		"Name": "KALEIDOSCOPE Acoustic",
+		"URL": "music/songs/kaleidoscopeacoustic.wav",
+		"LyricsURL": ""
 	}
 ]
