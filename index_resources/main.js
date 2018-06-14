@@ -125,7 +125,7 @@ function HeadLine(imgsrc, msg, url, type, appendWhere, SubHeadLine, ContentList)
 				var GetSlideShowImgs = function(lastimage) {
 					return new Promise(function(LocalResolve, LocalReject) {
 						if(lastimage >= 0) {
-							var TheType = that.ContentList[lastimage].type || that.ContentList[lastimage].Type;
+							var TheType = that.ContentList[lastimage].Type;
 							if(TheType == 0 || TheType == "Picture") {
 								totalimages++;
 								GetSlideShowImgs(lastimage - 1).then(function(response) {
