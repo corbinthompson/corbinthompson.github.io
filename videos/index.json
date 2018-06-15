@@ -1,5 +1,11 @@
 [
 	{
+		"Thumbnail": "videos/polaroid_thumb/kaleidoscopeacoustic.png",
+		"Caption": "Kaleidoscope (Acoustic)",
+		"URL": "https://www.youtube.com/watch?v=1S4zH8KyIxA",
+		"Type": "VideoLink"
+	},
+	{
 		"Thumbnail": "videos/polaroid_thumb/kaleidoscope.png",
 		"Caption": "Kaleidoscope (Music Video)",
 		"URL": "https://www.youtube.com/watch?v=RF_IwJ_t7cI",
