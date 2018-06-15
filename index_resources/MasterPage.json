@@ -35,6 +35,18 @@
 		"address": "photos/CorbinH/index.json"
 	},
 	{
+		"maxelements": 10,
+		"name": "kaleidoscopemusicvideoalbum",
+		"title": "Kaleidoscope Music Video",
+		"address": "photos/Kaleidoscope/index.json"
+	},
+	{
+		"maxelements": 10,
+		"name": "kaleidoscoperecording",
+		"title": "Kaleidoscope Recording",
+		"address": "photos/kaleidoscoperecording/index.json"
+	},
+	{
 		"name": "musicvideoshots2017",
 		"title": "Music Video Shots - 2017",
 		"address": "photos/musicvideoshots2017/index.json"
